@@ -1,0 +1,19 @@
+evaluation_protocol,split,cohort,description,windows,windows_admitted,windows_lost,subjects,subjects_admitted,subjects_lost
+Unseen-subject Generalization,test,cohort_core,"core common cohort (G, A, D, B available)",26861,28322,1461,9,9,0
+Unseen-subject Generalization,test,cohort_gut,Gut common cohort (core cohort and Gut available),23455,28322,4867,8,9,1
+Unseen-subject Generalization,test,cohort_full,all admitted windows (missing-handling version),28322,28322,0,9,9,0
+Unseen-subject Generalization,train,cohort_core,"core common cohort (G, A, D, B available)",79294,81958,2664,27,27,0
+Unseen-subject Generalization,train,cohort_gut,Gut common cohort (core cohort and Gut available),73153,81958,8805,25,27,2
+Unseen-subject Generalization,train,cohort_full,all admitted windows (missing-handling version),81958,81958,0,27,27,0
+Unseen-subject Generalization,validation,cohort_core,"core common cohort (G, A, D, B available)",23139,24259,1120,9,9,0
+Unseen-subject Generalization,validation,cohort_gut,Gut common cohort (core cohort and Gut available),23139,24259,1120,9,9,0
+Unseen-subject Generalization,validation,cohort_full,all admitted windows (missing-handling version),24259,24259,0,9,9,0
+Within-subject Future Prediction,test,cohort_core,"core common cohort (G, A, D, B available)",21083,26269,5186,44,45,1
+Within-subject Future Prediction,test,cohort_gut,Gut common cohort (core cohort and Gut available),19888,26269,6381,41,45,4
+Within-subject Future Prediction,test,cohort_full,all admitted windows (missing-handling version),26269,26269,0,45,45,0
+Within-subject Future Prediction,train,cohort_core,"core common cohort (G, A, D, B available)",79300,79300,0,45,45,0
+Within-subject Future Prediction,train,cohort_gut,Gut common cohort (core cohort and Gut available),73134,79300,6166,42,45,3
+Within-subject Future Prediction,train,cohort_full,all admitted windows (missing-handling version),79300,79300,0,45,45,0
+Within-subject Future Prediction,validation,cohort_core,"core common cohort (G, A, D, B available)",26301,26330,29,45,45,0
+Within-subject Future Prediction,validation,cohort_gut,Gut common cohort (core cohort and Gut available),24295,26330,2035,42,45,3
+Within-subject Future Prediction,validation,cohort_full,all admitted windows (missing-handling version),26330,26330,0,45,45,0

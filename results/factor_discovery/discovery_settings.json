@@ -1,0 +1,56 @@
+{
+  "execution_enabled": false,
+  "scope": "P1 sub-tasks T10 (E4, cross-environment stability), T11 (36-subject grouped CV) and T14 (E8-a, E8-b). No P2 sub-task (72, 73). No test split. T_k, O_k, L_k and R_k are not changed.",
+  "e4": {
+    "pairs": 50,
+    "seed": 42,
+    "k_per_family": 5,
+    "q": 10,
+    "thresholds": [
+      0.5,
+      0.6,
+      0.7
+    ],
+    "headline_threshold": 0.6,
+    "lasso_path": {
+      "n_alphas": 100,
+      "eps": 0.001
+    },
+    "not_in_the_protocol": "pool = per-family top 5 (no redundancy filter); Lasso path rule (first penalty with at least q non-zero, largest |coefficient|); the candidate library (tau*, k*) is fixed on all training subjects",
+    "conditional_stability_note": "tau* and k* of the candidate library are fixed on all training subjects of the protocol and are not re-estimated inside a half sample, so E4 measures the stability of the selection conditional on the candidate library; it is not the stability of the complete candidate-construction process (kernel choice included). The 36-subject CV re-estimates tau* in every fold."
+  },
+  "cv_36": {
+    "folds": 6,
+    "seed": 42,
+    "scheme": "sklearn GroupKFold(n_splits=6, shuffle=False); no random seed in the assignment",
+    "alternative_scheme": "the seed-42 permutation of the initial method check (superseded 2026-10-18; its record is kept in discovery_checks/cv_check_fold0_record.json and is not a formal membership)",
+    "inner": "3-fold subject-grouped CV inside the training subjects, baseline refitted per inner split (llm_fitness.group_splits), forward selection k_max 10, paired 1-SE, ridge grid logspace(-3, 3, 13)",
+    "blocks": [
+      "base",
+      "base + M",
+      "base + T",
+      "base + M + T"
+    ],
+    "min_windows": 20,
+    "bootstrap": "2000 subject resamples, seed 42",
+    "O_L_R": "not in the CV",
+    "membership_file": "grouped_cv_fold_membership.csv",
+    "membership_record": "grouped_cv_fold_membership.json",
+    "membership_sha256": "dd006c4b7ae77d9d05841dafd2a620fdf410fb96f28c2b070e9a3f756b598139"
+  },
+  "e8": {
+    "anchor_rule": "prefix_causal, n_anchors 9 for the 24-lag rebuild (last reading held)",
+    "reliable_window": "level confirmed or grid and all anchors the oldest lag needs present",
+    "validation_comparison": "original base vs anchor-causal base on the same anchor-reliable validation windows, subject-equal RMSE, 20-window rule",
+    "e8b": "residual ridge on the anchor-causal residuals with the selected M, T_k, O_k; alpha re-selected on validation; factors not reselected",
+    "reporting": "Reported separately: (i) the loss of rebuilding the base from native readings (E8-a: original base against anchor-causal base on the same reliable validation windows, with the matched control); (ii) the marginal effect of the added M, T, O blocks on each base (block against the base of the same lags); (iii) for completeness the total change (original base + block against anchor-causal base + block). No rule or parameter is changed on the basis of the smoke runs."
+  },
+  "cv_36_disclosure": "The 36 subjects include the 9 Protocol-B validation subjects whose validation windows took part in the earlier model development (T_7, alpha, k, many diagnostics). The CV re-runs the whole pipeline without the outer subjects in every fold, but its design was fixed with these subjects in view: it is supplementary robustness evidence, not a completely independent external confirmation.",
+  "seed_use": {
+    "folds": "none (GroupKFold shuffle=False)",
+    "e4_subsampling": "[42, pair index]",
+    "bootstrap": "42",
+    "lasso": "deterministic (coordinate descent, cyclic)",
+    "oof_residual_folds": "none (deterministic GroupKFold)"
+  }
+}

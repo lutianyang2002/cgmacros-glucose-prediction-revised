@@ -1,0 +1,21 @@
+# PPGR reproduction environment (Python 3.9). Author repository pins (commit 3d0c9b7): xgboost 1.6.2,
+# scikit-learn 0.24.2, pandas 1.3.5, numpy 1.18.4, scipy 1.5.2. These author pins are reproduction evidence.
+# The project's executed Python 3.9 environment uses numpy 1.19.5 and scipy 1.5.4, with Python 3.9 wheel
+# support, while retaining the author's xgboost, scikit-learn and pandas pins. The NumPy minor version
+# and SciPy patch version differ; this is not an environment-identical reproduction of the author code.
+# See README.md for the distinction and interpreter setup.
+#
+# Notebook 07 fits the PPGR models in a separate interpreter built from this file; the main pipeline
+# environment (requirements.txt) is not used for those fits. The recorded reference run used CPython 3.9.0.
+#
+#   python3.9 -m venv <env-dir>
+#   <env-dir>/bin/python -m pip install -r requirements-ppgr.txt       (Windows: <env-dir>\Scripts\python.exe)
+#   export CGMACROS_PPGR_PYTHON=<env-dir>/bin/python                    (set before starting Jupyter)
+#
+# Notebook 07 reads the interpreter path from CGMACROS_PPGR_PYTHON and checks that it reports xgboost 1.6.2
+# before any model is fitted. Keep <env-dir> outside version control (envs/ is git-ignored).
+xgboost==1.6.2
+scikit-learn==0.24.2
+pandas==1.3.5
+numpy==1.19.5
+scipy==1.5.4

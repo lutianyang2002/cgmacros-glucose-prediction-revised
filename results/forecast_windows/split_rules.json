@@ -1,0 +1,29 @@
+{
+  "version": "primary_scope_v1",
+  "task_id": "primary_libre_30min",
+  "primary_assignment_source": {
+    "path": "results/data_quality/split_scope_v1.csv"
+  },
+  "window_key": [
+    "subject",
+    "origin_time",
+    "task_id"
+  ],
+  "fold_key": [
+    "evaluation_protocol",
+    "subject",
+    "origin_time",
+    "task_id"
+  ],
+  "temporal_partitions": {
+    "train": "[start_time, protocol_a_train_end_time]",
+    "validation": "(protocol_a_train_end_time, protocol_a_val_end_time]",
+    "test": "(protocol_a_val_end_time, end_time]"
+  },
+  "support_rule": "The entire closed [history_start_time, target_time] must be in one temporal partition. Origins alone never determine admission.",
+  "boundary_exclusion_reason": "temporal_boundary_crossing",
+  "subject_rule": "Use protocol_b_group from primary split_scope_v1; normalize val to validation only.",
+  "unseen_history_policy": "An unseen subject may supply causally available pre-origin history at prediction time. Only training subjects fit models, preprocessing, dimensionality reduction, and feature selection. Validation may guide model selection; test-subject windows, statistics, and history cannot guide fitting or tuning.",
+  "preprocessing_policy": "Fit learned preprocessing separately on the appropriate training split of each protocol. Validation is for tuning and test is for frozen evaluation only.",
+  "cross_protocol_policy": "Do not transfer learned statistics or choices from Protocol A data into Protocol B when those subjects are held out in Protocol B; shared exploration remains restricted to the common training range."
+}

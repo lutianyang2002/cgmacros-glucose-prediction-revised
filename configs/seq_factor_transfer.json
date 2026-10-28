@@ -1,0 +1,771 @@
+{
+  "schema_version": 2,
+  "design": "A-consistent",
+  "epochs": {
+    "GRU": {
+      "A": 60,
+      "B": 37
+    },
+    "TCN": {
+      "A": 35,
+      "B": 34
+    }
+  },
+  "epoch_provenance": "Historical validation-early-stopping median; indirect validation dependence accepted and disclosed",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "devices": {
+    "GRU": "cuda",
+    "TCN": "cpu"
+  },
+  "cpu_threads": 14,
+  "early_stopping": false,
+  "max_training_count": 120,
+  "run_order": [
+    [
+      "GRU",
+      "A"
+    ],
+    [
+      "GRU",
+      "B"
+    ],
+    [
+      "TCN",
+      "A"
+    ],
+    [
+      "TCN",
+      "B"
+    ]
+  ],
+  "shared_training": {
+    "loss": "MSE of standardized target-minus-latest-glucose residual",
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0,
+    "batch_size": 512,
+    "history_minutes": 120,
+    "history_step_minutes": 5,
+    "history_values": 25,
+    "horizon_minutes": 30,
+    "cpu_threads": 14,
+    "cudnn_deterministic": true,
+    "cudnn_benchmark": false,
+    "mixed_precision": false,
+    "training_statistics_only": true
+  },
+  "ensemble": "arithmetic mean of per-window predictions, not mean of seed RMSE",
+  "factor_columns": {
+    "A": {
+      "M": [
+        "act_hr_mean_30m",
+        "act_hr_max_30m",
+        "act_hr_coverage_30m",
+        "act_hr_missing_30m",
+        "act_hr_mean_120m",
+        "act_hr_max_120m",
+        "act_hr_coverage_120m",
+        "act_hr_missing_120m",
+        "act_calories_mean_30m",
+        "act_calories_max_30m",
+        "act_calories_sum_observed_30m",
+        "act_calories_coverage_30m",
+        "act_calories_missing_30m",
+        "act_calories_mean_120m",
+        "act_calories_max_120m",
+        "act_calories_sum_observed_120m",
+        "act_calories_coverage_120m",
+        "act_calories_missing_120m",
+        "act_met_mean_30m",
+        "act_met_max_30m",
+        "act_met_coverage_30m",
+        "act_met_missing_30m",
+        "act_met_mean_120m",
+        "act_met_max_120m",
+        "act_met_coverage_120m",
+        "act_met_missing_120m",
+        "diet_logged_meal_count_30m",
+        "diet_no_logged_meal_30m",
+        "diet_logged_meal_calories_sum_30m",
+        "diet_logged_carbs_sum_30m",
+        "diet_logged_protein_sum_30m",
+        "diet_logged_fat_sum_30m",
+        "diet_logged_fiber_sum_30m",
+        "diet_logged_meal_count_120m",
+        "diet_no_logged_meal_120m",
+        "diet_logged_meal_calories_sum_120m",
+        "diet_logged_carbs_sum_120m",
+        "diet_logged_protein_sum_120m",
+        "diet_logged_fat_sum_120m",
+        "diet_logged_fiber_sum_120m",
+        "diet_minutes_since_last_logged_meal",
+        "diet_last_meal_carbs",
+        "diet_last_meal_calories",
+        "diet_last_meal_type_breakfast",
+        "diet_last_meal_type_dinner",
+        "diet_last_meal_type_lunch",
+        "diet_last_meal_type_snack",
+        "bio_age",
+        "bio_gender_m",
+        "bio_bmi"
+      ],
+      "T": [
+        "actstat_calories_mean_15m",
+        "int_snack_carbs_x_native_slope_1h",
+        "int_lunch_carbs_x_bmi",
+        "actstat_hr_mean_120m",
+        "actstat_hr_max_15m",
+        "int_breakfast_carbs_x_native_slope_1h",
+        "native_missing"
+      ],
+      "O": [
+        "O_A_0011",
+        "O_A_0018",
+        "O_A_0007",
+        "O_A_0021",
+        "O_A_0019",
+        "O_A_0008",
+        "O_A_0025",
+        "native_missing"
+      ]
+    },
+    "B": {
+      "M": [
+        "act_hr_mean_30m",
+        "act_hr_max_30m",
+        "act_hr_coverage_30m",
+        "act_hr_missing_30m",
+        "act_hr_mean_120m",
+        "act_hr_max_120m",
+        "act_hr_coverage_120m",
+        "act_hr_missing_120m",
+        "act_calories_mean_30m",
+        "act_calories_max_30m",
+        "act_calories_sum_observed_30m",
+        "act_calories_coverage_30m",
+        "act_calories_missing_30m",
+        "act_calories_mean_120m",
+        "act_calories_max_120m",
+        "act_calories_sum_observed_120m",
+        "act_calories_coverage_120m",
+        "act_calories_missing_120m",
+        "act_met_mean_30m",
+        "act_met_max_30m",
+        "act_met_coverage_30m",
+        "act_met_missing_30m",
+        "act_met_mean_120m",
+        "act_met_max_120m",
+        "act_met_coverage_120m",
+        "act_met_missing_120m",
+        "diet_logged_meal_count_30m",
+        "diet_no_logged_meal_30m",
+        "diet_logged_meal_calories_sum_30m",
+        "diet_logged_carbs_sum_30m",
+        "diet_logged_protein_sum_30m",
+        "diet_logged_fat_sum_30m",
+        "diet_logged_fiber_sum_30m",
+        "diet_logged_meal_count_120m",
+        "diet_no_logged_meal_120m",
+        "diet_logged_meal_calories_sum_120m",
+        "diet_logged_carbs_sum_120m",
+        "diet_logged_protein_sum_120m",
+        "diet_logged_fat_sum_120m",
+        "diet_logged_fiber_sum_120m",
+        "diet_minutes_since_last_logged_meal",
+        "diet_last_meal_carbs",
+        "diet_last_meal_calories",
+        "diet_last_meal_type_breakfast",
+        "diet_last_meal_type_dinner",
+        "diet_last_meal_type_lunch",
+        "diet_last_meal_type_snack",
+        "bio_age",
+        "bio_gender_m",
+        "bio_bmi"
+      ],
+      "T": [
+        "actstat_hr_max_15m",
+        "abs_lunch_carbs_t20_k2",
+        "int_snack_carbs_x_native_slope_1h",
+        "ratio_last_meal_carb_share",
+        "ratio_kernel_protein_x_carbs",
+        "int_dinner_carbs_x_native_slope_1h",
+        "abs_dinner_fiber_t20_k3",
+        "native_missing"
+      ],
+      "O": [
+        "O_B_0003",
+        "O_B_0018",
+        "O_B_0017",
+        "O_B_0005",
+        "native_missing"
+      ]
+    }
+  },
+  "factor_selection": "Frozen; no IC/search/forward selection",
+  "secondary_factor_combinations": [],
+  "alpha_grid": [
+    0.001,
+    0.0031622776601683794,
+    0.01,
+    0.03162277660168379,
+    0.1,
+    0.31622776601683794,
+    1.0,
+    3.1622776601683795,
+    10.0,
+    31.622776601683793,
+    100.0,
+    316.22776601683796,
+    1000.0
+  ],
+  "alpha_selection": "minimum subject-equal validation RMSE on original core_rows sample; apply >=20 rule for final paired reporting, matching historical E2_O",
+  "cohort": "original cohort_core",
+  "min_validation_windows_per_subject": 20,
+  "bootstrap": {
+    "n_resamples": 2000,
+    "seed": 42,
+    "unit": "subject"
+  },
+  "delta_definition": "new RMSE minus reference RMSE; negative is improvement",
+  "lr_reproduction_tolerance_absolute_mg_dl": 1e-07,
+  "lr_reproduction_require_same_alpha": true,
+  "lr_reproduction_require_same_subject_and_window_counts": true,
+  "oof_specification": {
+    "rec_revision": "see rec_revisions[0]",
+    "protocol_A": {
+      "blocks": "5 equal-duration time blocks inside each subject's training period [start_time, protocol_a_train_end_time] (edges in block_edges)",
+      "cross_fitting": "non-forward: block b is predicted by a base fitted on the retained training windows of the other blocks; fits pooled over the protocol's training windows",
+      "support_rule": "a window belongs to a block only if its whole support [history_start_time, target_time] lies in it; the others are dropped (5,117 of 79,300 windows, 6.45%, accepted by the user); the dropped windows are in no fit and have no OOF residual",
+      "effect": "factor-block training rows, IC screening and OpenFE only (74,183 rows); the evaluation windows are unchanged",
+      "block_edges": {
+        "1": [
+          "2020-05-01 10:30:00",
+          "2020-05-02 15:57:28.800000",
+          "2020-05-03 21:24:57.600000",
+          "2020-05-05 02:52:26.400000",
+          "2020-05-06 08:19:55.200000",
+          "2020-05-07 13:47:24"
+        ],
+        "2": [
+          "2019-11-15 20:12:00",
+          "2019-11-17 06:14:52.800000",
+          "2019-11-18 16:17:45.600000",
+          "2019-11-20 02:20:38.400000",
+          "2019-11-21 12:23:31.200000",
+          "2019-11-22 22:26:24"
+        ],
+        "3": [
+          "2020-03-11 09:03:00",
+          "2020-03-12 14:12:28.800000",
+          "2020-03-13 19:21:57.600000",
+          "2020-03-15 00:31:26.400000",
+          "2020-03-16 05:40:55.200000",
+          "2020-03-17 10:50:24"
+        ],
+        "4": [
+          "2023-09-11 09:54:00",
+          "2023-09-12 14:26:52.800000",
+          "2023-09-13 18:59:45.600000",
+          "2023-09-14 23:32:38.400000",
+          "2023-09-16 04:05:31.200000",
+          "2023-09-17 08:38:24"
+        ],
+        "5": [
+          "2020-08-17 11:14:00",
+          "2020-08-18 16:09:04.800000",
+          "2020-08-19 21:04:09.600000",
+          "2020-08-21 01:59:14.400000",
+          "2020-08-22 06:54:19.200000",
+          "2020-08-23 11:49:24"
+        ],
+        "6": [
+          "2023-04-07 11:19:00",
+          "2023-04-08 16:14:04.800000",
+          "2023-04-09 21:09:09.600000",
+          "2023-04-11 02:04:14.400000",
+          "2023-04-12 06:59:19.200000",
+          "2023-04-13 11:54:24"
+        ],
+        "7": [
+          "2023-11-03 10:41:00",
+          "2023-11-04 07:30:04.800000",
+          "2023-11-05 04:19:09.600000",
+          "2023-11-06 01:08:14.400000",
+          "2023-11-06 21:57:19.200000",
+          "2023-11-07 18:46:24"
+        ],
+        "8": [
+          "2023-01-30 10:52:00",
+          "2023-01-31 16:23:04.800000",
+          "2023-02-01 21:54:09.600000",
+          "2023-02-03 03:25:14.400000",
+          "2023-02-04 08:56:19.200000",
+          "2023-02-05 14:27:24"
+        ],
+        "9": [
+          "2020-09-15 09:05:00",
+          "2020-09-16 13:49:16.800000",
+          "2020-09-17 18:33:33.600000",
+          "2020-09-18 23:17:50.400000",
+          "2020-09-20 04:02:07.200000",
+          "2020-09-21 08:46:24"
+        ],
+        "10": [
+          "2020-06-21 09:18:00",
+          "2020-06-22 17:36:28.800000",
+          "2020-06-24 01:54:57.600000",
+          "2020-06-25 10:13:26.400000",
+          "2020-06-26 18:31:55.200000",
+          "2020-06-28 02:50:24"
+        ],
+        "11": [
+          "2020-10-03 09:21:00",
+          "2020-10-04 14:57:28.800000",
+          "2020-10-05 20:33:57.600000",
+          "2020-10-07 02:10:26.400000",
+          "2020-10-08 07:46:55.200000",
+          "2020-10-09 13:23:24"
+        ],
+        "12": [
+          "2023-02-26 08:43:00",
+          "2023-02-27 14:03:16.800000",
+          "2023-02-28 19:23:33.600000",
+          "2023-03-02 00:43:50.400000",
+          "2023-03-03 06:04:07.200000",
+          "2023-03-04 11:24:24"
+        ],
+        "13": [
+          "2024-01-25 08:42:00",
+          "2024-01-26 16:22:40.800000",
+          "2024-01-28 00:03:21.600000",
+          "2024-01-29 07:44:02.400000",
+          "2024-01-30 15:24:43.200000",
+          "2024-01-31 23:05:24"
+        ],
+        "14": [
+          "2023-05-09 09:01:00",
+          "2023-05-10 19:30:52.800000",
+          "2023-05-12 06:00:45.600000",
+          "2023-05-13 16:30:38.400000",
+          "2023-05-15 03:00:31.200000",
+          "2023-05-16 13:30:24"
+        ],
+        "15": [
+          "2024-01-25 09:12:00",
+          "2024-01-26 19:40:04.800000",
+          "2024-01-28 06:08:09.600000",
+          "2024-01-29 16:36:14.400000",
+          "2024-01-31 03:04:19.200000",
+          "2024-02-01 13:32:24"
+        ],
+        "16": [
+          "2023-07-14 09:12:00",
+          "2023-07-15 17:46:40.800000",
+          "2023-07-17 02:21:21.600000",
+          "2023-07-18 10:56:02.400000",
+          "2023-07-19 19:30:43.200000",
+          "2023-07-21 04:05:24"
+        ],
+        "17": [
+          "2023-10-10 08:51:00",
+          "2023-10-11 17:13:04.800000",
+          "2023-10-13 01:35:09.600000",
+          "2023-10-14 09:57:14.400000",
+          "2023-10-15 18:19:19.200000",
+          "2023-10-17 02:41:24"
+        ],
+        "18": [
+          "2024-01-28 08:10:00",
+          "2024-01-30 15:19:43.200000",
+          "2024-02-01 22:29:26.400000",
+          "2024-02-04 05:39:09.600000",
+          "2024-02-06 12:48:52.800000",
+          "2024-02-08 19:58:36"
+        ],
+        "19": [
+          "2020-09-29 08:32:00",
+          "2020-09-30 13:25:16.800000",
+          "2020-10-01 18:18:33.600000",
+          "2020-10-02 23:11:50.400000",
+          "2020-10-04 04:05:07.200000",
+          "2020-10-05 08:58:24"
+        ],
+        "20": [
+          "2024-03-19 07:36:00",
+          "2024-03-20 16:07:04.800000",
+          "2024-03-22 00:38:09.600000",
+          "2024-03-23 09:09:14.400000",
+          "2024-03-24 17:40:19.200000",
+          "2024-03-26 02:11:24"
+        ],
+        "21": [
+          "2020-06-08 08:12:00",
+          "2020-06-09 16:26:52.800000",
+          "2020-06-11 00:41:45.600000",
+          "2020-06-12 08:56:38.400000",
+          "2020-06-13 17:11:31.200000",
+          "2020-06-15 01:26:24"
+        ],
+        "22": [
+          "2021-03-28 08:09:00",
+          "2021-03-29 19:23:52.800000",
+          "2021-03-31 06:38:45.600000",
+          "2021-04-01 17:53:38.400000",
+          "2021-04-03 05:08:31.200000",
+          "2021-04-04 16:23:24"
+        ],
+        "23": [
+          "2021-05-05 08:37:00",
+          "2021-05-06 16:59:04.800000",
+          "2021-05-08 01:21:09.600000",
+          "2021-05-09 09:43:14.400000",
+          "2021-05-10 18:05:19.200000",
+          "2021-05-12 02:27:24"
+        ],
+        "26": [
+          "2021-03-26 08:16:00",
+          "2021-03-27 16:54:16.800000",
+          "2021-03-29 01:32:33.600000",
+          "2021-03-30 10:10:50.400000",
+          "2021-03-31 18:49:07.200000",
+          "2021-04-02 03:27:24"
+        ],
+        "27": [
+          "2024-06-10 08:12:00",
+          "2024-06-11 13:16:04.800000",
+          "2024-06-12 18:20:09.600000",
+          "2024-06-13 23:24:14.400000",
+          "2024-06-15 04:28:19.200000",
+          "2024-06-16 09:32:24"
+        ],
+        "28": [
+          "2023-11-28 08:04:00",
+          "2023-11-29 21:32:04.800000",
+          "2023-12-01 11:00:09.600000",
+          "2023-12-03 00:28:14.400000",
+          "2023-12-04 13:56:19.200000",
+          "2023-12-06 03:24:24"
+        ],
+        "29": [
+          "2024-01-17 08:13:00",
+          "2024-01-18 19:40:28.800000",
+          "2024-01-20 07:07:57.600000",
+          "2024-01-21 18:35:26.400000",
+          "2024-01-23 06:02:55.200000",
+          "2024-01-24 17:30:24"
+        ],
+        "30": [
+          "2021-01-23 09:27:00",
+          "2021-01-24 16:22:40.800000",
+          "2021-01-25 23:18:21.600000",
+          "2021-01-27 06:14:02.400000",
+          "2021-01-28 13:09:43.200000",
+          "2021-01-29 20:05:24"
+        ],
+        "31": [
+          "2022-06-29 20:05:00",
+          "2022-06-30 23:31:52.800000",
+          "2022-07-02 02:58:45.600000",
+          "2022-07-03 06:25:38.400000",
+          "2022-07-04 09:52:31.200000",
+          "2022-07-05 13:19:24"
+        ],
+        "32": [
+          "2022-01-01 20:54:00",
+          "2022-01-03 00:28:04.800000",
+          "2022-01-04 04:02:09.600000",
+          "2022-01-05 07:36:14.400000",
+          "2022-01-06 11:10:19.200000",
+          "2022-01-07 14:44:24"
+        ],
+        "33": [
+          "2022-04-16 09:30:00",
+          "2022-04-17 17:12:28.800000",
+          "2022-04-19 00:54:57.600000",
+          "2022-04-20 08:37:26.400000",
+          "2022-04-21 16:19:55.200000",
+          "2022-04-23 00:02:24"
+        ],
+        "34": [
+          "2022-03-02 09:12:00",
+          "2022-03-03 14:35:52.800000",
+          "2022-03-04 19:59:45.600000",
+          "2022-03-06 01:23:38.400000",
+          "2022-03-07 06:47:31.200000",
+          "2022-03-08 12:11:24"
+        ],
+        "35": [
+          "2024-12-12 09:07:00",
+          "2024-12-13 13:54:52.800000",
+          "2024-12-14 18:42:45.600000",
+          "2024-12-15 23:30:38.400000",
+          "2024-12-17 04:18:31.200000",
+          "2024-12-18 09:06:24"
+        ],
+        "36": [
+          "2022-03-29 09:58:00",
+          "2022-03-30 20:11:40.800000",
+          "2022-04-01 06:25:21.600000",
+          "2022-04-02 16:39:02.400000",
+          "2022-04-04 02:52:43.200000",
+          "2022-04-05 13:06:24"
+        ],
+        "38": [
+          "2022-01-25 08:56:00",
+          "2022-01-26 13:56:28.800000",
+          "2022-01-27 18:56:57.600000",
+          "2022-01-28 23:57:26.400000",
+          "2022-01-30 04:57:55.200000",
+          "2022-01-31 09:58:24"
+        ],
+        "39": [
+          "2025-02-07 09:28:00",
+          "2025-02-08 19:52:28.800000",
+          "2025-02-10 06:16:57.600000",
+          "2025-02-11 16:41:26.400000",
+          "2025-02-13 03:05:55.200000",
+          "2025-02-14 13:30:24"
+        ],
+        "41": [
+          "2022-04-26 09:04:00",
+          "2022-04-27 13:41:04.800000",
+          "2022-04-28 18:18:09.600000",
+          "2022-04-29 22:55:14.400000",
+          "2022-05-01 03:32:19.200000",
+          "2022-05-02 08:09:24"
+        ],
+        "42": [
+          "2025-07-25 10:10:00",
+          "2025-07-26 15:12:16.800000",
+          "2025-07-27 20:14:33.600000",
+          "2025-07-29 01:16:50.400000",
+          "2025-07-30 06:19:07.200000",
+          "2025-07-31 11:21:24"
+        ],
+        "43": [
+          "2025-10-14 09:09:00",
+          "2025-10-15 14:13:04.800000",
+          "2025-10-16 19:17:09.600000",
+          "2025-10-18 00:21:14.400000",
+          "2025-10-19 05:25:19.200000",
+          "2025-10-20 10:29:24"
+        ],
+        "44": [
+          "2022-10-17 08:36:00",
+          "2022-10-18 13:40:04.800000",
+          "2022-10-19 18:44:09.600000",
+          "2022-10-20 23:48:14.400000",
+          "2022-10-22 04:52:19.200000",
+          "2022-10-23 09:56:24"
+        ],
+        "45": [
+          "2025-03-25 19:59:00",
+          "2025-03-27 03:07:16.800000",
+          "2025-03-28 10:15:33.600000",
+          "2025-03-29 17:23:50.400000",
+          "2025-03-31 00:32:07.200000",
+          "2025-04-01 07:40:24"
+        ],
+        "46": [
+          "2025-05-01 08:32:00",
+          "2025-05-02 13:54:04.800000",
+          "2025-05-03 19:16:09.600000",
+          "2025-05-05 00:38:14.400000",
+          "2025-05-06 06:00:19.200000",
+          "2025-05-07 11:22:24"
+        ],
+        "47": [
+          "2025-10-30 08:49:00",
+          "2025-10-31 16:11:40.800000",
+          "2025-11-01 23:34:21.600000",
+          "2025-11-03 06:57:02.400000",
+          "2025-11-04 14:19:43.200000",
+          "2025-11-05 21:42:24"
+        ],
+        "48": [
+          "2022-11-14 09:14:00",
+          "2022-11-15 19:56:28.800000",
+          "2022-11-17 06:38:57.600000",
+          "2022-11-18 17:21:26.400000",
+          "2022-11-20 04:03:55.200000",
+          "2022-11-21 14:46:24"
+        ],
+        "49": [
+          "2025-05-11 08:53:00",
+          "2025-05-12 15:30:40.800000",
+          "2025-05-13 22:08:21.600000",
+          "2025-05-15 04:46:02.400000",
+          "2025-05-16 11:23:43.200000",
+          "2025-05-17 18:01:24"
+        ]
+      }
+    },
+    "protocol_B": {
+      "folds": "GroupKFold(n_splits=5), deterministic, no shuffle, groups = the 27 training subjects; validation and test subjects take no part in any fold fit",
+      "fold_membership_subjects": {
+        "fold_0": [
+          4,
+          6,
+          28,
+          34,
+          45
+        ],
+        "fold_1": [
+          11,
+          29,
+          31,
+          35,
+          44,
+          47
+        ],
+        "fold_2": [
+          8,
+          21,
+          22,
+          42,
+          43
+        ],
+        "fold_3": [
+          10,
+          19,
+          38,
+          39,
+          49
+        ],
+        "fold_4": [
+          5,
+          17,
+          26,
+          27,
+          30,
+          32
+        ]
+      },
+      "membership_sha256": "94a490ecb5655d772adda93d77c99183b3344353d1d4c2bb07d1f45d7c888425",
+      "scikit_learn_version": "1.8.0",
+      "reproduction": "membership computed from the admitted training keys of fold_assignments (window counts per subject balance the folds); to be saved with the base residuals"
+    },
+    "all_residuals": "every training window with a compliant OOF rule gets its OOF residual; validation and test rows use the base fitted on the full training split; scalers, imputers, standardizers and any other fitted preprocessing are fitted inside each fold's training part only",
+    "openfe_init_scores": {
+      "option": "separate_openfe_init_scores",
+      "protocol_A": {
+        "internal_split": "per subject the first 75% of the training period is internal-train (whole support before the 75% cut) and the rest internal-validation (whole support after the cut); windows crossing the cut are dropped from both (REC 4.1 internal validation = last 25%)",
+        "internal_train_init_scores": "OOF inside the internal-train period: 5 equal-duration blocks of that period, non-forward, crossing windows dropped",
+        "internal_validation_init_scores": "base fitted on all internal-train windows only"
+      },
+      "protocol_B": {
+        "internal_split": "18 internal-train / 9 internal-validation subjects among the 27 training subjects (REC 3.6 example); membership: internal_membership",
+        "internal_train_init_scores": "GroupKFold(5) OOF inside the 18 subjects, deterministic",
+        "internal_validation_init_scores": "base fitted on the 18 internal-train subjects only",
+        "internal_membership": {
+          "rule": "the 27 Protocol-B training subject ids are sorted; permutation = numpy.random.default_rng(42).permutation(sorted ids); the first 18 are internal-train, the last 9 internal-validation; Protocol-B validation and test subjects are never used",
+          "generator": "numpy.random.default_rng (PCG64)",
+          "seed": 42,
+          "numpy_version": "2.4.2",
+          "sorted_training_subjects": [
+            4,
+            5,
+            6,
+            8,
+            10,
+            11,
+            17,
+            19,
+            21,
+            22,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            34,
+            35,
+            38,
+            39,
+            42,
+            43,
+            44,
+            45,
+            47,
+            49
+          ],
+          "permutation": [
+            19,
+            38,
+            43,
+            42,
+            34,
+            11,
+            31,
+            49,
+            35,
+            26,
+            22,
+            17,
+            32,
+            8,
+            4,
+            44,
+            39,
+            28,
+            27,
+            30,
+            47,
+            6,
+            10,
+            45,
+            5,
+            29,
+            21
+          ],
+          "internal_train_subjects": [
+            19,
+            38,
+            43,
+            42,
+            34,
+            11,
+            31,
+            49,
+            35,
+            26,
+            22,
+            17,
+            32,
+            8,
+            4,
+            44,
+            39,
+            28
+          ],
+          "internal_validation_subjects": [
+            27,
+            30,
+            47,
+            6,
+            10,
+            45,
+            5,
+            29,
+            21
+          ]
+        }
+      },
+      "rule": "no internal-validation label, lag, residual or fold fit reaches the internal-train data through the base, the residual target, the init_scores, the preprocessing parameters or the folds; the final O_k factor block is trained on the main OOF residuals",
+      "consequence": "A: 5,157 of the 58,895 internal-train windows (8.8%) have no init_score because of the block edges, in addition to 1,290 windows crossing the 75% cut"
+    }
+  },
+  "isolation": "TRAIN/VALIDATION only; mixed inputs may be decoded read-only with immediate fixed-key isolation; no new TEST analysis",
+  "old_sequence_prediction_file_opened": false,
+  "max_retries_per_task": 1,
+  "hard_wall_clock_budget_seconds": null,
+  "publication_status": "Exploratory validation-stage; repeated validation selection is not independent confirmation"
+}

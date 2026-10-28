@@ -1,0 +1,88 @@
+{
+  "rule_version": "strict_published_history_v1",
+  "task_id": "primary_libre_30min",
+  "primary_task_read_from_protocol": {
+    "task_id": "primary_libre_30min",
+    "task_status": "primary",
+    "target_device": "Libre",
+    "target_field": "libre_gl",
+    "target_unit": "mg/dL",
+    "prediction_type": "single_future_point_glucose_forecasting",
+    "history_minutes": 120,
+    "history_interval": "[t - 120 minutes, t]",
+    "forecast_horizon_minutes": 30,
+    "origin_stride_minutes": 5,
+    "grid_resolution_minutes": 1,
+    "base_grid_artifact": "results/aligned_data/dynamic_aligned_1min.parquet"
+  },
+  "history_interval": "closed at both ends: [origin - history_duration, origin]",
+  "expected_history_points": 121,
+  "origin_rule": "Per-subject date_range from first through last aligned timestamp at protocol stride; phase anchored to subject start, never reset by a gap. Origins in inserted rows are retained as candidates and rejected by continuity.",
+  "continuity_rule": "Treat every source interval longer than one minute as a continuity boundary and retain >15, >60, and >1440 minute audit flags.",
+  "continuity_implementation": "Entire closed history-start to target interval must lie within the origin's inherited subject/source segment. No source-gap tolerance.",
+  "valid_history_value": "Finite, nonmissing published source value; no inserted grid point and no project interpolation. Native device anchor status remains unknown.",
+  "target_rule": "Exact subject + target timestamp, finite nonmissing published value; no filling, interpolation, nearest match, or label repair.",
+  "intermediate_horizon_values": "Not required to be nonmissing; only structural source continuity is checked between origin and target. These future values are never predictors.",
+  "flow_accounting": "Sequential, first-failure exclusions in the saved stage order; later failures are not counted again.",
+  "exclusion_order": [
+    "insufficient_history_extent",
+    "target_outside_subject_extent",
+    "disallowed_source_discontinuity",
+    "incomplete_published_primary_history",
+    "target_unavailable"
+  ],
+  "all_cohort_processing": "Fixed structural construction only; labels persisted without outcome-distribution or performance analysis; split-boundary eligibility is applied at split assignment.",
+  "availability_policy": {
+    "global_cutoff_rule": "An input may be used only if both its event time and its availability time are at or before origin time t.",
+    "future_information_rule": "No value, aggregate, metadata, or preprocessing result that depends on times after t may enter the input.",
+    "glucose_history": {
+      "status": "conditional_strictly_historical_offline",
+      "rule": "Released glucose values require timestamps at or before t; target-horizon glucose is excluded from input."
+    },
+    "activity": {
+      "status": "conditional_strictly_historical_offline",
+      "rule": "Only activity minutes available by t may be used; future minutes, centered filters, completed-day summaries, and missing-as-zero substitutions are excluded."
+    },
+    "meal_logs": {
+      "status": "conditional_after_verified_record_creation",
+      "rule": "Meal type and nutrients cannot be backfilled before the log existed; the released meal timestamp does not establish upload time."
+    },
+    "amount_consumed": {
+      "status": "not_available_before_verified_meal_completion",
+      "rule": "Final Amount Consumed cannot be used before meal completion and cannot retrospectively rescale nutrients without a separate justified rule."
+    },
+    "meal_photos": {
+      "status": "offline_only_until_timing_verified",
+      "rule": "Photo content requires verified capture, upload, and feature-extraction availability by t; paths and folder identities are excluded as predictors."
+    },
+    "static_measurements": {
+      "status": "conditional_or_offline_only",
+      "rule": "Bio, Gut, and Microbiome results may enter only when result availability before the prediction period is established; later-returned results cannot be backfilled."
+    },
+    "calendar_context": {
+      "status": "shifted_clock_only",
+      "rule": "Shifted calendar dates cannot represent real season, holiday, or calendar context."
+    },
+    "identifiers_and_metadata": {
+      "status": "excluded",
+      "rule": "Subject identifiers, file paths, image paths, export indices, and source metadata are not ordinary predictive features."
+    }
+  },
+  "offline_interpretation": {
+    "scope": "retrospective forecasting protocol on released, shifted, one-minute aligned data"
+  },
+  "availability_limit": "History completeness certifies released source support, not verified live arrival by origin; unresolved arrival and publisher interpolation remain offline limitations.",
+  "deferred": [
+    "short-gap tolerance comparison",
+    "fold assignments and split-boundary exclusion",
+    "feature engineering and learned preprocessing"
+  ],
+  "audit_only_columns": [
+    "segment_id",
+    "segment_start_time",
+    "segment_end_time",
+    "source_file",
+    "origin_source_row_index",
+    "target_source_row_index"
+  ]
+}

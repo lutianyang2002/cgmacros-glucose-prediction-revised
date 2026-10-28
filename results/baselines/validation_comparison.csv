@@ -1,0 +1,337 @@
+category,model_id,evaluation_protocol,config,subjects,windows,subject_mean_mae,subject_mean_rmse,pooled_mae,pooled_rmse,train_subject_mean_rmse,validation_minus_train_rmse,delta_rmse_vs_persistence,subjects_better_than_persistence,scope,subject,mae,rmse,persistence_rmse
+formal baseline reproduction,glucobench_linear_regression,Unseen-subject Generalization,in_len=24,9.0,24259.0,8.341578705110685,12.37914794145039,8.185974998998708,12.377864519785367,11.257877912079211,1.1212700293711784,-4.830828938357206,8.0,summary,,,,
+formal baseline reproduction,sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,9.0,24259.0,11.320194821315363,18.216810142585356,11.677144244893805,18.524152157838824,17.447708877548603,0.7691012650367526,1.0068332627777608,4.0,summary,,,,
+simple reference,persistence,Unseen-subject Generalization,no parameters,9.0,24259.0,11.427916021041515,17.209976879807595,12.035546944776508,18.606347529446296,,,0.0,0.0,summary,,,,
+simple reference,linear_trend_30min,Unseen-subject Generalization,no parameters,9.0,24259.0,14.024038673341321,20.886496759207784,14.751133799361458,22.00774086532761,,,3.676519879400189,0.0,summary,,,,
+project comparison,ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,9.0,24259.0,8.57283138424743,12.681505075984525,8.494283924463236,12.790741839157652,11.635186254827696,1.046318821156829,-4.52847180382307,8.0,summary,,,,
+project comparison,shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",9.0,24259.0,9.95714160915002,14.686213262887698,10.281939370414602,15.47063779759948,12.828464841340198,1.8577484215475,-2.523763616919897,9.0,summary,,,,
+formal baseline reproduction,glucobench_linear_regression,Within-subject Future Prediction,in_len=24,45.0,26330.0,7.567410424052004,11.075340762754617,7.4809658418957135,11.484796794097843,11.70570283848552,-0.6303620757309023,-4.367449480277511,42.0,summary,,,,
+formal baseline reproduction,sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,45.0,26330.0,11.19107590315327,17.518011082845614,10.761522997395444,17.994006948651958,18.06577996397055,-0.5477688811249344,2.075220839813486,16.0,summary,,,,
+simple reference,persistence,Within-subject Future Prediction,no parameters,45.0,26330.0,10.615591484519513,15.442790243032128,10.428801114065074,16.235790103355125,,,0.0,0.0,summary,,,,
+simple reference,linear_trend_30min,Within-subject Future Prediction,no parameters,45.0,26330.0,13.72391279921417,19.8494876132616,13.297763395938237,20.14185934162952,,,4.406697370229473,3.0,summary,,,,
+project comparison,ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,45.0,26330.0,7.974312420172923,11.477405451586272,7.767397851966802,11.720518990880716,12.046475917652298,-0.5690704660660266,-3.9653847914458566,41.0,summary,,,,
+project comparison,shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",45.0,26330.0,9.075597032900289,12.971720430477346,9.043107359268083,13.56315601824078,13.286673395264565,-0.3149529647872189,-2.4710698125547825,42.0,summary,,,,
+,glucobench_linear_regression,Unseen-subject Generalization,,,2916.0,,,,,,,,,subject,1.0,6.181511156299894,8.652121109222696,9.239705690978806
+,glucobench_linear_regression,Unseen-subject Generalization,,,110.0,,,,,,,,,subject,7.0,9.542821121455152,15.14912846385322,13.55028047717467
+,glucobench_linear_regression,Unseen-subject Generalization,,,2878.0,,,,,,,,,subject,12.0,10.748475639237743,16.28595613327033,25.97597828311094
+,glucobench_linear_regression,Unseen-subject Generalization,,,3228.0,,,,,,,,,subject,16.0,6.10094244237103,8.685926678910919,10.837002524185877
+,glucobench_linear_regression,Unseen-subject Generalization,,,2755.0,,,,,,,,,subject,18.0,6.27521297020888,9.316512125047836,12.385168683030457
+,glucobench_linear_regression,Unseen-subject Generalization,,,3222.0,,,,,,,,,subject,20.0,7.277357079022935,10.222347342333448,16.312982165445618
+,glucobench_linear_regression,Unseen-subject Generalization,,,3207.0,,,,,,,,,subject,23.0,8.769107510725197,12.876105344441235,20.058847872147073
+,glucobench_linear_regression,Unseen-subject Generalization,,,3106.0,,,,,,,,,subject,33.0,10.316102055643672,15.285995064298513,24.371908255167114
+,glucobench_linear_regression,Unseen-subject Generalization,,,2837.0,,,,,,,,,subject,46.0,9.862678371031675,14.938239211675306,22.15791796702779
+,glucobench_linear_regression,Within-subject Future Prediction,,,559.0,,,,,,,,,subject,1.0,6.349776488950354,9.223517336207905,10.008106434023999
+,glucobench_linear_regression,Within-subject Future Prediction,,,651.0,,,,,,,,,subject,2.0,7.591705063370604,10.505508990290515,15.164495998793457
+,glucobench_linear_regression,Within-subject Future Prediction,,,553.0,,,,,,,,,subject,3.0,7.489141123511581,12.830585239324042,19.54805313462774
+,glucobench_linear_regression,Within-subject Future Prediction,,,466.0,,,,,,,,,subject,4.0,6.07937858988076,8.632647972839528,12.008894732419183
+,glucobench_linear_regression,Within-subject Future Prediction,,,548.0,,,,,,,,,subject,5.0,6.328672049884653,9.801055627295327,16.69090087258209
+,glucobench_linear_regression,Within-subject Future Prediction,,,548.0,,,,,,,,,subject,6.0,5.545474858406243,7.956099686949993,10.634274493277758
+,glucobench_linear_regression,Within-subject Future Prediction,,,1.0,,,,,,,,,subject,7.0,10.847710236090762,10.847710236090762,19.0
+,glucobench_linear_regression,Within-subject Future Prediction,,,560.0,,,,,,,,,subject,8.0,5.210424024515391,7.52456291901521,11.828922719267918
+,glucobench_linear_regression,Within-subject Future Prediction,,,545.0,,,,,,,,,subject,9.0,6.258652902663874,8.835887940708107,13.170782850576643
+,glucobench_linear_regression,Within-subject Future Prediction,,,616.0,,,,,,,,,subject,10.0,6.464063646357554,9.705135275901492,13.689724240595563
+,glucobench_linear_regression,Within-subject Future Prediction,,,562.0,,,,,,,,,subject,11.0,8.022349862967232,11.444851291967554,14.541938369084402
+,glucobench_linear_regression,Within-subject Future Prediction,,,557.0,,,,,,,,,subject,12.0,10.580663292061782,16.188045213258295,26.117799246157727
+,glucobench_linear_regression,Within-subject Future Prediction,,,604.0,,,,,,,,,subject,13.0,5.022385431896857,7.1951531042556,10.450820388807617
+,glucobench_linear_regression,Within-subject Future Prediction,,,660.0,,,,,,,,,subject,14.0,7.3335841185121655,10.646009141397363,15.418499754520045
+,glucobench_linear_regression,Within-subject Future Prediction,,,551.0,,,,,,,,,subject,15.0,9.337529328120379,20.561821845910924,8.38148219583822
+,glucobench_linear_regression,Within-subject Future Prediction,,,622.0,,,,,,,,,subject,16.0,4.625644197201072,6.537312473180343,8.812970726090908
+,glucobench_linear_regression,Within-subject Future Prediction,,,617.0,,,,,,,,,subject,17.0,5.627505648347592,7.649360364449164,8.993604787094581
+,glucobench_linear_regression,Within-subject Future Prediction,,,1073.0,,,,,,,,,subject,18.0,6.85359099289857,9.917539140973123,13.527347223902382
+,glucobench_linear_regression,Within-subject Future Prediction,,,548.0,,,,,,,,,subject,19.0,5.86542468805858,8.374898929084347,8.015356813639643
+,glucobench_linear_regression,Within-subject Future Prediction,,,620.0,,,,,,,,,subject,20.0,6.849571745771356,9.688324261504043,15.736512117368054
+,glucobench_linear_regression,Within-subject Future Prediction,,,615.0,,,,,,,,,subject,21.0,8.366914431263737,12.677037204875095,15.595618174123855
+,glucobench_linear_regression,Within-subject Future Prediction,,,675.0,,,,,,,,,subject,22.0,6.7242923600135445,9.16076968854253,11.33236742434383
+,glucobench_linear_regression,Within-subject Future Prediction,,,617.0,,,,,,,,,subject,23.0,7.263846158694234,10.291648726072516,15.750336937102992
+,glucobench_linear_regression,Within-subject Future Prediction,,,623.0,,,,,,,,,subject,26.0,9.40079692452439,14.114414065559375,19.124422471466435
+,glucobench_linear_regression,Within-subject Future Prediction,,,551.0,,,,,,,,,subject,27.0,5.005344801700759,7.005971207249855,7.497287269035005
+,glucobench_linear_regression,Within-subject Future Prediction,,,719.0,,,,,,,,,subject,28.0,6.622587877212018,9.33420273637072,13.431856670070449
+,glucobench_linear_regression,Within-subject Future Prediction,,,679.0,,,,,,,,,subject,29.0,6.0527278193386636,9.24914340325535,13.413852359296419
+,glucobench_linear_regression,Within-subject Future Prediction,,,589.0,,,,,,,,,subject,30.0,11.305718161000804,16.28683700181093,27.54851322707722
+,glucobench_linear_regression,Within-subject Future Prediction,,,519.0,,,,,,,,,subject,31.0,6.233079092965859,8.00165928090052,8.333949880853035
+,glucobench_linear_regression,Within-subject Future Prediction,,,521.0,,,,,,,,,subject,32.0,10.924891457514143,16.147852513381796,16.4056593910592
+,glucobench_linear_regression,Within-subject Future Prediction,,,604.0,,,,,,,,,subject,33.0,11.786291657368412,17.038387429865065,27.55128003634155
+,glucobench_linear_regression,Within-subject Future Prediction,,,558.0,,,,,,,,,subject,34.0,8.895503376441146,12.54520153875419,11.958260743101398
+,glucobench_linear_regression,Within-subject Future Prediction,,,546.0,,,,,,,,,subject,35.0,9.475503480601782,13.675446213872267,19.688911489801452
+,glucobench_linear_regression,Within-subject Future Prediction,,,655.0,,,,,,,,,subject,36.0,6.4579387986335846,9.640532303545088,14.769814252789939
+,glucobench_linear_regression,Within-subject Future Prediction,,,550.0,,,,,,,,,subject,38.0,7.470518951302217,11.176741272017592,16.773331406272472
+,glucobench_linear_regression,Within-subject Future Prediction,,,658.0,,,,,,,,,subject,39.0,8.592918969033196,12.69120289246421,20.823829645894694
+,glucobench_linear_regression,Within-subject Future Prediction,,,542.0,,,,,,,,,subject,41.0,5.62663557194242,8.004975528006335,14.401949665289822
+,glucobench_linear_regression,Within-subject Future Prediction,,,551.0,,,,,,,,,subject,42.0,6.78280493469825,9.835201346723768,15.54871223308476
+,glucobench_linear_regression,Within-subject Future Prediction,,,551.0,,,,,,,,,subject,43.0,5.156597749241153,7.033095673315143,10.014095731982007
+,glucobench_linear_regression,Within-subject Future Prediction,,,551.0,,,,,,,,,subject,44.0,7.152480604823651,9.911995977718552,14.9858843309052
+,glucobench_linear_regression,Within-subject Future Prediction,,,593.0,,,,,,,,,subject,45.0,8.924722358850854,14.155877850766979,23.641900919936898
+,glucobench_linear_regression,Within-subject Future Prediction,,,557.0,,,,,,,,,subject,46.0,11.072896379014104,16.327500152235107,25.327383628401165
+,glucobench_linear_regression,Within-subject Future Prediction,,,598.0,,,,,,,,,subject,47.0,8.592175749697068,12.35983045740183,19.11685398490539
+,glucobench_linear_regression,Within-subject Future Prediction,,,664.0,,,,,,,,,subject,48.0,9.058833188919909,13.256030497443597,14.682921578406797
+,glucobench_linear_regression,Within-subject Future Prediction,,,583.0,,,,,,,,,subject,49.0,9.304199938076978,14.402752371205745,25.466080386235948
+,linear_trend_30min,Unseen-subject Generalization,,,2916.0,,,,,,,,,subject,1.0,11.09124389722259,15.752460169441548,9.239705690978806
+,linear_trend_30min,Unseen-subject Generalization,,,110.0,,,,,,,,,subject,7.0,8.006109481915933,15.446242735605738,13.55028047717467
+,linear_trend_30min,Unseen-subject Generalization,,,2878.0,,,,,,,,,subject,12.0,17.773047946229084,26.88184537859663,25.97597828311094
+,linear_trend_30min,Unseen-subject Generalization,,,3228.0,,,,,,,,,subject,16.0,10.976625478008287,15.656694990466086,10.837002524185877
+,linear_trend_30min,Unseen-subject Generalization,,,2755.0,,,,,,,,,subject,18.0,12.656603145795524,18.715676414427982,12.385168683030457
+,linear_trend_30min,Unseen-subject Generalization,,,3222.0,,,,,,,,,subject,20.0,13.45569688899568,18.533165032120227,16.312982165445618
+,linear_trend_30min,Unseen-subject Generalization,,,3207.0,,,,,,,,,subject,23.0,17.28835192505641,25.518952881347204,20.058847872147073
+,linear_trend_30min,Unseen-subject Generalization,,,3106.0,,,,,,,,,subject,33.0,19.21405240637268,27.171667637604628,24.371908255167114
+,linear_trend_30min,Unseen-subject Generalization,,,2837.0,,,,,,,,,subject,46.0,15.754616890475702,24.30176559325999,22.15791796702779
+,linear_trend_30min,Within-subject Future Prediction,,,559.0,,,,,,,,,subject,1.0,10.811960201588859,16.830817529149037,10.008106434023999
+,linear_trend_30min,Within-subject Future Prediction,,,651.0,,,,,,,,,subject,2.0,13.469189253918701,18.977705618808557,15.164495998793457
+,linear_trend_30min,Within-subject Future Prediction,,,553.0,,,,,,,,,subject,3.0,13.435398802232202,23.176889533878946,19.54805313462774
+,linear_trend_30min,Within-subject Future Prediction,,,466.0,,,,,,,,,subject,4.0,12.389373644376759,17.45593203938291,12.008894732419183
+,linear_trend_30min,Within-subject Future Prediction,,,548.0,,,,,,,,,subject,5.0,11.218499823404754,17.613979933808082,16.69090087258209
+,linear_trend_30min,Within-subject Future Prediction,,,548.0,,,,,,,,,subject,6.0,9.894754140177382,14.94210690910667,10.634274493277758
+,linear_trend_30min,Within-subject Future Prediction,,,1.0,,,,,,,,,subject,7.0,34.0,34.0,19.0
+,linear_trend_30min,Within-subject Future Prediction,,,560.0,,,,,,,,,subject,8.0,9.827664170506912,14.442381861761852,11.828922719267918
+,linear_trend_30min,Within-subject Future Prediction,,,545.0,,,,,,,,,subject,9.0,12.077392226496992,16.091183884811343,13.170782850576643
+,linear_trend_30min,Within-subject Future Prediction,,,616.0,,,,,,,,,subject,10.0,11.874234132802682,18.3285305366746,13.689724240595563
+,linear_trend_30min,Within-subject Future Prediction,,,562.0,,,,,,,,,subject,11.0,16.025882026556463,22.555389000671994,14.541938369084402
+,linear_trend_30min,Within-subject Future Prediction,,,557.0,,,,,,,,,subject,12.0,17.225314183123878,26.419939475467608,26.117799246157727
+,linear_trend_30min,Within-subject Future Prediction,,,604.0,,,,,,,,,subject,13.0,9.835436249376913,14.07454530161967,10.450820388807617
+,linear_trend_30min,Within-subject Future Prediction,,,660.0,,,,,,,,,subject,14.0,13.57985907461714,19.93126178848588,15.418499754520045
+,linear_trend_30min,Within-subject Future Prediction,,,551.0,,,,,,,,,subject,15.0,5.098181702866733,16.922037637674435,8.38148219583822
+,linear_trend_30min,Within-subject Future Prediction,,,622.0,,,,,,,,,subject,16.0,8.243826280123086,12.186025409414388,8.812970726090908
+,linear_trend_30min,Within-subject Future Prediction,,,617.0,,,,,,,,,subject,17.0,10.182094247224692,13.54359307766164,8.993604787094581
+,linear_trend_30min,Within-subject Future Prediction,,,1073.0,,,,,,,,,subject,18.0,13.75080494844121,19.693054116793313,13.527347223902382
+,linear_trend_30min,Within-subject Future Prediction,,,548.0,,,,,,,,,subject,19.0,9.635036496350365,14.065758350625885,8.015356813639643
+,linear_trend_30min,Within-subject Future Prediction,,,620.0,,,,,,,,,subject,20.0,12.116094346167188,17.50325275634538,15.736512117368054
+,linear_trend_30min,Within-subject Future Prediction,,,615.0,,,,,,,,,subject,21.0,16.77194903400647,24.818801318948356,15.595618174123855
+,linear_trend_30min,Within-subject Future Prediction,,,675.0,,,,,,,,,subject,22.0,11.921127041019513,16.33810071039845,11.33236742434383
+,linear_trend_30min,Within-subject Future Prediction,,,617.0,,,,,,,,,subject,23.0,13.59012129450515,19.479466898231,15.750336937102992
+,linear_trend_30min,Within-subject Future Prediction,,,623.0,,,,,,,,,subject,26.0,20.073525604515098,29.617797390727674,19.124422471466435
+,linear_trend_30min,Within-subject Future Prediction,,,551.0,,,,,,,,,subject,27.0,8.214199988291082,11.534790422181475,7.497287269035005
+,linear_trend_30min,Within-subject Future Prediction,,,719.0,,,,,,,,,subject,28.0,12.055215951067042,16.640426761200555,13.431856670070449
+,linear_trend_30min,Within-subject Future Prediction,,,679.0,,,,,,,,,subject,29.0,12.301970006492786,18.278770698955306,13.413852359296419
+,linear_trend_30min,Within-subject Future Prediction,,,589.0,,,,,,,,,subject,30.0,18.292620534165803,25.433966530932153,27.54851322707722
+,linear_trend_30min,Within-subject Future Prediction,,,519.0,,,,,,,,,subject,31.0,10.393990718296145,13.104742645124745,8.333949880853035
+,linear_trend_30min,Within-subject Future Prediction,,,521.0,,,,,,,,,subject,32.0,18.90028223226632,27.48113412424087,16.4056593910592
+,linear_trend_30min,Within-subject Future Prediction,,,604.0,,,,,,,,,subject,33.0,21.95530691447696,30.773520272711885,27.55128003634155
+,linear_trend_30min,Within-subject Future Prediction,,,558.0,,,,,,,,,subject,34.0,15.154661425212934,20.596826869699452,11.958260743101398
+,linear_trend_30min,Within-subject Future Prediction,,,546.0,,,,,,,,,subject,35.0,15.590171924849342,21.653869363989486,19.688911489801452
+,linear_trend_30min,Within-subject Future Prediction,,,655.0,,,,,,,,,subject,36.0,10.819615447755067,17.51563074081236,14.769814252789939
+,linear_trend_30min,Within-subject Future Prediction,,,550.0,,,,,,,,,subject,38.0,14.336586021505378,21.50937518333867,16.773331406272472
+,linear_trend_30min,Within-subject Future Prediction,,,658.0,,,,,,,,,subject,39.0,13.089571690034969,19.10977004332372,20.823829645894694
+,linear_trend_30min,Within-subject Future Prediction,,,542.0,,,,,,,,,subject,41.0,10.738729020354718,14.615797629520118,14.401949665289822
+,linear_trend_30min,Within-subject Future Prediction,,,551.0,,,,,,,,,subject,42.0,12.160795132993774,18.12873317178553,15.54871223308476
+,linear_trend_30min,Within-subject Future Prediction,,,551.0,,,,,,,,,subject,43.0,10.018231758484085,13.42341134243264,10.014095731982007
+,linear_trend_30min,Within-subject Future Prediction,,,551.0,,,,,,,,,subject,44.0,12.811203481451125,17.679244518635798,14.9858843309052
+,linear_trend_30min,Within-subject Future Prediction,,,593.0,,,,,,,,,subject,45.0,15.947589711508824,25.444649191789477,23.641900919936898
+,linear_trend_30min,Within-subject Future Prediction,,,557.0,,,,,,,,,subject,46.0,18.012294646821488,28.814663252803523,25.327383628401165
+,linear_trend_30min,Within-subject Future Prediction,,,598.0,,,,,,,,,subject,47.0,16.43725051246089,23.224533028313104,19.11685398490539
+,linear_trend_30min,Within-subject Future Prediction,,,664.0,,,,,,,,,subject,48.0,17.020950738437623,24.810473260749294,14.682921578406797
+,linear_trend_30min,Within-subject Future Prediction,,,583.0,,,,,,,,,subject,49.0,16.27711918331212,24.444062463784288,25.466080386235948
+,persistence,Unseen-subject Generalization,,,2916.0,,,,,,,,,subject,1.0,6.588134430727023,9.239705690978806,9.239705690978806
+,persistence,Unseen-subject Generalization,,,110.0,,,,,,,,,subject,7.0,6.363636363636363,13.55028047717467,13.55028047717467
+,persistence,Unseen-subject Generalization,,,2878.0,,,,,,,,,subject,12.0,17.057215659022464,25.97597828311094,25.97597828311094
+,persistence,Unseen-subject Generalization,,,3228.0,,,,,,,,,subject,16.0,7.567017761255681,10.837002524185877,10.837002524185877
+,persistence,Unseen-subject Generalization,,,2755.0,,,,,,,,,subject,18.0,8.373381730187537,12.385168683030457,12.385168683030457
+,persistence,Unseen-subject Generalization,,,3222.0,,,,,,,,,subject,20.0,11.708255741775293,16.312982165445618,16.312982165445618
+,persistence,Unseen-subject Generalization,,,3207.0,,,,,,,,,subject,23.0,13.7928489761979,20.058847872147073,20.058847872147073
+,persistence,Unseen-subject Generalization,,,3106.0,,,,,,,,,subject,33.0,16.47606782571367,24.371908255167114,24.371908255167114
+,persistence,Unseen-subject Generalization,,,2837.0,,,,,,,,,subject,46.0,14.924685700857712,22.15791796702779,22.15791796702779
+,persistence,Within-subject Future Prediction,,,559.0,,,,,,,,,subject,1.0,6.604651162790699,10.008106434023999,10.008106434023999
+,persistence,Within-subject Future Prediction,,,651.0,,,,,,,,,subject,2.0,10.293394777265744,15.164495998793457,15.164495998793457
+,persistence,Within-subject Future Prediction,,,553.0,,,,,,,,,subject,3.0,10.940928270042194,19.54805313462774,19.54805313462774
+,persistence,Within-subject Future Prediction,,,466.0,,,,,,,,,subject,4.0,8.54349070100143,12.008894732419183,12.008894732419183
+,persistence,Within-subject Future Prediction,,,548.0,,,,,,,,,subject,5.0,10.459245742092454,16.69090087258209,16.69090087258209
+,persistence,Within-subject Future Prediction,,,548.0,,,,,,,,,subject,6.0,6.735401459854015,10.634274493277758,10.634274493277758
+,persistence,Within-subject Future Prediction,,,1.0,,,,,,,,,subject,7.0,19.0,19.0,19.0
+,persistence,Within-subject Future Prediction,,,560.0,,,,,,,,,subject,8.0,7.704761904761905,11.828922719267918,11.828922719267918
+,persistence,Within-subject Future Prediction,,,545.0,,,,,,,,,subject,9.0,9.409174311926606,13.170782850576643,13.170782850576643
+,persistence,Within-subject Future Prediction,,,616.0,,,,,,,,,subject,10.0,8.807900432900434,13.689724240595563,13.689724240595563
+,persistence,Within-subject Future Prediction,,,562.0,,,,,,,,,subject,11.0,10.266310794780544,14.541938369084402,14.541938369084402
+,persistence,Within-subject Future Prediction,,,557.0,,,,,,,,,subject,12.0,17.65469778575703,26.117799246157727,26.117799246157727
+,persistence,Within-subject Future Prediction,,,604.0,,,,,,,,,subject,13.0,7.305739514348785,10.450820388807617,10.450820388807617
+,persistence,Within-subject Future Prediction,,,660.0,,,,,,,,,subject,14.0,10.241919191919193,15.418499754520045,15.418499754520045
+,persistence,Within-subject Future Prediction,,,551.0,,,,,,,,,subject,15.0,2.591651542649728,8.38148219583822,8.38148219583822
+,persistence,Within-subject Future Prediction,,,622.0,,,,,,,,,subject,16.0,5.920685959271169,8.812970726090908,8.812970726090908
+,persistence,Within-subject Future Prediction,,,617.0,,,,,,,,,subject,17.0,6.927066450567261,8.993604787094581,8.993604787094581
+,persistence,Within-subject Future Prediction,,,1073.0,,,,,,,,,subject,18.0,9.163156259707982,13.527347223902382,13.527347223902382
+,persistence,Within-subject Future Prediction,,,548.0,,,,,,,,,subject,19.0,5.658759124087592,8.015356813639643,8.015356813639643
+,persistence,Within-subject Future Prediction,,,620.0,,,,,,,,,subject,20.0,11.483333333333333,15.736512117368054,15.736512117368054
+,persistence,Within-subject Future Prediction,,,615.0,,,,,,,,,subject,21.0,10.507859078590785,15.595618174123855,15.595618174123855
+,persistence,Within-subject Future Prediction,,,675.0,,,,,,,,,subject,22.0,8.008395061728395,11.33236742434383,11.33236742434383
+,persistence,Within-subject Future Prediction,,,617.0,,,,,,,,,subject,23.0,11.532144786601839,15.750336937102992,15.750336937102992
+,persistence,Within-subject Future Prediction,,,623.0,,,,,,,,,subject,26.0,13.106474050294274,19.124422471466435,19.124422471466435
+,persistence,Within-subject Future Prediction,,,551.0,,,,,,,,,subject,27.0,5.230490018148821,7.497287269035005,7.497287269035005
+,persistence,Within-subject Future Prediction,,,719.0,,,,,,,,,subject,28.0,9.324061196105703,13.431856670070449,13.431856670070449
+,persistence,Within-subject Future Prediction,,,679.0,,,,,,,,,subject,29.0,8.986254295532644,13.413852359296419,13.413852359296419
+,persistence,Within-subject Future Prediction,,,589.0,,,,,,,,,subject,30.0,18.992642897566498,27.54851322707722,27.54851322707722
+,persistence,Within-subject Future Prediction,,,519.0,,,,,,,,,subject,31.0,6.82145150931278,8.333949880853035,8.333949880853035
+,persistence,Within-subject Future Prediction,,,521.0,,,,,,,,,subject,32.0,11.103007037747924,16.4056593910592,16.4056593910592
+,persistence,Within-subject Future Prediction,,,604.0,,,,,,,,,subject,33.0,19.5182119205298,27.55128003634155,27.55128003634155
+,persistence,Within-subject Future Prediction,,,558.0,,,,,,,,,subject,34.0,8.949820788530467,11.958260743101398,11.958260743101398
+,persistence,Within-subject Future Prediction,,,546.0,,,,,,,,,subject,35.0,14.002442002441999,19.688911489801452,19.688911489801452
+,persistence,Within-subject Future Prediction,,,655.0,,,,,,,,,subject,36.0,9.999491094147581,14.769814252789939,14.769814252789939
+,persistence,Within-subject Future Prediction,,,550.0,,,,,,,,,subject,38.0,10.867878787878787,16.773331406272472,16.773331406272472
+,persistence,Within-subject Future Prediction,,,658.0,,,,,,,,,subject,39.0,14.481256332320164,20.823829645894694,20.823829645894694
+,persistence,Within-subject Future Prediction,,,542.0,,,,,,,,,subject,41.0,10.419434194341942,14.401949665289822,14.401949665289822
+,persistence,Within-subject Future Prediction,,,551.0,,,,,,,,,subject,42.0,10.878402903811253,15.54871223308476,15.54871223308476
+,persistence,Within-subject Future Prediction,,,551.0,,,,,,,,,subject,43.0,7.337568058076224,10.014095731982007,10.014095731982007
+,persistence,Within-subject Future Prediction,,,551.0,,,,,,,,,subject,44.0,10.337568058076226,14.9858843309052,14.9858843309052
+,persistence,Within-subject Future Prediction,,,593.0,,,,,,,,,subject,45.0,14.639685216413714,23.641900919936898,23.641900919936898
+,persistence,Within-subject Future Prediction,,,557.0,,,,,,,,,subject,46.0,17.33632555356074,25.327383628401165,25.327383628401165
+,persistence,Within-subject Future Prediction,,,598.0,,,,,,,,,subject,47.0,13.424749163879596,19.11685398490539,19.11685398490539
+,persistence,Within-subject Future Prediction,,,664.0,,,,,,,,,subject,48.0,9.870983935742972,14.682921578406797,14.682921578406797
+,persistence,Within-subject Future Prediction,,,583.0,,,,,,,,,subject,49.0,16.31275014293882,25.466080386235948,25.466080386235948
+,ridge_glucose_history_features,Unseen-subject Generalization,,,2916.0,,,,,,,,,subject,1.0,6.520549524333712,9.101112444957394,9.239705690978806
+,ridge_glucose_history_features,Unseen-subject Generalization,,,110.0,,,,,,,,,subject,7.0,9.12899933193342,14.546777052548181,13.55028047717467
+,ridge_glucose_history_features,Unseen-subject Generalization,,,2878.0,,,,,,,,,subject,12.0,10.866435732181229,16.622259526703573,25.97597828311094
+,ridge_glucose_history_features,Unseen-subject Generalization,,,3228.0,,,,,,,,,subject,16.0,6.356364646637951,8.80041156532262,10.837002524185877
+,ridge_glucose_history_features,Unseen-subject Generalization,,,2755.0,,,,,,,,,subject,18.0,6.740041182312223,9.78737462047892,12.385168683030457
+,ridge_glucose_history_features,Unseen-subject Generalization,,,3222.0,,,,,,,,,subject,20.0,7.606518551475953,10.625560972257613,16.312982165445618
+,ridge_glucose_history_features,Unseen-subject Generalization,,,3207.0,,,,,,,,,subject,23.0,9.036648378426737,13.292032966992108,20.058847872147073
+,ridge_glucose_history_features,Unseen-subject Generalization,,,3106.0,,,,,,,,,subject,33.0,10.788621368337132,16.021350442584758,24.371908255167114
+,ridge_glucose_history_features,Unseen-subject Generalization,,,2837.0,,,,,,,,,subject,46.0,10.11130374258851,15.336666092015568,22.15791796702779
+,ridge_glucose_history_features,Within-subject Future Prediction,,,559.0,,,,,,,,,subject,1.0,6.663243242549106,9.4559043803046,10.008106434023999
+,ridge_glucose_history_features,Within-subject Future Prediction,,,651.0,,,,,,,,,subject,2.0,7.733255031671327,10.5481818404663,15.164495998793457
+,ridge_glucose_history_features,Within-subject Future Prediction,,,553.0,,,,,,,,,subject,3.0,7.8582108888497535,13.199197677264939,19.54805313462774
+,ridge_glucose_history_features,Within-subject Future Prediction,,,466.0,,,,,,,,,subject,4.0,6.495659852358631,9.071821365117822,12.008894732419183
+,ridge_glucose_history_features,Within-subject Future Prediction,,,548.0,,,,,,,,,subject,5.0,6.337653584769642,9.901995437221737,16.69090087258209
+,ridge_glucose_history_features,Within-subject Future Prediction,,,548.0,,,,,,,,,subject,6.0,5.900141136883219,8.26954387404194,10.634274493277758
+,ridge_glucose_history_features,Within-subject Future Prediction,,,1.0,,,,,,,,,subject,7.0,16.84138637372702,16.84138637372702,19.0
+,ridge_glucose_history_features,Within-subject Future Prediction,,,560.0,,,,,,,,,subject,8.0,5.422034723713252,7.73297754162566,11.828922719267918
+,ridge_glucose_history_features,Within-subject Future Prediction,,,545.0,,,,,,,,,subject,9.0,6.412892955875122,9.071792842489177,13.170782850576643
+,ridge_glucose_history_features,Within-subject Future Prediction,,,616.0,,,,,,,,,subject,10.0,6.8704557116083045,10.255544251953005,13.689724240595563
+,ridge_glucose_history_features,Within-subject Future Prediction,,,562.0,,,,,,,,,subject,11.0,8.706276691660475,12.247679277689922,14.541938369084402
+,ridge_glucose_history_features,Within-subject Future Prediction,,,557.0,,,,,,,,,subject,12.0,10.916735168244136,16.82692976986002,26.117799246157727
+,ridge_glucose_history_features,Within-subject Future Prediction,,,604.0,,,,,,,,,subject,13.0,5.210580145398582,7.411645314653542,10.450820388807617
+,ridge_glucose_history_features,Within-subject Future Prediction,,,660.0,,,,,,,,,subject,14.0,7.485083696412458,10.915288430317815,15.418499754520045
+,ridge_glucose_history_features,Within-subject Future Prediction,,,551.0,,,,,,,,,subject,15.0,8.145494564442926,16.877817959250468,8.38148219583822
+,ridge_glucose_history_features,Within-subject Future Prediction,,,622.0,,,,,,,,,subject,16.0,5.008122949297628,6.89115406352832,8.812970726090908
+,ridge_glucose_history_features,Within-subject Future Prediction,,,617.0,,,,,,,,,subject,17.0,6.001772773411637,8.024467797506379,8.993604787094581
+,ridge_glucose_history_features,Within-subject Future Prediction,,,1073.0,,,,,,,,,subject,18.0,7.2540412175684175,10.248426831403627,13.527347223902382
+,ridge_glucose_history_features,Within-subject Future Prediction,,,548.0,,,,,,,,,subject,19.0,6.430869534530175,9.061009618950497,8.015356813639643
+,ridge_glucose_history_features,Within-subject Future Prediction,,,620.0,,,,,,,,,subject,20.0,6.959715917796345,9.888671502691354,15.736512117368054
+,ridge_glucose_history_features,Within-subject Future Prediction,,,615.0,,,,,,,,,subject,21.0,8.686912874708586,12.864210399566755,15.595618174123855
+,ridge_glucose_history_features,Within-subject Future Prediction,,,675.0,,,,,,,,,subject,22.0,7.1599053260501195,9.666622072643236,11.33236742434383
+,ridge_glucose_history_features,Within-subject Future Prediction,,,617.0,,,,,,,,,subject,23.0,7.681242619599728,10.801767824597437,15.750336937102992
+,ridge_glucose_history_features,Within-subject Future Prediction,,,623.0,,,,,,,,,subject,26.0,9.970201362345554,14.881294095536132,19.124422471466435
+,ridge_glucose_history_features,Within-subject Future Prediction,,,551.0,,,,,,,,,subject,27.0,5.490792266807338,7.358554656479502,7.497287269035005
+,ridge_glucose_history_features,Within-subject Future Prediction,,,719.0,,,,,,,,,subject,28.0,6.9743642749195605,9.719769034672895,13.431856670070449
+,ridge_glucose_history_features,Within-subject Future Prediction,,,679.0,,,,,,,,,subject,29.0,6.387462595174551,9.597681311475336,13.413852359296419
+,ridge_glucose_history_features,Within-subject Future Prediction,,,589.0,,,,,,,,,subject,30.0,11.868128135673771,17.13617356899063,27.54851322707722
+,ridge_glucose_history_features,Within-subject Future Prediction,,,519.0,,,,,,,,,subject,31.0,6.680263316933715,8.335702445323916,8.333949880853035
+,ridge_glucose_history_features,Within-subject Future Prediction,,,521.0,,,,,,,,,subject,32.0,10.6128118248917,15.349554664199049,16.4056593910592
+,ridge_glucose_history_features,Within-subject Future Prediction,,,604.0,,,,,,,,,subject,33.0,12.299839415864382,17.944351747026282,27.55128003634155
+,ridge_glucose_history_features,Within-subject Future Prediction,,,558.0,,,,,,,,,subject,34.0,9.181594069741971,12.742369812580126,11.958260743101398
+,ridge_glucose_history_features,Within-subject Future Prediction,,,546.0,,,,,,,,,subject,35.0,9.453355838917739,13.63899045416176,19.688911489801452
+,ridge_glucose_history_features,Within-subject Future Prediction,,,655.0,,,,,,,,,subject,36.0,6.748540289121232,10.201415820766897,14.769814252789939
+,ridge_glucose_history_features,Within-subject Future Prediction,,,550.0,,,,,,,,,subject,38.0,7.699511807965206,11.363961760807442,16.773331406272472
+,ridge_glucose_history_features,Within-subject Future Prediction,,,658.0,,,,,,,,,subject,39.0,8.675347541371416,13.05541590340803,20.823829645894694
+,ridge_glucose_history_features,Within-subject Future Prediction,,,542.0,,,,,,,,,subject,41.0,5.9840511688876985,8.24367423896375,14.401949665289822
+,ridge_glucose_history_features,Within-subject Future Prediction,,,551.0,,,,,,,,,subject,42.0,6.8544747132094805,10.129525432848181,15.54871223308476
+,ridge_glucose_history_features,Within-subject Future Prediction,,,551.0,,,,,,,,,subject,43.0,5.405000452709924,7.31193649601172,10.014095731982007
+,ridge_glucose_history_features,Within-subject Future Prediction,,,551.0,,,,,,,,,subject,44.0,7.484739258897684,10.37698956976262,14.9858843309052
+,ridge_glucose_history_features,Within-subject Future Prediction,,,593.0,,,,,,,,,subject,45.0,9.417061397709483,14.780940295217725,23.641900919936898
+,ridge_glucose_history_features,Within-subject Future Prediction,,,557.0,,,,,,,,,subject,46.0,11.462070460622929,16.83514470757006,25.327383628401165
+,ridge_glucose_history_features,Within-subject Future Prediction,,,598.0,,,,,,,,,subject,47.0,9.027127094944975,12.903687641042207,19.11685398490539
+,ridge_glucose_history_features,Within-subject Future Prediction,,,664.0,,,,,,,,,subject,48.0,9.654887665835332,14.040842179331667,14.682921578406797
+,ridge_glucose_history_features,Within-subject Future Prediction,,,583.0,,,,,,,,,subject,49.0,9.330746974109251,14.461233038334822,25.466080386235948
+,shallow_gbt_glucose_history_features,Unseen-subject Generalization,,,2916.0,,,,,,,,,subject,1.0,6.710100942947528,9.173968298352865,9.239705690978806
+,shallow_gbt_glucose_history_features,Unseen-subject Generalization,,,110.0,,,,,,,,,subject,7.0,7.177486268590143,12.855469818502026,13.55028047717467
+,shallow_gbt_glucose_history_features,Unseen-subject Generalization,,,2878.0,,,,,,,,,subject,12.0,13.33733216816639,20.357021134581,25.97597828311094
+,shallow_gbt_glucose_history_features,Unseen-subject Generalization,,,3228.0,,,,,,,,,subject,16.0,7.313214458178888,9.795822366872299,10.837002524185877
+,shallow_gbt_glucose_history_features,Unseen-subject Generalization,,,2755.0,,,,,,,,,subject,18.0,8.054575945449665,11.368486564094274,12.385168683030457
+,shallow_gbt_glucose_history_features,Unseen-subject Generalization,,,3222.0,,,,,,,,,subject,20.0,9.563461381342785,13.459253869382444,16.312982165445618
+,shallow_gbt_glucose_history_features,Unseen-subject Generalization,,,3207.0,,,,,,,,,subject,23.0,11.325020888315606,16.56317564930549,20.058847872147073
+,shallow_gbt_glucose_history_features,Unseen-subject Generalization,,,3106.0,,,,,,,,,subject,33.0,13.452657826777767,19.796097073829895,24.371908255167114
+,shallow_gbt_glucose_history_features,Unseen-subject Generalization,,,2837.0,,,,,,,,,subject,46.0,12.680424602581397,18.80662459106898,22.15791796702779
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,559.0,,,,,,,,,subject,1.0,6.797016616932915,9.767693944399285,10.008106434023999
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,651.0,,,,,,,,,subject,2.0,9.798372628201463,13.460961949894209,15.164495998793457
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,553.0,,,,,,,,,subject,3.0,9.553424821007535,16.201294170245703,19.54805313462774
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,466.0,,,,,,,,,subject,4.0,7.958420744299254,10.753361842097755,12.008894732419183
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,548.0,,,,,,,,,subject,5.0,8.269021435813793,12.732735083463298,16.69090087258209
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,548.0,,,,,,,,,subject,6.0,6.430557521137114,9.277881521693763,10.634274493277758
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,1.0,,,,,,,,,subject,7.0,10.583277984336775,10.583277984336775,19.0
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,560.0,,,,,,,,,subject,8.0,6.659804432174859,9.577028359715356,11.828922719267918
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,545.0,,,,,,,,,subject,9.0,8.294450570384923,11.467195165590612,13.170782850576643
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,616.0,,,,,,,,,subject,10.0,8.1331288313957,11.796514621765095,13.689724240595563
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,562.0,,,,,,,,,subject,11.0,9.536083876931968,13.34344407929199,14.541938369084402
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,557.0,,,,,,,,,subject,12.0,14.026740611648904,21.798690687793957,26.117799246157727
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,604.0,,,,,,,,,subject,13.0,6.478387088942124,9.184414257796613,10.450820388807617
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,660.0,,,,,,,,,subject,14.0,8.861212465806313,12.93228678920378,15.418499754520045
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,551.0,,,,,,,,,subject,15.0,5.023897006426736,9.505498519445885,8.38148219583822
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,622.0,,,,,,,,,subject,16.0,5.7792224664329925,7.974444975985198,8.812970726090908
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,617.0,,,,,,,,,subject,17.0,6.6257802310793155,8.530932593142621,8.993604787094581
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,1073.0,,,,,,,,,subject,18.0,8.767222250601984,12.214868943146858,13.527347223902382
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,548.0,,,,,,,,,subject,19.0,6.222800697404451,8.30053023871859,8.015356813639643
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,620.0,,,,,,,,,subject,20.0,8.155153238590342,11.989136643035915,15.736512117368054
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,615.0,,,,,,,,,subject,21.0,9.385200958749609,13.552010554937493,15.595618174123855
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,675.0,,,,,,,,,subject,22.0,7.312757046608187,10.038432167957534,11.33236742434383
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,617.0,,,,,,,,,subject,23.0,9.564836648635975,13.331844509292845,15.750336937102992
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,623.0,,,,,,,,,subject,26.0,11.305621232807763,16.323233434311938,19.124422471466435
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,551.0,,,,,,,,,subject,27.0,5.944869172094846,7.664743706917186,7.497287269035005
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,719.0,,,,,,,,,subject,28.0,7.862067523424582,10.998413445246902,13.431856670070449
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,679.0,,,,,,,,,subject,29.0,7.6736601851331265,11.052792956601364,13.413852359296419
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,589.0,,,,,,,,,subject,30.0,14.905335208475512,21.79122925792094,27.54851322707722
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,519.0,,,,,,,,,subject,31.0,6.826253170163752,8.257269606215777,8.333949880853035
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,521.0,,,,,,,,,subject,32.0,11.156001713072397,15.305440169840585,16.4056593910592
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,604.0,,,,,,,,,subject,33.0,15.122666101735497,22.190793640392858,27.55128003634155
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,558.0,,,,,,,,,subject,34.0,8.615076956153052,11.465859155490909,11.958260743101398
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,546.0,,,,,,,,,subject,35.0,12.724548227626375,17.386222794538174,19.688911489801452
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,655.0,,,,,,,,,subject,36.0,8.876618961632252,12.977553946533591,14.769814252789939
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,550.0,,,,,,,,,subject,38.0,8.68732884618397,12.929989959298378,16.773331406272472
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,658.0,,,,,,,,,subject,39.0,9.822250274258456,15.06750076891473,20.823829645894694
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,542.0,,,,,,,,,subject,41.0,7.633403027978179,10.432450587613298,14.401949665289822
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,551.0,,,,,,,,,subject,42.0,8.584139581782306,13.004728804149444,15.54871223308476
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,551.0,,,,,,,,,subject,43.0,7.013436984257548,9.245920110728932,10.014095731982007
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,551.0,,,,,,,,,subject,44.0,8.435979823469944,11.832173983196816,14.9858843309052
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,593.0,,,,,,,,,subject,45.0,11.471117714737671,18.20629853841434,23.641900919936898
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,557.0,,,,,,,,,subject,46.0,14.381546339165926,21.47468123712914,25.327383628401165
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,598.0,,,,,,,,,subject,47.0,12.290183913996339,17.109383241671374,19.11685398490539
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,664.0,,,,,,,,,subject,48.0,9.646420447150795,13.937684958124384,14.682921578406797
+,shallow_gbt_glucose_history_features,Within-subject Future Prediction,,,583.0,,,,,,,,,subject,49.0,11.206570901669497,16.758575465278366,25.466080386235948
+,sparacino2007_ar1_wls,Unseen-subject Generalization,,,2916.0,,,,,,,,,subject,1.0,9.77980023148494,14.439202198277634,9.239705690978806
+,sparacino2007_ar1_wls,Unseen-subject Generalization,,,110.0,,,,,,,,,subject,7.0,8.346575170269206,18.25358883670238,13.55028047717467
+,sparacino2007_ar1_wls,Unseen-subject Generalization,,,2878.0,,,,,,,,,subject,12.0,13.898600370481748,22.33563713846655,25.97597828311094
+,sparacino2007_ar1_wls,Unseen-subject Generalization,,,3228.0,,,,,,,,,subject,16.0,9.098787927728106,14.161978288119013,10.837002524185877
+,sparacino2007_ar1_wls,Unseen-subject Generalization,,,2755.0,,,,,,,,,subject,18.0,9.791245738319436,15.884933875721012,12.385168683030457
+,sparacino2007_ar1_wls,Unseen-subject Generalization,,,3222.0,,,,,,,,,subject,20.0,10.24956935135343,14.85354422554876,16.312982165445618
+,sparacino2007_ar1_wls,Unseen-subject Generalization,,,3207.0,,,,,,,,,subject,23.0,13.232514485149391,20.887261017146496,20.058847872147073
+,sparacino2007_ar1_wls,Unseen-subject Generalization,,,3106.0,,,,,,,,,subject,33.0,15.089639520835972,22.93249847806416,24.371908255167114
+,sparacino2007_ar1_wls,Unseen-subject Generalization,,,2837.0,,,,,,,,,subject,46.0,12.39502059621604,20.202647225222194,22.15791796702779
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,559.0,,,,,,,,,subject,1.0,9.595198450376698,15.262957061475538,10.008106434023999
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,651.0,,,,,,,,,subject,2.0,10.854438380744714,16.567780365877205,15.164495998793457
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,553.0,,,,,,,,,subject,3.0,10.987147490265482,21.342602535810894,19.54805313462774
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,466.0,,,,,,,,,subject,4.0,9.614619123988508,13.926123379444926,12.008894732419183
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,548.0,,,,,,,,,subject,5.0,8.76630610777559,14.572253444513146,16.69090087258209
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,548.0,,,,,,,,,subject,6.0,8.27258635859291,12.097611893690289,10.634274493277758
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,1.0,,,,,,,,,subject,7.0,30.608644581363468,30.608644581363468,19.0
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,560.0,,,,,,,,,subject,8.0,7.476258141687469,11.456744443262366,11.828922719267918
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,545.0,,,,,,,,,subject,9.0,9.337095646739828,13.309638594841797,13.170782850576643
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,616.0,,,,,,,,,subject,10.0,10.04419538723747,16.644273199852986,13.689724240595563
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,562.0,,,,,,,,,subject,11.0,13.824617720983305,19.570326535728302,14.541938369084402
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,557.0,,,,,,,,,subject,12.0,13.662854956840777,22.53226653510825,26.117799246157727
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,604.0,,,,,,,,,subject,13.0,7.800318339356666,11.218357717436847,10.450820388807617
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,660.0,,,,,,,,,subject,14.0,10.828410639200557,17.365892960592905,15.418499754520045
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,551.0,,,,,,,,,subject,15.0,6.78678436884499,37.35410559713372,8.38148219583822
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,622.0,,,,,,,,,subject,16.0,6.641839889136694,10.41779419750073,8.812970726090908
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,617.0,,,,,,,,,subject,17.0,8.481385094191193,11.935472631849358,8.993604787094581
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,1073.0,,,,,,,,,subject,18.0,10.487442844058224,16.140477906382603,13.527347223902382
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,548.0,,,,,,,,,subject,19.0,8.996168384129923,13.759132979114225,8.015356813639643
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,620.0,,,,,,,,,subject,20.0,8.958567000148188,14.142325530371362,15.736512117368054
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,615.0,,,,,,,,,subject,21.0,14.025932442033108,22.31679591599893,15.595618174123855
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,675.0,,,,,,,,,subject,22.0,10.071631398550355,14.203138319923228,11.33236742434383
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,617.0,,,,,,,,,subject,23.0,10.393078070398603,15.639929370590588,15.750336937102992
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,623.0,,,,,,,,,subject,26.0,15.885468681843603,25.368194463228395,19.124422471466435
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,551.0,,,,,,,,,subject,27.0,7.292782187686097,10.505270777252797,7.497287269035005
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,719.0,,,,,,,,,subject,28.0,10.031224287858015,14.14507994651484,13.431856670070449
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,679.0,,,,,,,,,subject,29.0,9.699019023018808,15.607302673194882,13.413852359296419
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,589.0,,,,,,,,,subject,30.0,14.061318974046959,20.547090719160686,27.54851322707722
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,519.0,,,,,,,,,subject,31.0,9.273489888204287,12.068079347207119,8.333949880853035
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,521.0,,,,,,,,,subject,32.0,16.798103915057027,28.022964559656998,16.4056593910592
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,604.0,,,,,,,,,subject,33.0,17.134955983765824,27.459994178178995,27.55128003634155
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,558.0,,,,,,,,,subject,34.0,13.475668467989111,19.681547133189053,11.958260743101398
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,546.0,,,,,,,,,subject,35.0,11.907555319094435,17.022817191295914,19.688911489801452
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,655.0,,,,,,,,,subject,36.0,8.752200567362507,15.42866971794324,14.769814252789939
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,550.0,,,,,,,,,subject,38.0,11.292734372894392,17.082325358959764,16.773331406272472
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,658.0,,,,,,,,,subject,39.0,10.502819885656741,16.138025397918334,20.823829645894694
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,542.0,,,,,,,,,subject,41.0,7.60776689594669,10.92003761215252,14.401949665289822
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,551.0,,,,,,,,,subject,42.0,9.118945497848369,14.470706977207309,15.54871223308476
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,551.0,,,,,,,,,subject,43.0,8.008702763096657,11.359052422973242,10.014095731982007
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,551.0,,,,,,,,,subject,44.0,10.49706083269116,14.830246900628842,14.9858843309052
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,593.0,,,,,,,,,subject,45.0,12.594872408687422,22.41530445115946,23.641900919936898
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,557.0,,,,,,,,,subject,46.0,13.73129520095513,23.04538415904302,25.327383628401165
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,598.0,,,,,,,,,subject,47.0,12.709294644360382,18.17855582078391,19.11685398490539
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,664.0,,,,,,,,,subject,48.0,14.82851847523076,22.84186936932063,14.682921578406797
+,sparacino2007_ar1_wls,Within-subject Future Prediction,,,583.0,,,,,,,,,subject,49.0,11.879096551958009,18.787333853218854,25.466080386235948

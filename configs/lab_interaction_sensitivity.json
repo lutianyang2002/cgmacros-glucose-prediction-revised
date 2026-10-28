@@ -1,0 +1,395 @@
+{
+  "schema_version": 2,
+  "experiment": "Laboratory-state interactions",
+  "execution_enabled": false,
+  "evidence_scope": "exploratory, validation-stage, offline sensitivity analysis",
+  "protocols": {
+    "A": "Within-subject Future Prediction",
+    "B": "Unseen-subject Generalization"
+  },
+  "allowed_splits": [
+    "train",
+    "validation"
+  ],
+  "test_access": "mixed-source decoding allowed; TEST analysis forbidden",
+  "new_grouped_cv": false,
+  "paper_writes": false,
+  "reference": {
+    "baseline": "stored GlucoBench LR predictions; training OOF residual mode B",
+    "manual_columns": [
+      "act_hr_mean_30m",
+      "act_hr_max_30m",
+      "act_hr_coverage_30m",
+      "act_hr_missing_30m",
+      "act_hr_mean_120m",
+      "act_hr_max_120m",
+      "act_hr_coverage_120m",
+      "act_hr_missing_120m",
+      "act_calories_mean_30m",
+      "act_calories_max_30m",
+      "act_calories_sum_observed_30m",
+      "act_calories_coverage_30m",
+      "act_calories_missing_30m",
+      "act_calories_mean_120m",
+      "act_calories_max_120m",
+      "act_calories_sum_observed_120m",
+      "act_calories_coverage_120m",
+      "act_calories_missing_120m",
+      "act_met_mean_30m",
+      "act_met_max_30m",
+      "act_met_coverage_30m",
+      "act_met_missing_30m",
+      "act_met_mean_120m",
+      "act_met_max_120m",
+      "act_met_coverage_120m",
+      "act_met_missing_120m",
+      "diet_logged_meal_count_30m",
+      "diet_no_logged_meal_30m",
+      "diet_logged_meal_calories_sum_30m",
+      "diet_logged_carbs_sum_30m",
+      "diet_logged_protein_sum_30m",
+      "diet_logged_fat_sum_30m",
+      "diet_logged_fiber_sum_30m",
+      "diet_logged_meal_count_120m",
+      "diet_no_logged_meal_120m",
+      "diet_logged_meal_calories_sum_120m",
+      "diet_logged_carbs_sum_120m",
+      "diet_logged_protein_sum_120m",
+      "diet_logged_fat_sum_120m",
+      "diet_logged_fiber_sum_120m",
+      "diet_minutes_since_last_logged_meal",
+      "diet_last_meal_carbs",
+      "diet_last_meal_calories",
+      "diet_last_meal_type_breakfast",
+      "diet_last_meal_type_dinner",
+      "diet_last_meal_type_lunch",
+      "diet_last_meal_type_snack",
+      "bio_age",
+      "bio_gender_m",
+      "bio_bmi"
+    ],
+    "E6_original_added_columns": [
+      "bio_lab_fasting_glucose_lab_mg_dl",
+      "bio_lab_fasting_insulin_raw",
+      "bio_lab_triglycerides_mg_dl",
+      "bio_lab_hdl_mg_dl"
+    ],
+    "M50_exact_trainval_source": "results/manual_ablation/activity_diet_features.parquet plus original static_features.parquet; immediate frozen-key isolation"
+  },
+  "laboratory_states": {
+    "fasting_glucose": "fasting_glucose_mg_dl",
+    "hba1c_percent": "hba1c_percent",
+    "homa_ir": "homa_ir"
+  },
+  "fasting_insulin_role": "HOMA-IR component only; not a fourth interaction state",
+  "complete_case_rule": "all three states finite per subject; identical core train/validation windows in all configurations",
+  "standardization": {
+    "primary": "C-S1",
+    "sensitivity": "C-S2",
+    "C-S1": "unique corresponding TRAIN subjects; population standard deviation ddof=0; state centering/scaling before multiplication",
+    "C-S2": "raw state times kernel; final block train-fitted median imputation and StandardScaler",
+    "final_block_preprocessing": "src/residuals.ridge_path_predictions; train-only median imputation and column standardization",
+    "sensitivity_cannot_replace_primary": true
+  },
+  "kernel_source": {
+    "selection": "saved tau_star_selection.csv, TRAIN IC only per protocol; no reselection",
+    "values": "safe candidates_batch1.parquet, only if its row groups exclude TEST",
+    "parameters": [
+      {
+        "protocol": "A",
+        "meal_class": "lunch",
+        "tau": 20,
+        "k": 2,
+        "kernel_column": "abs_lunch_carbs_t20_k2"
+      },
+      {
+        "protocol": "A",
+        "meal_class": "dinner",
+        "tau": 20,
+        "k": 3,
+        "kernel_column": "abs_dinner_carbs_t20_k3"
+      },
+      {
+        "protocol": "A",
+        "meal_class": "snack",
+        "tau": 20,
+        "k": 3,
+        "kernel_column": "abs_snack_carbs_t20_k3"
+      },
+      {
+        "protocol": "A",
+        "meal_class": "breakfast",
+        "tau": 90,
+        "k": 3,
+        "kernel_column": "abs_breakfast_carbs_t90_k3"
+      },
+      {
+        "protocol": "B",
+        "meal_class": "lunch",
+        "tau": 20,
+        "k": 2,
+        "kernel_column": "abs_lunch_carbs_t20_k2"
+      },
+      {
+        "protocol": "B",
+        "meal_class": "dinner",
+        "tau": 20,
+        "k": 2,
+        "kernel_column": "abs_dinner_carbs_t20_k2"
+      },
+      {
+        "protocol": "B",
+        "meal_class": "snack",
+        "tau": 20,
+        "k": 2,
+        "kernel_column": "abs_snack_carbs_t20_k2"
+      },
+      {
+        "protocol": "B",
+        "meal_class": "breakfast",
+        "tau": 20,
+        "k": 2,
+        "kernel_column": "abs_breakfast_carbs_t20_k2"
+      }
+    ],
+    "source_recipe": "src/factor_construction.py: batch1_catalog, batch2_catalog, conditional_lab_catalog; meal ages 0..120, max offset 0"
+  },
+  "candidate_ids": [
+    "lab_breakfast_carbs_x_fasting_glucose",
+    "lab_breakfast_carbs_x_hba1c_percent",
+    "lab_breakfast_carbs_x_homa_ir",
+    "lab_lunch_carbs_x_fasting_glucose",
+    "lab_lunch_carbs_x_hba1c_percent",
+    "lab_lunch_carbs_x_homa_ir",
+    "lab_dinner_carbs_x_fasting_glucose",
+    "lab_dinner_carbs_x_hba1c_percent",
+    "lab_dinner_carbs_x_homa_ir",
+    "lab_snack_carbs_x_fasting_glucose",
+    "lab_snack_carbs_x_hba1c_percent",
+    "lab_snack_carbs_x_homa_ir"
+  ],
+  "model_blocks": {
+    "R": [],
+    "R+L": [
+      "L"
+    ],
+    "R+K": [
+      "K"
+    ],
+    "R+K+L": [
+      "K",
+      "L"
+    ],
+    "R+K+L+X": [
+      "K",
+      "L",
+      "X"
+    ],
+    "R+K+X": [
+      "K",
+      "X"
+    ],
+    "R+X": [
+      "X"
+    ]
+  },
+  "all_models_include_exact_R": true,
+  "contrasts": [
+    {
+      "role": "primary",
+      "from": "R+K+L",
+      "to": "R+K+L+X",
+      "hierarchical": true
+    },
+    {
+      "role": "auxiliary",
+      "from": "R",
+      "to": "R+L",
+      "hierarchical": true
+    },
+    {
+      "role": "auxiliary",
+      "from": "R",
+      "to": "R+K",
+      "hierarchical": true
+    },
+    {
+      "role": "auxiliary",
+      "from": "R+K",
+      "to": "R+K+L",
+      "hierarchical": true
+    },
+    {
+      "role": "auxiliary_nonhierarchical",
+      "from": "R+K",
+      "to": "R+K+X",
+      "hierarchical": false
+    },
+    {
+      "role": "auxiliary_nonhierarchical",
+      "from": "R+L",
+      "to": "R+X",
+      "hierarchical": false
+    },
+    {
+      "role": "auxiliary_nonnested",
+      "from": "R+K+L",
+      "to": "R+K+X",
+      "hierarchical": false
+    }
+  ],
+  "alpha_grid": [
+    0.001,
+    0.0031622776601683794,
+    0.01,
+    0.03162277660168379,
+    0.1,
+    0.31622776601683794,
+    1.0,
+    3.1622776601683795,
+    10.0,
+    31.622776601683793,
+    100.0,
+    316.22776601683796,
+    1000.0
+  ],
+  "alpha_choice": "minimum VALIDATION subject-equal RMSE; all results optimistic",
+  "minimum_validation_windows_per_subject": 20,
+  "bootstrap": {
+    "resamples": 2000,
+    "seed": 42,
+    "paired_unit": "subject",
+    "interval": "percentile",
+    "level": 0.95,
+    "implementation": "src/residuals.contrast_row; no multiplicity/significance claims"
+  },
+  "delta_definition": "to RMSE minus from RMSE; negative is lower error",
+  "strata": [
+    "P30",
+    "P31_120",
+    "NoMeal120"
+  ],
+  "strata_source": "src/factor_evaluation.strata_masks; no redefinition",
+  "identity_proxy": {
+    "protocol_A": [
+      false,
+      true
+    ],
+    "protocol_B": [
+      false
+    ],
+    "definition": "mean OOF residual per subject on the reference core TRAIN rows; append as ridge column to every configuration; no validation fitting"
+  },
+  "auxiliary_selection": {
+    "enabled_by_user": true,
+    "standardization": "C-S1",
+    "backbone": "R+K+L",
+    "ranking": "TRAIN subject-level Spearman IC on 15-minute thinned core OOF rows; abs(mean IC)",
+    "keep_per_family": 5,
+    "source": "factor_protocol.json screening K=5; single laboratory-interaction family",
+    "redundancy": "src/selection.redundancy_filter; Spearman threshold abs(rho)>0.9, TRAIN only",
+    "forward_selection": "fixed backbone plus candidate additions, VALIDATION subject-equal RMSE; source fit_block algorithm",
+    "k_max": 10,
+    "choice": "src/selection.one_standard_error_choice, paired",
+    "validation_reuse_disclosed": true,
+    "status": "NOT_RUN"
+  },
+  "budget_seconds": {
+    "core": 3600,
+    "auxiliary_selection": 1200,
+    "C0_suggested": 1200,
+    "C1_suggested": 1800,
+    "C2_suggested": 600,
+    "C3_suggested": 1800,
+    "strata_suggested": 600
+  },
+  "default_device": "CPU",
+  "stop_conditions": [
+    "TEST participates in new analysis or unverified upstream global fitting",
+    "source mismatch",
+    "Reference-ablation/BMI check failure",
+    "leakage",
+    "need shared-code/frozen-config changes",
+    "budget exceeded"
+  ],
+  "outputs_root": "results/laboratory_interactions",
+  "data_access_policy": {
+    "mixed_file_decode_readonly": true,
+    "test_statistical_use": false,
+    "filtering": "fixed independent fold registry keys; copy immediately; discard mixed object before statistics",
+    "declaration": "Mixed-source Parquet files were loaded read-only, and TRAIN/VALIDATION rows were isolated before any experimental statistical estimation, model fitting, feature selection, or evaluation. TEST rows were excluded from all new analyzes."
+  },
+  "selection_lag_columns": [
+    "g-115",
+    "g-110",
+    "g-105",
+    "g-100",
+    "g-95",
+    "g-90",
+    "g-85",
+    "g-80",
+    "g-75",
+    "g-70",
+    "g-65",
+    "g-60",
+    "g-55",
+    "g-50",
+    "g-45",
+    "g-40",
+    "g-35",
+    "g-30",
+    "g-25",
+    "g-20",
+    "g-15",
+    "g-10",
+    "g-5",
+    "g0"
+  ],
+  "selection_lag_source": "baseline_registry.json registered GlucoBench in_len=24; no baseline refitting",
+  "primary_validation_sample_rule": "core complete-case; all validation subjects with >=20 core windows fixed before fitting; same rows for all configurations",
+  "minimum_rule_sensitivity": "stratum subject minimum >=20 and without minimum; no retuning per stratum",
+  "stratified_contrasts": "primary hierarchy only; all seven comparisons reported on overall validation sample",
+  "sequence_transfer_writes": false,
+  "reference_ablation_check": {
+    "sample": "original E6 A core sample, original four B_lab columns; both original minimum-window rules",
+    "references": [
+      {
+        "identity_proxy": false,
+        "rule": "applied (>= 20 validation windows)",
+        "d_rmse": -0.0784514386763874,
+        "alpha_from": 1000.0,
+        "alpha_to": 1000.0
+      },
+      {
+        "identity_proxy": false,
+        "rule": "not applied",
+        "d_rmse": -0.0788781386526928,
+        "alpha_from": 1000.0,
+        "alpha_to": 1000.0
+      },
+      {
+        "identity_proxy": true,
+        "rule": "applied (>= 20 validation windows)",
+        "d_rmse": -0.0002069819219183,
+        "alpha_from": 1000.0,
+        "alpha_to": 1000.0
+      },
+      {
+        "identity_proxy": true,
+        "rule": "not applied",
+        "d_rmse": 0.0004514307096861,
+        "alpha_from": 1000.0,
+        "alpha_to": 1000.0
+      }
+    ],
+    "tolerance_abs_mg_dl": 1e-08,
+    "tolerance_fixed_before_new_fitting": true,
+    "status": "NOT_RUN"
+  },
+  "bmi_reconstruction_check": {
+    "comparison": "raw saved BMI interactions against corresponding stored kernel times raw BMI; subsequent train-fitted column standardization",
+    "value_abs_tolerance": 1e-09,
+    "standardized_abs_tolerance": 1e-09,
+    "status": "NOT_RUN"
+  }
+}

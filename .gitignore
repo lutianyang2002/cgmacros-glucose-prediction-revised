@@ -1,0 +1,62 @@
+# Python environments and build products
+.venv*/
+venv/
+env/
+envs/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Notebook, test, and editor caches
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipython/
+.coverage
+.coverage.*
+htmlcov/
+.vscode/
+.idea/
+
+# Raw data and local reconstruction outputs
+data/*
+!data/README.md
+reproductions/
+history/
+_p0_delivery*/
+checkpoints/
+model_checkpoints/
+*.parquet
+*.npy
+*.npz
+*.joblib
+*.pkl
+*.pickle
+*.pt
+*.pth
+*.ckpt
+
+# Private settings, permissions, logs, and temporary files
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+*credentials*.json
+execution_permission.json
+execution_state.json
+*.jsonl
+*.log
+*.tmp
+*.bak
+*.zip
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+Desktop.ini

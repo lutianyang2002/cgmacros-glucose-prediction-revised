@@ -1,0 +1,19 @@
+record_type,config_id,feature_groups,includes_G,includes_A,includes_D,includes_B,roles,core,protocols,contrast_type,from_config,to_config,group_tested
+configuration,G,G,True,False,False,False,glucose-only reference,True,Within-subject Future Prediction; Unseen-subject Generalization,,,,
+configuration,G+A,G+A,True,True,False,False,incremental step 1; G + single group,True,Within-subject Future Prediction; Unseen-subject Generalization,,,,
+configuration,G+A+D,G+A+D,True,True,True,False,incremental step 2; full model without B,True,Within-subject Future Prediction; Unseen-subject Generalization,,,,
+configuration,G+A+D+B,G+A+D+B,True,True,True,True,incremental step 3; full model,True,Within-subject Future Prediction; Unseen-subject Generalization,,,,
+configuration,G+D,G+D,True,False,True,False,G + single group,True,Within-subject Future Prediction; Unseen-subject Generalization,,,,
+configuration,G+B,G+B,True,False,False,True,G + single group,True,Within-subject Future Prediction; Unseen-subject Generalization,,,,
+configuration,G+D+B,G+D+B,True,False,True,True,full model without A,True,Within-subject Future Prediction; Unseen-subject Generalization,,,,
+configuration,G+A+B,G+A+B,True,True,False,True,full model without D,True,Within-subject Future Prediction; Unseen-subject Generalization,,,,
+contrast,G->G+A,G -> G+A,,,,,,True,,incremental; single_group_addition,G,G+A,A
+contrast,G+A->G+A+D,G+A -> G+A+D,,,,,,True,,incremental,G+A,G+A+D,D
+contrast,G+A+D->G+A+D+B,G+A+D -> G+A+D+B,,,,,,True,,incremental; leave_one_group_out,G+A+D,G+A+D+B,B
+contrast,G->G+D,G -> G+D,,,,,,True,,single_group_addition,G,G+D,D
+contrast,G->G+B,G -> G+B,,,,,,True,,single_group_addition,G,G+B,B
+contrast,G+D+B->G+A+D+B,G+D+B -> G+A+D+B,,,,,,True,,leave_one_group_out,G+D+B,G+A+D+B,A
+contrast,G+A+B->G+A+D+B,G+A+B -> G+A+D+B,,,,,,True,,leave_one_group_out,G+A+B,G+A+D+B,D
+sensitivity,diet_delay,G+A+D(delayed availability)+B,,,,,diet availability-delay sensitivity (delay rule specified with the Activity and Diet features),False,,,,,
+sensitivity,offline_lab_bio,G+A+D+B+B_lab(offline),,,,,offline laboratory Bio sensitivity (fields and HbA1c handling specified with the Bio features),False,,,,,
+sensitivity,gut,G+A+D+B+Gut,,,,,optional Gut supplement on the Gut-available common cohort,False,,,,,

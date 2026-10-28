@@ -1,0 +1,5 @@
+evaluation_protocol,search,model_invocations,replies_accepted_and_parsed,malformed_replies,total_proposals,valid_proposals,invalid_proposals,duplicate_proposals,unique_valid_expressions,fitness_evaluations,duplicate_share_of_valid,pool_size,kept_after_redundancy_filter,selected_k,best_training_fitness,median_training_fitness_of_all_evaluated,mean_training_fitness_of_pool
+Within-subject Future Prediction,LLM-guided search (Claude Sonnet 5),30,29.0,1.0,87,87,0,20,67,67,0.22988505747126436,25,10,6,0.0425424205512847,0.0012838529433078052,0.0162970819020185
+Within-subject Future Prediction,Random-DSL,0,,,70,70,0,3,67,67,0.04285714285714286,25,18,4,0.0958841956476107,-2.896832796003582e-06,0.01130585846089894
+Unseen-subject Generalization,LLM-guided search (Claude Sonnet 5),30,30.0,0.0,90,90,0,20,70,70,0.2222222222222222,25,15,5,0.0474017038381722,-0.015387536880360701,-0.005591175394034916
+Unseen-subject Generalization,Random-DSL,0,,,74,74,0,4,70,70,0.05405405405405406,25,19,8,0.0340939499803898,-0.01119271008929362,-0.002515299296933804

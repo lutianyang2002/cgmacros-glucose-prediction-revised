@@ -1,0 +1,21 @@
+record_type,evaluation_protocol,target_form,max_iter,split,windows,subjects,subject_mean_rmse,pooled_rmse,selected,min_window_rule,validation_windows,rmse_from,rmse_to,d_rmse,d_rmse_low,d_rmse_high,d_mae,pooled_d_rmse,improved_share,outcome
+fit,Within-subject Future Prediction,absolute y,100.0,train,79300.0,45,14.132423626600712,14.54603961752411,False,,,,,,,,,,,
+fit,Within-subject Future Prediction,absolute y,100.0,validation,26330.0,45,13.599228208785128,14.21609156955444,False,,,,,,,,,,,
+fit,Within-subject Future Prediction,absolute y,300.0,train,79300.0,45,13.286673395264566,13.657884671641838,True,,,,,,,,,,,
+fit,Within-subject Future Prediction,absolute y,300.0,validation,26330.0,45,12.971720430477344,13.56315601824078,True,,,,,,,,,,,
+fit,Within-subject Future Prediction,change y - g(t),100.0,train,79300.0,45,13.991394746918958,14.382077106759155,False,,,,,,,,,,,
+fit,Within-subject Future Prediction,change y - g(t),100.0,validation,26330.0,45,13.499588971280785,14.088166331458813,False,,,,,,,,,,,
+fit,Within-subject Future Prediction,change y - g(t),300.0,train,79300.0,45,13.190779762062435,13.551744966305002,True,,,,,,,,,,,
+fit,Within-subject Future Prediction,change y - g(t),300.0,validation,26330.0,45,12.872718509876089,13.468588121953415,True,,,,,,,,,,,
+"contrast (change minus absolute, selected fits)",Within-subject Future Prediction,change y - g(t) vs absolute y,,validation,,44,,,,applied (>= 20 validation windows),26329.0,13.026003213344175,12.942554578960841,-0.08344863438333347,-0.12252065554491728,-0.048803515781369426,-0.07739060472049383,-0.0945482801190991,0.7272727272727273,negligible
+"contrast (change minus absolute, selected fits)",Within-subject Future Prediction,change y - g(t) vs absolute y,,validation,,45,,,,not applied,26330.0,12.971720430477344,12.872718509876089,-0.09900192060125688,-0.14562817283827179,-0.05704589862651793,-0.09307851381981368,-0.09456789628736573,0.7333333333333333,negligible
+fit,Unseen-subject Generalization,absolute y,100.0,train,81958.0,27,13.65030917158975,13.948291813588666,False,,,,,,,,,,,
+fit,Unseen-subject Generalization,absolute y,100.0,validation,24259.0,9,15.28602489442948,16.172069049857008,False,,,,,,,,,,,
+fit,Unseen-subject Generalization,absolute y,300.0,train,81958.0,27,12.828464841340194,13.09420781578589,True,,,,,,,,,,,
+fit,Unseen-subject Generalization,absolute y,300.0,validation,24259.0,9,14.686213262887698,15.47063779759948,True,,,,,,,,,,,
+fit,Unseen-subject Generalization,change y - g(t),100.0,train,81958.0,27,13.489730521490127,13.777951965941162,False,,,,,,,,,,,
+fit,Unseen-subject Generalization,change y - g(t),100.0,validation,24259.0,9,15.13076072309508,15.994246110279088,False,,,,,,,,,,,
+fit,Unseen-subject Generalization,change y - g(t),300.0,train,81958.0,27,12.736474202371092,12.99827302729612,True,,,,,,,,,,,
+fit,Unseen-subject Generalization,change y - g(t),300.0,validation,24259.0,9,14.586366111953335,15.352626478843764,True,,,,,,,,,,,
+"contrast (change minus absolute, selected fits)",Unseen-subject Generalization,change y - g(t) vs absolute y,,validation,,9,,,,applied (>= 20 validation windows),24259.0,14.686213262887698,14.586366111953335,-0.0998471509343596,-0.14944583931447222,-0.05460572408259902,-0.08998785277970317,-0.11801131875571791,1.0,negligible
+"contrast (change minus absolute, selected fits)",Unseen-subject Generalization,change y - g(t) vs absolute y,,validation,,9,,,,not applied,24259.0,14.686213262887698,14.586366111953335,-0.0998471509343596,-0.14944583931447222,-0.05460572408259902,-0.08998785277970317,-0.11801131875571791,1.0,negligible

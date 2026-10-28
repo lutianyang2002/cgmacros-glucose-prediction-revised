@@ -1,0 +1,3450 @@
+{
+  "schema_version": 1,
+  "execute_test_default": false,
+  "test_split_status": "previously used: the corresponding analysis/the corresponding analysis locked evaluation; the corresponding analysis exploratory reuse. This is a second locked evaluation on a previously used test split (`second locked evaluation on a previously used test split`), not a new independent hold-out: even though the comparisons are fixed before the evaluation, it does not have the evidential strength of a fresh test set. Holm correction of the four primary contrasts per protocol cannot remove the effects of the reuse of the test split, of earlier results that influenced research decisions, or of the model selection on the validation split. The 36-subject GroupKFold CV (analysis) is supplementary robustness evidence; it includes the 9 validation subjects that took part in the earlier model development and is not a completely independent external validation.",
+  "protocol": {
+    "file": "results/factor_discovery/factor_protocol.json",
+    "sha256": "88a5070fbfd5d1d888d842064717bfa01b8f52c222130aff1bdab8588b2a75c6",
+    "rule": "nothing in this file changes a frozen protocol item"
+  },
+  "data": {
+    "protocol_A": {
+      "name": "Within-subject Future Prediction",
+      "subjects": 45,
+      "windows": "admitted windows of each subject's training period (fit), validation period (dry run) and test period (analysis only)",
+      "per_subject_periods": [
+        {
+          "subject_id": 1,
+          "start_time": "2020-05-01 10:30:00",
+          "protocol_a_train_end_time": "2020-05-07 13:47:24",
+          "protocol_a_val_end_time": "2020-05-09 14:53:12",
+          "end_time": "2020-05-11 15:59:00"
+        },
+        {
+          "subject_id": 2,
+          "start_time": "2019-11-15 20:12:00",
+          "protocol_a_train_end_time": "2019-11-22 22:26:24",
+          "protocol_a_val_end_time": "2019-11-25 07:11:12",
+          "end_time": "2019-11-27 15:56:00"
+        },
+        {
+          "subject_id": 3,
+          "start_time": "2020-03-11 09:03:00",
+          "protocol_a_train_end_time": "2020-03-17 10:50:24",
+          "protocol_a_val_end_time": "2020-03-19 11:26:12",
+          "end_time": "2020-03-21 12:02:00"
+        },
+        {
+          "subject_id": 4,
+          "start_time": "2023-09-11 09:54:00",
+          "protocol_a_train_end_time": "2023-09-17 08:38:24",
+          "protocol_a_val_end_time": "2023-09-19 08:13:12",
+          "end_time": "2023-09-21 07:48:00"
+        },
+        {
+          "subject_id": 5,
+          "start_time": "2020-08-17 11:14:00",
+          "protocol_a_train_end_time": "2020-08-23 11:49:24",
+          "protocol_a_val_end_time": "2020-08-25 12:01:12",
+          "end_time": "2020-08-27 12:13:00"
+        },
+        {
+          "subject_id": 6,
+          "start_time": "2023-04-07 11:19:00",
+          "protocol_a_train_end_time": "2023-04-13 11:54:24",
+          "protocol_a_val_end_time": "2023-04-15 12:06:12",
+          "end_time": "2023-04-17 12:18:00"
+        },
+        {
+          "subject_id": 7,
+          "start_time": "2023-11-03 10:41:00",
+          "protocol_a_train_end_time": "2023-11-07 18:46:24",
+          "protocol_a_val_end_time": "2023-11-09 05:28:12",
+          "end_time": "2023-11-10 16:10:00"
+        },
+        {
+          "subject_id": 8,
+          "start_time": "2023-01-30 10:52:00",
+          "protocol_a_train_end_time": "2023-02-05 14:27:24",
+          "protocol_a_val_end_time": "2023-02-07 15:39:12",
+          "end_time": "2023-02-09 16:51:00"
+        },
+        {
+          "subject_id": 9,
+          "start_time": "2020-09-15 09:05:00",
+          "protocol_a_train_end_time": "2020-09-21 08:46:24",
+          "protocol_a_val_end_time": "2020-09-23 08:40:12",
+          "end_time": "2020-09-25 08:34:00"
+        },
+        {
+          "subject_id": 10,
+          "start_time": "2020-06-21 09:18:00",
+          "protocol_a_train_end_time": "2020-06-28 02:50:24",
+          "protocol_a_val_end_time": "2020-06-30 08:41:12",
+          "end_time": "2020-07-02 14:32:00"
+        },
+        {
+          "subject_id": 11,
+          "start_time": "2020-10-03 09:21:00",
+          "protocol_a_train_end_time": "2020-10-09 13:23:24",
+          "protocol_a_val_end_time": "2020-10-11 14:44:12",
+          "end_time": "2020-10-13 16:05:00"
+        },
+        {
+          "subject_id": 12,
+          "start_time": "2023-02-26 08:43:00",
+          "protocol_a_train_end_time": "2023-03-04 11:24:24",
+          "protocol_a_val_end_time": "2023-03-06 12:18:12",
+          "end_time": "2023-03-08 13:12:00"
+        },
+        {
+          "subject_id": 13,
+          "start_time": "2024-01-25 08:42:00",
+          "protocol_a_train_end_time": "2024-01-31 23:05:24",
+          "protocol_a_val_end_time": "2024-02-03 03:53:12",
+          "end_time": "2024-02-05 08:41:00"
+        },
+        {
+          "subject_id": 14,
+          "start_time": "2023-05-09 09:01:00",
+          "protocol_a_train_end_time": "2023-05-16 13:30:24",
+          "protocol_a_val_end_time": "2023-05-18 23:00:12",
+          "end_time": "2023-05-21 08:30:00"
+        },
+        {
+          "subject_id": 15,
+          "start_time": "2024-01-25 09:12:00",
+          "protocol_a_train_end_time": "2024-02-01 13:32:24",
+          "protocol_a_val_end_time": "2024-02-03 22:59:12",
+          "end_time": "2024-02-06 08:26:00"
+        },
+        {
+          "subject_id": 16,
+          "start_time": "2023-07-14 09:12:00",
+          "protocol_a_train_end_time": "2023-07-21 04:05:24",
+          "protocol_a_val_end_time": "2023-07-23 10:23:12",
+          "end_time": "2023-07-25 16:41:00"
+        },
+        {
+          "subject_id": 17,
+          "start_time": "2023-10-10 08:51:00",
+          "protocol_a_train_end_time": "2023-10-17 02:41:24",
+          "protocol_a_val_end_time": "2023-10-19 08:38:12",
+          "end_time": "2023-10-21 14:35:00"
+        },
+        {
+          "subject_id": 18,
+          "start_time": "2024-01-28 08:10:00",
+          "protocol_a_train_end_time": "2024-02-08 19:58:36",
+          "protocol_a_val_end_time": "2024-02-12 15:54:48",
+          "end_time": "2024-02-16 11:51:00"
+        },
+        {
+          "subject_id": 19,
+          "start_time": "2020-09-29 08:32:00",
+          "protocol_a_train_end_time": "2020-10-05 08:58:24",
+          "protocol_a_val_end_time": "2020-10-07 09:07:12",
+          "end_time": "2020-10-09 09:16:00"
+        },
+        {
+          "subject_id": 20,
+          "start_time": "2024-03-19 07:36:00",
+          "protocol_a_train_end_time": "2024-03-26 02:11:24",
+          "protocol_a_val_end_time": "2024-03-28 08:23:12",
+          "end_time": "2024-03-30 14:35:00"
+        },
+        {
+          "subject_id": 21,
+          "start_time": "2020-06-08 08:12:00",
+          "protocol_a_train_end_time": "2020-06-15 01:26:24",
+          "protocol_a_val_end_time": "2020-06-17 07:11:12",
+          "end_time": "2020-06-19 12:56:00"
+        },
+        {
+          "subject_id": 22,
+          "start_time": "2021-03-28 08:09:00",
+          "protocol_a_train_end_time": "2021-04-04 16:23:24",
+          "protocol_a_val_end_time": "2021-04-07 03:08:12",
+          "end_time": "2021-04-09 13:53:00"
+        },
+        {
+          "subject_id": 23,
+          "start_time": "2021-05-05 08:37:00",
+          "protocol_a_train_end_time": "2021-05-12 02:27:24",
+          "protocol_a_val_end_time": "2021-05-14 08:24:12",
+          "end_time": "2021-05-16 14:21:00"
+        },
+        {
+          "subject_id": 26,
+          "start_time": "2021-03-26 08:16:00",
+          "protocol_a_train_end_time": "2021-04-02 03:27:24",
+          "protocol_a_val_end_time": "2021-04-04 09:51:12",
+          "end_time": "2021-04-06 16:15:00"
+        },
+        {
+          "subject_id": 27,
+          "start_time": "2024-06-10 08:12:00",
+          "protocol_a_train_end_time": "2024-06-16 09:32:24",
+          "protocol_a_val_end_time": "2024-06-18 09:59:12",
+          "end_time": "2024-06-20 10:26:00"
+        },
+        {
+          "subject_id": 28,
+          "start_time": "2023-11-28 08:04:00",
+          "protocol_a_train_end_time": "2023-12-06 03:24:24",
+          "protocol_a_val_end_time": "2023-12-08 17:51:12",
+          "end_time": "2023-12-11 08:18:00"
+        },
+        {
+          "subject_id": 29,
+          "start_time": "2024-01-17 08:13:00",
+          "protocol_a_train_end_time": "2024-01-24 17:30:24",
+          "protocol_a_val_end_time": "2024-01-27 04:36:12",
+          "end_time": "2024-01-29 15:42:00"
+        },
+        {
+          "subject_id": 30,
+          "start_time": "2021-01-23 09:27:00",
+          "protocol_a_train_end_time": "2021-01-29 20:05:24",
+          "protocol_a_val_end_time": "2021-01-31 23:38:12",
+          "end_time": "2021-02-03 03:11:00"
+        },
+        {
+          "subject_id": 31,
+          "start_time": "2022-06-29 20:05:00",
+          "protocol_a_train_end_time": "2022-07-05 13:19:24",
+          "protocol_a_val_end_time": "2022-07-07 11:04:12",
+          "end_time": "2022-07-09 08:49:00"
+        },
+        {
+          "subject_id": 32,
+          "start_time": "2022-01-01 20:54:00",
+          "protocol_a_train_end_time": "2022-01-07 14:44:24",
+          "protocol_a_val_end_time": "2022-01-09 12:41:12",
+          "end_time": "2022-01-11 10:38:00"
+        },
+        {
+          "subject_id": 33,
+          "start_time": "2022-04-16 09:30:00",
+          "protocol_a_train_end_time": "2022-04-23 00:02:24",
+          "protocol_a_val_end_time": "2022-04-25 04:53:12",
+          "end_time": "2022-04-27 09:44:00"
+        },
+        {
+          "subject_id": 34,
+          "start_time": "2022-03-02 09:12:00",
+          "protocol_a_train_end_time": "2022-03-08 12:11:24",
+          "protocol_a_val_end_time": "2022-03-10 13:11:12",
+          "end_time": "2022-03-12 14:11:00"
+        },
+        {
+          "subject_id": 35,
+          "start_time": "2024-12-12 09:07:00",
+          "protocol_a_train_end_time": "2024-12-18 09:06:24",
+          "protocol_a_val_end_time": "2024-12-20 09:06:12",
+          "end_time": "2024-12-22 09:06:00"
+        },
+        {
+          "subject_id": 36,
+          "start_time": "2022-03-29 09:58:00",
+          "protocol_a_train_end_time": "2022-04-05 13:06:24",
+          "protocol_a_val_end_time": "2022-04-07 22:09:12",
+          "end_time": "2022-04-10 07:12:00"
+        },
+        {
+          "subject_id": 38,
+          "start_time": "2022-01-25 08:56:00",
+          "protocol_a_train_end_time": "2022-01-31 09:58:24",
+          "protocol_a_val_end_time": "2022-02-02 10:19:12",
+          "end_time": "2022-02-04 10:40:00"
+        },
+        {
+          "subject_id": 39,
+          "start_time": "2025-02-07 09:28:00",
+          "protocol_a_train_end_time": "2025-02-14 13:30:24",
+          "protocol_a_val_end_time": "2025-02-16 22:51:12",
+          "end_time": "2025-02-19 08:12:00"
+        },
+        {
+          "subject_id": 41,
+          "start_time": "2022-04-26 09:04:00",
+          "protocol_a_train_end_time": "2022-05-02 08:09:24",
+          "protocol_a_val_end_time": "2022-05-04 07:51:12",
+          "end_time": "2022-05-06 07:33:00"
+        },
+        {
+          "subject_id": 42,
+          "start_time": "2025-07-25 10:10:00",
+          "protocol_a_train_end_time": "2025-07-31 11:21:24",
+          "protocol_a_val_end_time": "2025-08-02 11:45:12",
+          "end_time": "2025-08-04 12:09:00"
+        },
+        {
+          "subject_id": 43,
+          "start_time": "2025-10-14 09:09:00",
+          "protocol_a_train_end_time": "2025-10-20 10:29:24",
+          "protocol_a_val_end_time": "2025-10-22 10:56:12",
+          "end_time": "2025-10-24 11:23:00"
+        },
+        {
+          "subject_id": 44,
+          "start_time": "2022-10-17 08:36:00",
+          "protocol_a_train_end_time": "2022-10-23 09:56:24",
+          "protocol_a_val_end_time": "2022-10-25 10:23:12",
+          "end_time": "2022-10-27 10:50:00"
+        },
+        {
+          "subject_id": 45,
+          "start_time": "2025-03-25 19:59:00",
+          "protocol_a_train_end_time": "2025-04-01 07:40:24",
+          "protocol_a_val_end_time": "2025-04-03 11:34:12",
+          "end_time": "2025-04-05 15:28:00"
+        },
+        {
+          "subject_id": 46,
+          "start_time": "2025-05-01 08:32:00",
+          "protocol_a_train_end_time": "2025-05-07 11:22:24",
+          "protocol_a_val_end_time": "2025-05-09 12:19:12",
+          "end_time": "2025-05-11 13:16:00"
+        },
+        {
+          "subject_id": 47,
+          "start_time": "2025-10-30 08:49:00",
+          "protocol_a_train_end_time": "2025-11-05 21:42:24",
+          "protocol_a_val_end_time": "2025-11-08 02:00:12",
+          "end_time": "2025-11-10 06:18:00"
+        },
+        {
+          "subject_id": 48,
+          "start_time": "2022-11-14 09:14:00",
+          "protocol_a_train_end_time": "2022-11-21 14:46:24",
+          "protocol_a_val_end_time": "2022-11-24 00:37:12",
+          "end_time": "2022-11-26 10:28:00"
+        },
+        {
+          "subject_id": 49,
+          "start_time": "2025-05-11 08:53:00",
+          "protocol_a_train_end_time": "2025-05-17 18:01:24",
+          "protocol_a_val_end_time": "2025-05-19 21:04:12",
+          "end_time": "2025-05-22 00:07:00"
+        }
+      ],
+      "window_source": "results/forecast_windows/fold_assignments.parquet (admitted_to_split, split)"
+    },
+    "protocol_B": {
+      "name": "Unseen-subject Generalization",
+      "groups": {
+        "train": [
+          4,
+          5,
+          6,
+          8,
+          10,
+          11,
+          17,
+          19,
+          21,
+          22,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          34,
+          35,
+          38,
+          39,
+          42,
+          43,
+          44,
+          45,
+          47,
+          49
+        ],
+        "val": [
+          1,
+          7,
+          12,
+          16,
+          18,
+          20,
+          23,
+          33,
+          46
+        ],
+        "test": [
+          2,
+          3,
+          9,
+          13,
+          14,
+          15,
+          36,
+          41,
+          48
+        ]
+      },
+      "note": "val is the validation group; the test group is read only in analysis after method specification"
+    },
+    "cross_protocol_boundary": "split_rules.json: no learned statistics or choices are transferred from Protocol-A data into Protocol B for subjects held out in B (the 9 B-test subjects contribute to Protocol A training); A-side and B-side diagnostics are therefore kept separate",
+    "isolation": {
+      "within_protocol": "train / validation / test of each protocol, support rule, preprocessing fitted on the training split only",
+      "global": "no test label, test prediction or test-period value of either protocol enters method development; hold per data_scope_conflict_B"
+    }
+  },
+  "features": {
+    "M": {
+      "columns": [
+        "act_hr_mean_30m",
+        "act_hr_max_30m",
+        "act_hr_coverage_30m",
+        "act_hr_missing_30m",
+        "act_hr_mean_120m",
+        "act_hr_max_120m",
+        "act_hr_coverage_120m",
+        "act_hr_missing_120m",
+        "act_calories_mean_30m",
+        "act_calories_max_30m",
+        "act_calories_sum_observed_30m",
+        "act_calories_coverage_30m",
+        "act_calories_missing_30m",
+        "act_calories_mean_120m",
+        "act_calories_max_120m",
+        "act_calories_sum_observed_120m",
+        "act_calories_coverage_120m",
+        "act_calories_missing_120m",
+        "act_met_mean_30m",
+        "act_met_max_30m",
+        "act_met_coverage_30m",
+        "act_met_missing_30m",
+        "act_met_mean_120m",
+        "act_met_max_120m",
+        "act_met_coverage_120m",
+        "act_met_missing_120m",
+        "diet_logged_meal_count_30m",
+        "diet_no_logged_meal_30m",
+        "diet_logged_meal_calories_sum_30m",
+        "diet_logged_carbs_sum_30m",
+        "diet_logged_protein_sum_30m",
+        "diet_logged_fat_sum_30m",
+        "diet_logged_fiber_sum_30m",
+        "diet_logged_meal_count_120m",
+        "diet_no_logged_meal_120m",
+        "diet_logged_meal_calories_sum_120m",
+        "diet_logged_carbs_sum_120m",
+        "diet_logged_protein_sum_120m",
+        "diet_logged_fat_sum_120m",
+        "diet_logged_fiber_sum_120m",
+        "diet_minutes_since_last_logged_meal",
+        "diet_last_meal_carbs",
+        "diet_last_meal_calories",
+        "diet_last_meal_type_breakfast",
+        "diet_last_meal_type_dinner",
+        "diet_last_meal_type_lunch",
+        "diet_last_meal_type_snack",
+        "bio_age",
+        "bio_gender_m",
+        "bio_bmi"
+      ],
+      "groups": {
+        "A": [
+          "act_hr_mean_30m",
+          "act_hr_max_30m",
+          "act_hr_coverage_30m",
+          "act_hr_missing_30m",
+          "act_hr_mean_120m",
+          "act_hr_max_120m",
+          "act_hr_coverage_120m",
+          "act_hr_missing_120m",
+          "act_calories_mean_30m",
+          "act_calories_max_30m",
+          "act_calories_sum_observed_30m",
+          "act_calories_coverage_30m",
+          "act_calories_missing_30m",
+          "act_calories_mean_120m",
+          "act_calories_max_120m",
+          "act_calories_sum_observed_120m",
+          "act_calories_coverage_120m",
+          "act_calories_missing_120m",
+          "act_met_mean_30m",
+          "act_met_max_30m",
+          "act_met_coverage_30m",
+          "act_met_missing_30m",
+          "act_met_mean_120m",
+          "act_met_max_120m",
+          "act_met_coverage_120m",
+          "act_met_missing_120m"
+        ],
+        "D": [
+          "diet_logged_meal_count_30m",
+          "diet_no_logged_meal_30m",
+          "diet_logged_meal_calories_sum_30m",
+          "diet_logged_carbs_sum_30m",
+          "diet_logged_protein_sum_30m",
+          "diet_logged_fat_sum_30m",
+          "diet_logged_fiber_sum_30m",
+          "diet_logged_meal_count_120m",
+          "diet_no_logged_meal_120m",
+          "diet_logged_meal_calories_sum_120m",
+          "diet_logged_carbs_sum_120m",
+          "diet_logged_protein_sum_120m",
+          "diet_logged_fat_sum_120m",
+          "diet_logged_fiber_sum_120m",
+          "diet_minutes_since_last_logged_meal",
+          "diet_last_meal_carbs",
+          "diet_last_meal_calories",
+          "diet_last_meal_type_breakfast",
+          "diet_last_meal_type_dinner",
+          "diet_last_meal_type_lunch",
+          "diet_last_meal_type_snack"
+        ],
+        "B": [
+          "bio_age",
+          "bio_gender_m",
+          "bio_bmi"
+        ]
+      },
+      "source": "manual-feature inputs (activity_diet_features.parquet, static_features.parquet)"
+    },
+    "T": {
+      "A": {
+        "ids_in_selection_order": [
+          "actstat_calories_mean_15m",
+          "int_snack_carbs_x_native_slope_1h",
+          "int_lunch_carbs_x_bmi",
+          "actstat_hr_mean_120m",
+          "actstat_hr_max_15m",
+          "int_breakfast_carbs_x_native_slope_1h"
+        ],
+        "k": 6,
+        "native_missing_indicator_added": true,
+        "source": "selection_T.csv",
+        "recipes_including_inputs": [
+          {
+            "candidate_id": "abs_breakfast_carbs_t90_k3",
+            "evaluation_protocol": "both",
+            "batch": 1,
+            "family": "meal_absorption",
+            "formula": "conv_gamma(carbs pulses of breakfast meals, tau=90, k=3); unit-sum gamma weights over ages 0..120, tau = time to peak",
+            "generator": "conv_gamma_class",
+            "generator_params": "{\"k\": 3, \"meal_class\": \"breakfast\", \"nutrient\": \"carbs\", \"tau\": 90}",
+            "inputs": "[]",
+            "parameters": "{\"k\": 3, \"tau\": 90}",
+            "min_source_offset": -120,
+            "max_source_offset": 0,
+            "uses_native_state": false,
+            "availability": "logged meal row time (about the pre-meal photo); nutrients known at the log time for the designed meals, assumed for free-choice meals",
+            "causal_source": "logged meal events at ages 0..120 minutes before t",
+            "missing_handling": "0 when no meal of the class lies in the history (never NaN)",
+            "generation_status": "generated"
+          },
+          {
+            "candidate_id": "abs_lunch_carbs_t20_k2",
+            "evaluation_protocol": "both",
+            "batch": 1,
+            "family": "meal_absorption",
+            "formula": "conv_gamma(carbs pulses of lunch meals, tau=20, k=2); unit-sum gamma weights over ages 0..120, tau = time to peak",
+            "generator": "conv_gamma_class",
+            "generator_params": "{\"k\": 2, \"meal_class\": \"lunch\", \"nutrient\": \"carbs\", \"tau\": 20}",
+            "inputs": "[]",
+            "parameters": "{\"k\": 2, \"tau\": 20}",
+            "min_source_offset": -120,
+            "max_source_offset": 0,
+            "uses_native_state": false,
+            "availability": "logged meal row time (about the pre-meal photo); nutrients known at the log time for the designed meals, assumed for free-choice meals",
+            "causal_source": "logged meal events at ages 0..120 minutes before t",
+            "missing_handling": "0 when no meal of the class lies in the history (never NaN)",
+            "generation_status": "generated"
+          },
+          {
+            "candidate_id": "abs_snack_carbs_t20_k3",
+            "evaluation_protocol": "both",
+            "batch": 1,
+            "family": "meal_absorption",
+            "formula": "conv_gamma(carbs pulses of snack meals, tau=20, k=3); unit-sum gamma weights over ages 0..120, tau = time to peak",
+            "generator": "conv_gamma_class",
+            "generator_params": "{\"k\": 3, \"meal_class\": \"snack\", \"nutrient\": \"carbs\", \"tau\": 20}",
+            "inputs": "[]",
+            "parameters": "{\"k\": 3, \"tau\": 20}",
+            "min_source_offset": -120,
+            "max_source_offset": 0,
+            "uses_native_state": false,
+            "availability": "logged meal row time (about the pre-meal photo); nutrients known at the log time for the designed meals, assumed for free-choice meals",
+            "causal_source": "logged meal events at ages 0..120 minutes before t",
+            "missing_handling": "0 when no meal of the class lies in the history (never NaN)",
+            "generation_status": "generated"
+          },
+          {
+            "candidate_id": "actstat_hr_mean_120m",
+            "evaluation_protocol": "both",
+            "batch": 1,
+            "family": "activity_kernels",
+            "formula": "ts_mean(hr, 120) over the observed minutes in [t-120, t]",
+            "generator": "activity_stat",
+            "generator_params": "{\"signal\": \"hr\", \"stat\": \"mean\", \"window\": 120}",
+            "inputs": "[]",
+            "parameters": "{\"window\": 120}",
+            "min_source_offset": -120,
+            "max_source_offset": 0,
+            "uses_native_state": false,
+            "availability": "wearable minutes, published rows only",
+            "causal_source": "published Fitbit minutes at or before t",
+            "missing_handling": "NaN when no observed minute in the window",
+            "generation_status": "generated"
+          },
+          {
+            "candidate_id": "actstat_hr_max_15m",
+            "evaluation_protocol": "both",
+            "batch": 1,
+            "family": "activity_kernels",
+            "formula": "ts_max(hr, 15) over the observed minutes in [t-15, t]",
+            "generator": "activity_stat",
+            "generator_params": "{\"signal\": \"hr\", \"stat\": \"max\", \"window\": 15}",
+            "inputs": "[]",
+            "parameters": "{\"window\": 15}",
+            "min_source_offset": -15,
+            "max_source_offset": 0,
+            "uses_native_state": false,
+            "availability": "wearable minutes, published rows only",
+            "causal_source": "published Fitbit minutes at or before t",
+            "missing_handling": "NaN when no observed minute in the window",
+            "generation_status": "generated"
+          },
+          {
+            "candidate_id": "actstat_calories_mean_15m",
+            "evaluation_protocol": "both",
+            "batch": 1,
+            "family": "activity_kernels",
+            "formula": "ts_mean(calories, 15) over the observed minutes in [t-15, t]",
+            "generator": "activity_stat",
+            "generator_params": "{\"signal\": \"calories\", \"stat\": \"mean\", \"window\": 15}",
+            "inputs": "[]",
+            "parameters": "{\"window\": 15}",
+            "min_source_offset": -15,
+            "max_source_offset": 0,
+            "uses_native_state": false,
+            "availability": "wearable minutes, published rows only",
+            "causal_source": "published Fitbit minutes at or before t",
+            "missing_handling": "NaN when no observed minute in the window",
+            "generation_status": "generated"
+          },
+          {
+            "candidate_id": "native_slope_1h",
+            "evaluation_protocol": "both",
+            "batch": 1,
+            "family": "native_glucose_state",
+            "formula": "least-squares slope over the newest five anchors",
+            "generator": "native_state",
+            "generator_params": "{\"name\": \"native_slope_1h\"}",
+            "inputs": "[]",
+            "parameters": "{\"max_readings\": 8}",
+            "min_source_offset": -74,
+            "max_source_offset": 0,
+            "uses_native_state": true,
+            "availability": "inferred native-reading anchors (not observed sampling labels)",
+            "causal_source": "inferred native-reading anchors at or before t (prefix-causal phase, calibrated on the continuous run up to t - 15 minutes)",
+            "missing_handling": "NaN plus the native_missing indicator when the anchors are uncertain",
+            "generation_status": "generated"
+          },
+          {
+            "candidate_id": "int_breakfast_carbs_x_native_slope_1h",
+            "evaluation_protocol": "Within-subject Future Prediction",
+            "batch": 2,
+            "family": "meal_x_baseline_state",
+            "formula": "abs_breakfast_carbs_t90_k3 * native_slope_1h",
+            "generator": "interaction",
+            "generator_params": "{\"left\": \"abs_breakfast_carbs_t90_k3\", \"left_kind\": \"candidate\", \"right\": \"native_slope_1h\", \"right_kind\": \"candidate\"}",
+            "inputs": "[\"abs_breakfast_carbs_t90_k3\", \"native_slope_1h\"]",
+            "parameters": "{\"k\": 3, \"state\": \"native_slope_1h\", \"tau\": 90}",
+            "min_source_offset": -120,
+            "max_source_offset": 0,
+            "uses_native_state": true,
+            "availability": "inferred native-reading anchors at or before t (prefix-causal phase, calibrated on the continuous run up to t - 15 minutes)",
+            "causal_source": "logged meal events at ages 0..120 minutes before t; inferred native-reading anchors at or before t (prefix-causal phase, calibrated on the continuous run up to t - 15 minutes)",
+            "missing_handling": "NaN where the native state is uncertain (plus the native_missing indicator)",
+            "generation_status": "generated"
+          },
+          {
+            "candidate_id": "int_lunch_carbs_x_bmi",
+            "evaluation_protocol": "Within-subject Future Prediction",
+            "batch": 2,
+            "family": "meal_x_baseline_state",
+            "formula": "abs_lunch_carbs_t20_k2 * bmi",
+            "generator": "interaction",
+            "generator_params": "{\"left\": \"abs_lunch_carbs_t20_k2\", \"left_kind\": \"candidate\", \"right\": \"bmi\", \"right_kind\": \"static\"}",
+            "inputs": "[\"abs_lunch_carbs_t20_k2\"]",
+            "parameters": "{\"k\": 2, \"state\": \"bmi\", \"tau\": 20}",
+            "min_source_offset": -120,
+            "max_source_offset": 0,
+            "uses_native_state": false,
+            "availability": "BMI is an enrollment measurement; kernels as in the absorption family",
+            "causal_source": "logged meal events at ages 0..120 minutes before t",
+            "missing_handling": "none",
+            "generation_status": "generated"
+          },
+          {
+            "candidate_id": "int_snack_carbs_x_native_slope_1h",
+            "evaluation_protocol": "Within-subject Future Prediction",
+            "batch": 2,
+            "family": "meal_x_baseline_state",
+            "formula": "abs_snack_carbs_t20_k3 * native_slope_1h",
+            "generator": "interaction",
+            "generator_params": "{\"left\": \"abs_snack_carbs_t20_k3\", \"left_kind\": \"candidate\", \"right\": \"native_slope_1h\", \"right_kind\": \"candidate\"}",
+            "inputs": "[\"abs_snack_carbs_t20_k3\", \"native_slope_1h\"]",
+            "parameters": "{\"k\": 3, \"state\": \"native_slope_1h\", \"tau\": 20}",
+            "min_source_offset": -120,
+            "max_source_offset": 0,
+            "uses_native_state": true,
+            "availability": "inferred native-reading anchors at or before t (prefix-causal phase, calibrated on the continuous run up to t - 15 minutes)",
+            "causal_source": "logged meal events at ages 0..120 minutes before t; inferred native-reading anchors at or before t (prefix-causal phase, calibrated on the continuous run up to t - 15 minutes)",
+            "missing_handling": "NaN where the native state is uncertain (plus the native_missing indicator)",
+            "generation_status": "generated"
+          }
+        ]
+      },
+      "B": {
+        "ids_in_selection_order": [
+          "actstat_hr_max_15m",
+          "abs_lunch_carbs_t20_k2",
+          "int_snack_carbs_x_native_slope_1h",
+          "ratio_last_meal_carb_share",
+          "ratio_kernel_protein_x_carbs",
+          "int_dinner_carbs_x_native_slope_1h",
+          "abs_dinner_fiber_t20_k3"
+        ],
+        "k": 7,
+        "native_missing_indicator_added": true,
+        "source": "selection_T.csv",
+        "recipes_including_inputs": [
+          {
+            "candidate_id": "abs_lunch_carbs_t20_k2",
+            "evaluation_protocol": "both",
+            "batch": 1,
+            "family": "meal_absorption",
+            "formula": "conv_gamma(carbs pulses of lunch meals, tau=20, k=2); unit-sum gamma weights over ages 0..120, tau = time to peak",
+            "generator": "conv_gamma_class",
+            "generator_params": "{\"k\": 2, \"meal_class\": \"lunch\", \"nutrient\": \"carbs\", \"tau\": 20}",
+            "inputs": "[]",
+            "parameters": "{\"k\": 2, \"tau\": 20}",
+            "min_source_offset": -120,
+            "max_source_offset": 0,
+            "uses_native_state": false,
+            "availability": "logged meal row time (about the pre-meal photo); nutrients known at the log time for the designed meals, assumed for free-choice meals",
+            "causal_source": "logged meal events at ages 0..120 minutes before t",
+            "missing_handling": "0 when no meal of the class lies in the history (never NaN)",
+            "generation_status": "generated"
+          },
+          {
+            "candidate_id": "abs_dinner_carbs_t20_k2",
+            "evaluation_protocol": "both",
+            "batch": 1,
+            "family": "meal_absorption",
+            "formula": "conv_gamma(carbs pulses of dinner meals, tau=20, k=2); unit-sum gamma weights over ages 0..120, tau = time to peak",
+            "generator": "conv_gamma_class",
+            "generator_params": "{\"k\": 2, \"meal_class\": \"dinner\", \"nutrient\": \"carbs\", \"tau\": 20}",
+            "inputs": "[]",
+            "parameters": "{\"k\": 2, \"tau\": 20}",
+            "min_source_offset": -120,
+            "max_source_offset": 0,
+            "uses_native_state": false,
+            "availability": "logged meal row time (about the pre-meal photo); nutrients known at the log time for the designed meals, assumed for free-choice meals",
+            "causal_source": "logged meal events at ages 0..120 minutes before t",
+            "missing_handling": "0 when no meal of the class lies in the history (never NaN)",
+            "generation_status": "generated"
+          },
+          {
+            "candidate_id": "abs_dinner_fiber_t20_k3",
+            "evaluation_protocol": "both",
+            "batch": 1,
+            "family": "meal_absorption",
+            "formula": "conv_gamma(fiber pulses of dinner meals, tau=20, k=3); unit-sum gamma weights over ages 0..120, tau = time to peak",
+            "generator": "conv_gamma_class",
+            "generator_params": "{\"k\": 3, \"meal_class\": \"dinner\", \"nutrient\": \"fiber\", \"tau\": 20}",
+            "inputs": "[]",
+            "parameters": "{\"k\": 3, \"tau\": 20}",
+            "min_source_offset": -120,
+            "max_source_offset": 0,
+            "uses_native_state": false,
+            "availability": "logged meal row time (about the pre-meal photo); nutrients known at the log time for the designed meals, assumed for free-choice meals",
+            "causal_source": "logged meal events at ages 0..120 minutes before t",
+            "missing_handling": "0 when no meal of the class lies in the history (never NaN)",
+            "generation_status": "generated"
+          },
+          {
+            "candidate_id": "abs_snack_carbs_t20_k2",
+            "evaluation_protocol": "both",
+            "batch": 1,
+            "family": "meal_absorption",
+            "formula": "conv_gamma(carbs pulses of snack meals, tau=20, k=2); unit-sum gamma weights over ages 0..120, tau = time to peak",
+            "generator": "conv_gamma_class",
+            "generator_params": "{\"k\": 2, \"meal_class\": \"snack\", \"nutrient\": \"carbs\", \"tau\": 20}",
+            "inputs": "[]",
+            "parameters": "{\"k\": 2, \"tau\": 20}",
+            "min_source_offset": -120,
+            "max_source_offset": 0,
+            "uses_native_state": false,
+            "availability": "logged meal row time (about the pre-meal photo); nutrients known at the log time for the designed meals, assumed for free-choice meals",
+            "causal_source": "logged meal events at ages 0..120 minutes before t",
+            "missing_handling": "0 when no meal of the class lies in the history (never NaN)",
+            "generation_status": "generated"
+          },
+          {
+            "candidate_id": "ratio_last_meal_carb_share",
+            "evaluation_protocol": "both",
+            "batch": 1,
+            "family": "nutrient_ratios",
+            "formula": "carbs/(carbs+protein+fat) of the most recent meal",
+            "generator": "ratio_last_meal",
+            "generator_params": "{\"ratio\": \"carb_share\"}",
+            "inputs": "[]",
+            "parameters": "{\"aggregation\": \"most_recent_meal\"}",
+            "min_source_offset": -120,
+            "max_source_offset": 0,
+            "uses_native_state": false,
+            "availability": "logged meal row time (about the pre-meal photo); nutrients known at the log time for the designed meals, assumed for free-choice meals",
+            "causal_source": "latest logged meal of any class within 120 minutes before t",
+            "missing_handling": "NaN when no meal in the last 120 minutes or the denominator is 0",
+            "generation_status": "generated"
+          },
+          {
+            "candidate_id": "actstat_hr_max_15m",
+            "evaluation_protocol": "both",
+            "batch": 1,
+            "family": "activity_kernels",
+            "formula": "ts_max(hr, 15) over the observed minutes in [t-15, t]",
+            "generator": "activity_stat",
+            "generator_params": "{\"signal\": \"hr\", \"stat\": \"max\", \"window\": 15}",
+            "inputs": "[]",
+            "parameters": "{\"window\": 15}",
+            "min_source_offset": -15,
+            "max_source_offset": 0,
+            "uses_native_state": false,
+            "availability": "wearable minutes, published rows only",
+            "causal_source": "published Fitbit minutes at or before t",
+            "missing_handling": "NaN when no observed minute in the window",
+            "generation_status": "generated"
+          },
+          {
+            "candidate_id": "native_slope_1h",
+            "evaluation_protocol": "both",
+            "batch": 1,
+            "family": "native_glucose_state",
+            "formula": "least-squares slope over the newest five anchors",
+            "generator": "native_state",
+            "generator_params": "{\"name\": \"native_slope_1h\"}",
+            "inputs": "[]",
+            "parameters": "{\"max_readings\": 8}",
+            "min_source_offset": -74,
+            "max_source_offset": 0,
+            "uses_native_state": true,
+            "availability": "inferred native-reading anchors (not observed sampling labels)",
+            "causal_source": "inferred native-reading anchors at or before t (prefix-causal phase, calibrated on the continuous run up to t - 15 minutes)",
+            "missing_handling": "NaN plus the native_missing indicator when the anchors are uncertain",
+            "generation_status": "generated"
+          },
+          {
+            "candidate_id": "ratio_kernel_protein_x_carbs",
+            "evaluation_protocol": "Unseen-subject Generalization",
+            "batch": 2,
+            "family": "nutrient_ratios",
+            "formula": "protein*carbs of the kernel-weighted nutrient totals (sum over the four meal classes at their selected tau, k)",
+            "generator": "ratio_kernel_total",
+            "generator_params": "{\"ratio\": \"protein_x_carbs\", \"totals\": {\"carbs\": [{\"k\": 2, \"meal_class\": \"breakfast\", \"tau\": 20}, {\"k\": 2, \"meal_class\": \"lunch\", \"tau\": 20}, {\"k\": 2, \"meal_class\": \"dinner\", \"tau\": 20}, {\"k\": 2, \"meal_class\": \"snack\", \"tau\": 20}], \"fat\": [{\"k\": 2, \"meal_class\": \"breakfast\", \"tau\": 20}, {\"k\": 2, \"meal_class\": \"lunch\", \"tau\": 20}, {\"k\": 2, \"meal_class\": \"dinner\", \"tau\": 20}, {\"k\": 2, \"meal_class\": \"snack\", \"tau\": 20}], \"fiber\": [{\"k\": 2, \"meal_class\": \"breakfast\", \"tau\": 20}, {\"k\": 3, \"meal_class\": \"lunch\", \"tau\": 20}, {\"k\": 3, \"meal_class\": \"dinner\", \"tau\": 20}, {\"k\": 2, \"meal_class\": \"snack\", \"tau\": 20}], \"protein\": [{\"k\": 2, \"meal_class\": \"breakfast\", \"tau\": 20}, {\"k\": 3, \"meal_class\": \"lunch\", \"tau\": 20}, {\"k\": 2, \"meal_class\": \"dinner\", \"tau\": 20}, {\"k\": 2, \"meal_class\": \"snack\", \"tau\": 20}]}}",
+            "inputs": "[]",
+            "parameters": "{\"aggregation\": \"kernel_weighted_total\"}",
+            "min_source_offset": -120,
+            "max_source_offset": 0,
+            "uses_native_state": false,
+            "availability": "logged meal row time (about the pre-meal photo); nutrients known at the log time for the designed meals, assumed for free-choice meals",
+            "causal_source": "logged meal events at ages 0..120 minutes before t",
+            "missing_handling": "NaN when the denominator total is 0",
+            "generation_status": "generated"
+          },
+          {
+            "candidate_id": "int_dinner_carbs_x_native_slope_1h",
+            "evaluation_protocol": "Unseen-subject Generalization",
+            "batch": 2,
+            "family": "meal_x_baseline_state",
+            "formula": "abs_dinner_carbs_t20_k2 * native_slope_1h",
+            "generator": "interaction",
+            "generator_params": "{\"left\": \"abs_dinner_carbs_t20_k2\", \"left_kind\": \"candidate\", \"right\": \"native_slope_1h\", \"right_kind\": \"candidate\"}",
+            "inputs": "[\"abs_dinner_carbs_t20_k2\", \"native_slope_1h\"]",
+            "parameters": "{\"k\": 2, \"state\": \"native_slope_1h\", \"tau\": 20}",
+            "min_source_offset": -120,
+            "max_source_offset": 0,
+            "uses_native_state": true,
+            "availability": "inferred native-reading anchors at or before t (prefix-causal phase, calibrated on the continuous run up to t - 15 minutes)",
+            "causal_source": "logged meal events at ages 0..120 minutes before t; inferred native-reading anchors at or before t (prefix-causal phase, calibrated on the continuous run up to t - 15 minutes)",
+            "missing_handling": "NaN where the native state is uncertain (plus the native_missing indicator)",
+            "generation_status": "generated"
+          },
+          {
+            "candidate_id": "int_snack_carbs_x_native_slope_1h",
+            "evaluation_protocol": "Unseen-subject Generalization",
+            "batch": 2,
+            "family": "meal_x_baseline_state",
+            "formula": "abs_snack_carbs_t20_k2 * native_slope_1h",
+            "generator": "interaction",
+            "generator_params": "{\"left\": \"abs_snack_carbs_t20_k2\", \"left_kind\": \"candidate\", \"right\": \"native_slope_1h\", \"right_kind\": \"candidate\"}",
+            "inputs": "[\"abs_snack_carbs_t20_k2\", \"native_slope_1h\"]",
+            "parameters": "{\"k\": 2, \"state\": \"native_slope_1h\", \"tau\": 20}",
+            "min_source_offset": -120,
+            "max_source_offset": 0,
+            "uses_native_state": true,
+            "availability": "inferred native-reading anchors at or before t (prefix-causal phase, calibrated on the continuous run up to t - 15 minutes)",
+            "causal_source": "logged meal events at ages 0..120 minutes before t; inferred native-reading anchors at or before t (prefix-causal phase, calibrated on the continuous run up to t - 15 minutes)",
+            "missing_handling": "NaN where the native state is uncertain (plus the native_missing indicator)",
+            "generation_status": "generated"
+          }
+        ]
+      }
+    },
+    "O": {
+      "A": {
+        "ids_in_selection_order": [
+          "O_A_0011",
+          "O_A_0018",
+          "O_A_0007",
+          "O_A_0021",
+          "O_A_0019",
+          "O_A_0008",
+          "O_A_0025"
+        ],
+        "k": 7,
+        "formulas": {
+          "O_A_0011": "(diet_no_logged_meal_30m+native_curv_1h)",
+          "O_A_0018": "(diet_minutes_since_last_logged_meal/bio_age)",
+          "O_A_0007": "(diet_last_meal_type_lunch-native_slope_1h)",
+          "O_A_0021": "(diet_no_logged_meal_30m*act_calories_mean_15m)",
+          "O_A_0019": "(diet_no_logged_meal_30m*act_met_mean_30m_lag10)",
+          "O_A_0008": "(act_calories_mean_60m*meal_any_logged_minutes_since)",
+          "O_A_0025": "(diet_logged_meal_count_30m+native_curv_1h)"
+        },
+        "input_columns": {
+          "O_A_0011": [
+            "diet_no_logged_meal_30m",
+            "native_curv_1h"
+          ],
+          "O_A_0018": [
+            "diet_minutes_since_last_logged_meal",
+            "bio_age"
+          ],
+          "O_A_0007": [
+            "diet_last_meal_type_lunch",
+            "native_slope_1h"
+          ],
+          "O_A_0021": [
+            "diet_no_logged_meal_30m",
+            "act_calories_mean_15m"
+          ],
+          "O_A_0019": [
+            "diet_no_logged_meal_30m",
+            "act_met_mean_30m_lag10"
+          ],
+          "O_A_0008": [
+            "act_calories_mean_60m",
+            "meal_any_logged_minutes_since"
+          ],
+          "O_A_0025": [
+            "diet_logged_meal_count_30m",
+            "native_curv_1h"
+          ]
+        },
+        "reads_native_state": {
+          "O_A_0011": true,
+          "O_A_0018": false,
+          "O_A_0007": true,
+          "O_A_0021": false,
+          "O_A_0019": false,
+          "O_A_0008": false,
+          "O_A_0025": true
+        },
+        "native_missing_indicator_added": true,
+        "source": "selection_O.csv, openfe_features.csv",
+        "values_dtype": "float32 (selection used the stored float32 values)",
+        "fitted_state": "none: only operators acting on one row"
+      },
+      "B": {
+        "ids_in_selection_order": [
+          "O_B_0003",
+          "O_B_0018",
+          "O_B_0017",
+          "O_B_0005"
+        ],
+        "k": 4,
+        "formulas": {
+          "O_B_0003": "(diet_minutes_since_last_logged_meal+native_diff)",
+          "O_B_0018": "(act_calories_mean_15m/act_calories_mean_60m)",
+          "O_B_0017": "(meal_breakfast_logged_minutes_since*native_last)",
+          "O_B_0005": "(diet_no_logged_meal_30m/native_last)"
+        },
+        "input_columns": {
+          "O_B_0003": [
+            "diet_minutes_since_last_logged_meal",
+            "native_diff"
+          ],
+          "O_B_0018": [
+            "act_calories_mean_15m",
+            "act_calories_mean_60m"
+          ],
+          "O_B_0017": [
+            "meal_breakfast_logged_minutes_since",
+            "native_last"
+          ],
+          "O_B_0005": [
+            "diet_no_logged_meal_30m",
+            "native_last"
+          ]
+        },
+        "reads_native_state": {
+          "O_B_0003": true,
+          "O_B_0018": false,
+          "O_B_0017": true,
+          "O_B_0005": true
+        },
+        "native_missing_indicator_added": true,
+        "source": "selection_O.csv, openfe_features.csv",
+        "values_dtype": "float32 (selection used the stored float32 values)",
+        "fitted_state": "none: only operators acting on one row"
+      }
+    },
+    "openfe_input_columns": [
+      "act_hr_mean_30m",
+      "act_hr_max_30m",
+      "act_hr_coverage_30m",
+      "act_hr_missing_30m",
+      "act_hr_mean_120m",
+      "act_hr_max_120m",
+      "act_hr_coverage_120m",
+      "act_hr_missing_120m",
+      "act_calories_mean_30m",
+      "act_calories_max_30m",
+      "act_calories_sum_observed_30m",
+      "act_calories_coverage_30m",
+      "act_calories_missing_30m",
+      "act_calories_mean_120m",
+      "act_calories_max_120m",
+      "act_calories_sum_observed_120m",
+      "act_calories_coverage_120m",
+      "act_calories_missing_120m",
+      "diet_logged_meal_count_30m",
+      "diet_no_logged_meal_30m",
+      "diet_logged_meal_calories_sum_30m",
+      "diet_logged_carbs_sum_30m",
+      "diet_logged_protein_sum_30m",
+      "diet_logged_fat_sum_30m",
+      "diet_logged_fiber_sum_30m",
+      "diet_logged_meal_count_120m",
+      "diet_no_logged_meal_120m",
+      "diet_logged_meal_calories_sum_120m",
+      "diet_logged_carbs_sum_120m",
+      "diet_logged_protein_sum_120m",
+      "diet_logged_fat_sum_120m",
+      "diet_logged_fiber_sum_120m",
+      "diet_minutes_since_last_logged_meal",
+      "diet_last_meal_carbs",
+      "diet_last_meal_calories",
+      "diet_last_meal_type_breakfast",
+      "diet_last_meal_type_dinner",
+      "diet_last_meal_type_lunch",
+      "diet_last_meal_type_snack",
+      "bio_age",
+      "bio_gender_m",
+      "bio_bmi",
+      "act_calories_max_15m",
+      "act_calories_max_60m",
+      "act_calories_mean_15m",
+      "act_calories_mean_60m",
+      "act_hr_max_15m",
+      "act_hr_max_60m",
+      "act_hr_mean_15m",
+      "act_hr_mean_60m",
+      "act_met_mean_110m_lag10",
+      "act_met_mean_30m_lag10",
+      "act_met_value_lag10",
+      "meal_any_logged_minutes_since",
+      "meal_breakfast_logged_calories",
+      "meal_breakfast_logged_carbs",
+      "meal_breakfast_logged_fat",
+      "meal_breakfast_logged_fiber",
+      "meal_breakfast_logged_minutes_since",
+      "meal_breakfast_logged_protein",
+      "meal_dinner_logged_calories",
+      "meal_dinner_logged_carbs",
+      "meal_dinner_logged_fat",
+      "meal_dinner_logged_fiber",
+      "meal_dinner_logged_minutes_since",
+      "meal_dinner_logged_protein",
+      "meal_lunch_logged_calories",
+      "meal_lunch_logged_carbs",
+      "meal_lunch_logged_fat",
+      "meal_lunch_logged_fiber",
+      "meal_lunch_logged_minutes_since",
+      "meal_lunch_logged_protein",
+      "meal_snack_logged_calories",
+      "meal_snack_logged_carbs",
+      "meal_snack_logged_fat",
+      "meal_snack_logged_fiber",
+      "meal_snack_logged_minutes_since",
+      "meal_snack_logged_protein",
+      "native_curv_1h",
+      "native_diff",
+      "native_last",
+      "native_missing",
+      "native_slope_1h"
+    ],
+    "openfe_columns_from_primitives": [
+      "act_calories_max_15m",
+      "act_calories_max_60m",
+      "act_calories_mean_15m",
+      "act_calories_mean_60m",
+      "act_hr_max_15m",
+      "act_hr_max_60m",
+      "act_hr_mean_15m",
+      "act_hr_mean_60m",
+      "act_met_mean_110m_lag10",
+      "act_met_mean_30m_lag10",
+      "act_met_value_lag10",
+      "meal_any_logged_minutes_since",
+      "meal_breakfast_logged_calories",
+      "meal_breakfast_logged_carbs",
+      "meal_breakfast_logged_fat",
+      "meal_breakfast_logged_fiber",
+      "meal_breakfast_logged_minutes_since",
+      "meal_breakfast_logged_protein",
+      "meal_dinner_logged_calories",
+      "meal_dinner_logged_carbs",
+      "meal_dinner_logged_fat",
+      "meal_dinner_logged_fiber",
+      "meal_dinner_logged_minutes_since",
+      "meal_dinner_logged_protein",
+      "meal_lunch_logged_calories",
+      "meal_lunch_logged_carbs",
+      "meal_lunch_logged_fat",
+      "meal_lunch_logged_fiber",
+      "meal_lunch_logged_minutes_since",
+      "meal_lunch_logged_protein",
+      "meal_snack_logged_calories",
+      "meal_snack_logged_carbs",
+      "meal_snack_logged_fat",
+      "meal_snack_logged_fiber",
+      "meal_snack_logged_minutes_since",
+      "meal_snack_logged_protein",
+      "native_curv_1h",
+      "native_diff",
+      "native_last",
+      "native_missing",
+      "native_slope_1h"
+    ],
+    "native_missing_indicator": "column native_missing (primitives) is added to a block when it contains a native-state factor",
+    "training_statistics": "median imputation and standardization are fitted on the training windows of each fit (src/residuals.ridge_path_predictions); the T recipes and the O formulas carry no fitted state"
+  },
+  "model": {
+    "base": "GlucoBench linear regression, in_len = 24, the fit stored in baseline_fits.joblib (fitted on the training windows of the protocol)",
+    "base_fit_key": "glucobench_linear_regression|<protocol>|in_len=24",
+    "residual_mode": "B",
+    "oof_specification": {
+      "rec_revision": "see rec_revisions[0]",
+      "protocol_A": {
+        "blocks": "5 equal-duration time blocks inside each subject's training period [start_time, protocol_a_train_end_time] (edges in block_edges)",
+        "cross_fitting": "non-forward: block b is predicted by a base fitted on the retained training windows of the other blocks; fits pooled over the protocol's training windows",
+        "support_rule": "a window belongs to a block only if its whole support [history_start_time, target_time] lies in it; the others are dropped (5,117 of 79,300 windows, 6.45%, accepted by the user); the dropped windows are in no fit and have no OOF residual",
+        "effect": "factor-block training rows, IC screening and OpenFE only (74,183 rows); the evaluation windows are unchanged",
+        "block_edges": {
+          "1": [
+            "2020-05-01 10:30:00",
+            "2020-05-02 15:57:28.800000",
+            "2020-05-03 21:24:57.600000",
+            "2020-05-05 02:52:26.400000",
+            "2020-05-06 08:19:55.200000",
+            "2020-05-07 13:47:24"
+          ],
+          "2": [
+            "2019-11-15 20:12:00",
+            "2019-11-17 06:14:52.800000",
+            "2019-11-18 16:17:45.600000",
+            "2019-11-20 02:20:38.400000",
+            "2019-11-21 12:23:31.200000",
+            "2019-11-22 22:26:24"
+          ],
+          "3": [
+            "2020-03-11 09:03:00",
+            "2020-03-12 14:12:28.800000",
+            "2020-03-13 19:21:57.600000",
+            "2020-03-15 00:31:26.400000",
+            "2020-03-16 05:40:55.200000",
+            "2020-03-17 10:50:24"
+          ],
+          "4": [
+            "2023-09-11 09:54:00",
+            "2023-09-12 14:26:52.800000",
+            "2023-09-13 18:59:45.600000",
+            "2023-09-14 23:32:38.400000",
+            "2023-09-16 04:05:31.200000",
+            "2023-09-17 08:38:24"
+          ],
+          "5": [
+            "2020-08-17 11:14:00",
+            "2020-08-18 16:09:04.800000",
+            "2020-08-19 21:04:09.600000",
+            "2020-08-21 01:59:14.400000",
+            "2020-08-22 06:54:19.200000",
+            "2020-08-23 11:49:24"
+          ],
+          "6": [
+            "2023-04-07 11:19:00",
+            "2023-04-08 16:14:04.800000",
+            "2023-04-09 21:09:09.600000",
+            "2023-04-11 02:04:14.400000",
+            "2023-04-12 06:59:19.200000",
+            "2023-04-13 11:54:24"
+          ],
+          "7": [
+            "2023-11-03 10:41:00",
+            "2023-11-04 07:30:04.800000",
+            "2023-11-05 04:19:09.600000",
+            "2023-11-06 01:08:14.400000",
+            "2023-11-06 21:57:19.200000",
+            "2023-11-07 18:46:24"
+          ],
+          "8": [
+            "2023-01-30 10:52:00",
+            "2023-01-31 16:23:04.800000",
+            "2023-02-01 21:54:09.600000",
+            "2023-02-03 03:25:14.400000",
+            "2023-02-04 08:56:19.200000",
+            "2023-02-05 14:27:24"
+          ],
+          "9": [
+            "2020-09-15 09:05:00",
+            "2020-09-16 13:49:16.800000",
+            "2020-09-17 18:33:33.600000",
+            "2020-09-18 23:17:50.400000",
+            "2020-09-20 04:02:07.200000",
+            "2020-09-21 08:46:24"
+          ],
+          "10": [
+            "2020-06-21 09:18:00",
+            "2020-06-22 17:36:28.800000",
+            "2020-06-24 01:54:57.600000",
+            "2020-06-25 10:13:26.400000",
+            "2020-06-26 18:31:55.200000",
+            "2020-06-28 02:50:24"
+          ],
+          "11": [
+            "2020-10-03 09:21:00",
+            "2020-10-04 14:57:28.800000",
+            "2020-10-05 20:33:57.600000",
+            "2020-10-07 02:10:26.400000",
+            "2020-10-08 07:46:55.200000",
+            "2020-10-09 13:23:24"
+          ],
+          "12": [
+            "2023-02-26 08:43:00",
+            "2023-02-27 14:03:16.800000",
+            "2023-02-28 19:23:33.600000",
+            "2023-03-02 00:43:50.400000",
+            "2023-03-03 06:04:07.200000",
+            "2023-03-04 11:24:24"
+          ],
+          "13": [
+            "2024-01-25 08:42:00",
+            "2024-01-26 16:22:40.800000",
+            "2024-01-28 00:03:21.600000",
+            "2024-01-29 07:44:02.400000",
+            "2024-01-30 15:24:43.200000",
+            "2024-01-31 23:05:24"
+          ],
+          "14": [
+            "2023-05-09 09:01:00",
+            "2023-05-10 19:30:52.800000",
+            "2023-05-12 06:00:45.600000",
+            "2023-05-13 16:30:38.400000",
+            "2023-05-15 03:00:31.200000",
+            "2023-05-16 13:30:24"
+          ],
+          "15": [
+            "2024-01-25 09:12:00",
+            "2024-01-26 19:40:04.800000",
+            "2024-01-28 06:08:09.600000",
+            "2024-01-29 16:36:14.400000",
+            "2024-01-31 03:04:19.200000",
+            "2024-02-01 13:32:24"
+          ],
+          "16": [
+            "2023-07-14 09:12:00",
+            "2023-07-15 17:46:40.800000",
+            "2023-07-17 02:21:21.600000",
+            "2023-07-18 10:56:02.400000",
+            "2023-07-19 19:30:43.200000",
+            "2023-07-21 04:05:24"
+          ],
+          "17": [
+            "2023-10-10 08:51:00",
+            "2023-10-11 17:13:04.800000",
+            "2023-10-13 01:35:09.600000",
+            "2023-10-14 09:57:14.400000",
+            "2023-10-15 18:19:19.200000",
+            "2023-10-17 02:41:24"
+          ],
+          "18": [
+            "2024-01-28 08:10:00",
+            "2024-01-30 15:19:43.200000",
+            "2024-02-01 22:29:26.400000",
+            "2024-02-04 05:39:09.600000",
+            "2024-02-06 12:48:52.800000",
+            "2024-02-08 19:58:36"
+          ],
+          "19": [
+            "2020-09-29 08:32:00",
+            "2020-09-30 13:25:16.800000",
+            "2020-10-01 18:18:33.600000",
+            "2020-10-02 23:11:50.400000",
+            "2020-10-04 04:05:07.200000",
+            "2020-10-05 08:58:24"
+          ],
+          "20": [
+            "2024-03-19 07:36:00",
+            "2024-03-20 16:07:04.800000",
+            "2024-03-22 00:38:09.600000",
+            "2024-03-23 09:09:14.400000",
+            "2024-03-24 17:40:19.200000",
+            "2024-03-26 02:11:24"
+          ],
+          "21": [
+            "2020-06-08 08:12:00",
+            "2020-06-09 16:26:52.800000",
+            "2020-06-11 00:41:45.600000",
+            "2020-06-12 08:56:38.400000",
+            "2020-06-13 17:11:31.200000",
+            "2020-06-15 01:26:24"
+          ],
+          "22": [
+            "2021-03-28 08:09:00",
+            "2021-03-29 19:23:52.800000",
+            "2021-03-31 06:38:45.600000",
+            "2021-04-01 17:53:38.400000",
+            "2021-04-03 05:08:31.200000",
+            "2021-04-04 16:23:24"
+          ],
+          "23": [
+            "2021-05-05 08:37:00",
+            "2021-05-06 16:59:04.800000",
+            "2021-05-08 01:21:09.600000",
+            "2021-05-09 09:43:14.400000",
+            "2021-05-10 18:05:19.200000",
+            "2021-05-12 02:27:24"
+          ],
+          "26": [
+            "2021-03-26 08:16:00",
+            "2021-03-27 16:54:16.800000",
+            "2021-03-29 01:32:33.600000",
+            "2021-03-30 10:10:50.400000",
+            "2021-03-31 18:49:07.200000",
+            "2021-04-02 03:27:24"
+          ],
+          "27": [
+            "2024-06-10 08:12:00",
+            "2024-06-11 13:16:04.800000",
+            "2024-06-12 18:20:09.600000",
+            "2024-06-13 23:24:14.400000",
+            "2024-06-15 04:28:19.200000",
+            "2024-06-16 09:32:24"
+          ],
+          "28": [
+            "2023-11-28 08:04:00",
+            "2023-11-29 21:32:04.800000",
+            "2023-12-01 11:00:09.600000",
+            "2023-12-03 00:28:14.400000",
+            "2023-12-04 13:56:19.200000",
+            "2023-12-06 03:24:24"
+          ],
+          "29": [
+            "2024-01-17 08:13:00",
+            "2024-01-18 19:40:28.800000",
+            "2024-01-20 07:07:57.600000",
+            "2024-01-21 18:35:26.400000",
+            "2024-01-23 06:02:55.200000",
+            "2024-01-24 17:30:24"
+          ],
+          "30": [
+            "2021-01-23 09:27:00",
+            "2021-01-24 16:22:40.800000",
+            "2021-01-25 23:18:21.600000",
+            "2021-01-27 06:14:02.400000",
+            "2021-01-28 13:09:43.200000",
+            "2021-01-29 20:05:24"
+          ],
+          "31": [
+            "2022-06-29 20:05:00",
+            "2022-06-30 23:31:52.800000",
+            "2022-07-02 02:58:45.600000",
+            "2022-07-03 06:25:38.400000",
+            "2022-07-04 09:52:31.200000",
+            "2022-07-05 13:19:24"
+          ],
+          "32": [
+            "2022-01-01 20:54:00",
+            "2022-01-03 00:28:04.800000",
+            "2022-01-04 04:02:09.600000",
+            "2022-01-05 07:36:14.400000",
+            "2022-01-06 11:10:19.200000",
+            "2022-01-07 14:44:24"
+          ],
+          "33": [
+            "2022-04-16 09:30:00",
+            "2022-04-17 17:12:28.800000",
+            "2022-04-19 00:54:57.600000",
+            "2022-04-20 08:37:26.400000",
+            "2022-04-21 16:19:55.200000",
+            "2022-04-23 00:02:24"
+          ],
+          "34": [
+            "2022-03-02 09:12:00",
+            "2022-03-03 14:35:52.800000",
+            "2022-03-04 19:59:45.600000",
+            "2022-03-06 01:23:38.400000",
+            "2022-03-07 06:47:31.200000",
+            "2022-03-08 12:11:24"
+          ],
+          "35": [
+            "2024-12-12 09:07:00",
+            "2024-12-13 13:54:52.800000",
+            "2024-12-14 18:42:45.600000",
+            "2024-12-15 23:30:38.400000",
+            "2024-12-17 04:18:31.200000",
+            "2024-12-18 09:06:24"
+          ],
+          "36": [
+            "2022-03-29 09:58:00",
+            "2022-03-30 20:11:40.800000",
+            "2022-04-01 06:25:21.600000",
+            "2022-04-02 16:39:02.400000",
+            "2022-04-04 02:52:43.200000",
+            "2022-04-05 13:06:24"
+          ],
+          "38": [
+            "2022-01-25 08:56:00",
+            "2022-01-26 13:56:28.800000",
+            "2022-01-27 18:56:57.600000",
+            "2022-01-28 23:57:26.400000",
+            "2022-01-30 04:57:55.200000",
+            "2022-01-31 09:58:24"
+          ],
+          "39": [
+            "2025-02-07 09:28:00",
+            "2025-02-08 19:52:28.800000",
+            "2025-02-10 06:16:57.600000",
+            "2025-02-11 16:41:26.400000",
+            "2025-02-13 03:05:55.200000",
+            "2025-02-14 13:30:24"
+          ],
+          "41": [
+            "2022-04-26 09:04:00",
+            "2022-04-27 13:41:04.800000",
+            "2022-04-28 18:18:09.600000",
+            "2022-04-29 22:55:14.400000",
+            "2022-05-01 03:32:19.200000",
+            "2022-05-02 08:09:24"
+          ],
+          "42": [
+            "2025-07-25 10:10:00",
+            "2025-07-26 15:12:16.800000",
+            "2025-07-27 20:14:33.600000",
+            "2025-07-29 01:16:50.400000",
+            "2025-07-30 06:19:07.200000",
+            "2025-07-31 11:21:24"
+          ],
+          "43": [
+            "2025-10-14 09:09:00",
+            "2025-10-15 14:13:04.800000",
+            "2025-10-16 19:17:09.600000",
+            "2025-10-18 00:21:14.400000",
+            "2025-10-19 05:25:19.200000",
+            "2025-10-20 10:29:24"
+          ],
+          "44": [
+            "2022-10-17 08:36:00",
+            "2022-10-18 13:40:04.800000",
+            "2022-10-19 18:44:09.600000",
+            "2022-10-20 23:48:14.400000",
+            "2022-10-22 04:52:19.200000",
+            "2022-10-23 09:56:24"
+          ],
+          "45": [
+            "2025-03-25 19:59:00",
+            "2025-03-27 03:07:16.800000",
+            "2025-03-28 10:15:33.600000",
+            "2025-03-29 17:23:50.400000",
+            "2025-03-31 00:32:07.200000",
+            "2025-04-01 07:40:24"
+          ],
+          "46": [
+            "2025-05-01 08:32:00",
+            "2025-05-02 13:54:04.800000",
+            "2025-05-03 19:16:09.600000",
+            "2025-05-05 00:38:14.400000",
+            "2025-05-06 06:00:19.200000",
+            "2025-05-07 11:22:24"
+          ],
+          "47": [
+            "2025-10-30 08:49:00",
+            "2025-10-31 16:11:40.800000",
+            "2025-11-01 23:34:21.600000",
+            "2025-11-03 06:57:02.400000",
+            "2025-11-04 14:19:43.200000",
+            "2025-11-05 21:42:24"
+          ],
+          "48": [
+            "2022-11-14 09:14:00",
+            "2022-11-15 19:56:28.800000",
+            "2022-11-17 06:38:57.600000",
+            "2022-11-18 17:21:26.400000",
+            "2022-11-20 04:03:55.200000",
+            "2022-11-21 14:46:24"
+          ],
+          "49": [
+            "2025-05-11 08:53:00",
+            "2025-05-12 15:30:40.800000",
+            "2025-05-13 22:08:21.600000",
+            "2025-05-15 04:46:02.400000",
+            "2025-05-16 11:23:43.200000",
+            "2025-05-17 18:01:24"
+          ]
+        }
+      },
+      "protocol_B": {
+        "folds": "GroupKFold(n_splits=5), deterministic, no shuffle, groups = the 27 training subjects; validation and test subjects take no part in any fold fit",
+        "fold_membership_subjects": {
+          "fold_0": [
+            4,
+            6,
+            28,
+            34,
+            45
+          ],
+          "fold_1": [
+            11,
+            29,
+            31,
+            35,
+            44,
+            47
+          ],
+          "fold_2": [
+            8,
+            21,
+            22,
+            42,
+            43
+          ],
+          "fold_3": [
+            10,
+            19,
+            38,
+            39,
+            49
+          ],
+          "fold_4": [
+            5,
+            17,
+            26,
+            27,
+            30,
+            32
+          ]
+        },
+        "membership_sha256": "94a490ecb5655d772adda93d77c99183b3344353d1d4c2bb07d1f45d7c888425",
+        "scikit_learn_version": "1.8.0",
+        "reproduction": "membership computed from the admitted training keys of fold_assignments (window counts per subject balance the folds); to be saved with the analysis base residuals"
+      },
+      "all_residuals": "every training window with a compliant OOF rule gets its OOF residual; validation and test rows use the base fitted on the full training split; scalers, imputers, standardizers and any other fitted preprocessing are fitted inside each fold's training part only",
+      "openfe_init_scores": {
+        "option": "separate_openfe_init_scores",
+        "protocol_A": {
+          "internal_split": "per subject the first 75% of the training period is internal-train (whole support before the 75% cut) and the rest internal-validation (whole support after the cut); windows crossing the cut are dropped from both (REC 4.1 internal validation = last 25%)",
+          "internal_train_init_scores": "OOF inside the internal-train period: 5 equal-duration blocks of that period, non-forward, crossing windows dropped",
+          "internal_validation_init_scores": "base fitted on all internal-train windows only"
+        },
+        "protocol_B": {
+          "internal_split": "18 internal-train / 9 internal-validation subjects among the 27 training subjects (REC 3.6 example); membership: internal_membership",
+          "internal_train_init_scores": "GroupKFold(5) OOF inside the 18 subjects, deterministic",
+          "internal_validation_init_scores": "base fitted on the 18 internal-train subjects only",
+          "internal_membership": {
+            "rule": "the 27 Protocol-B training subject ids are sorted; permutation = numpy.random.default_rng(42).permutation(sorted ids); the first 18 are internal-train, the last 9 internal-validation; Protocol-B validation and test subjects are never used",
+            "generator": "numpy.random.default_rng (PCG64)",
+            "seed": 42,
+            "numpy_version": "2.4.2",
+            "sorted_training_subjects": [
+              4,
+              5,
+              6,
+              8,
+              10,
+              11,
+              17,
+              19,
+              21,
+              22,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              34,
+              35,
+              38,
+              39,
+              42,
+              43,
+              44,
+              45,
+              47,
+              49
+            ],
+            "permutation": [
+              19,
+              38,
+              43,
+              42,
+              34,
+              11,
+              31,
+              49,
+              35,
+              26,
+              22,
+              17,
+              32,
+              8,
+              4,
+              44,
+              39,
+              28,
+              27,
+              30,
+              47,
+              6,
+              10,
+              45,
+              5,
+              29,
+              21
+            ],
+            "internal_train_subjects": [
+              19,
+              38,
+              43,
+              42,
+              34,
+              11,
+              31,
+              49,
+              35,
+              26,
+              22,
+              17,
+              32,
+              8,
+              4,
+              44,
+              39,
+              28
+            ],
+            "internal_validation_subjects": [
+              27,
+              30,
+              47,
+              6,
+              10,
+              45,
+              5,
+              29,
+              21
+            ]
+          }
+        },
+        "rule": "no internal-validation label, lag, residual or fold fit reaches the internal-train data through the base, the residual target, the init_scores, the preprocessing parameters or the folds; the final O_k factor block is trained on the main OOF residuals",
+        "consequence": "A: 5,157 of the 58,895 internal-train windows (8.8%) have no init_score because of the block edges, in addition to 1,290 windows crossing the 75% cut"
+      }
+    },
+    "factor_block": "ridge on the out-of-fold residual added to the base prediction",
+    "ridge_alpha_grid": "logspace(-3, 3, 13)",
+    "alpha_rule": "alpha of every configuration is the value selected on the validation windows in Phases 5-9 and is frozen; it is not re-selected on the evaluation split",
+    "fit_rows": "training windows of the core cohort with an out-of-fold residual",
+    "full_cohort_supplementary": "same configurations and alphas refitted on all admitted training windows with a residual and evaluated on all evaluation windows (implementation decision of analysis; no earlier validation result exists); the full cohort is supplementary: the same frozen configurations and alphas, reported separately, and it never enters the Holm family (the family uses the core cohort only)",
+    "fit_scope": "every model of the locked evaluation (the main configurations, E8 and E9) is fitted on the TRAIN windows of its own protocol only; the VALIDATION windows are not merged into any fit, scaler, imputer or penalty selection; the penalties stay the frozen validation-selected values; the test split is used for evaluation only"
+  },
+  "e8": {
+    "anchor_rule": {
+      "name": "inferred native-reading anchors (statistical inference from the second difference; the raw CSV and the data dictionary carry no native-reading flag)",
+      "function": "src/factor_construction.py::native_libre_anchors",
+      "parameters": {
+        "period": 15,
+        "kink_tolerance": 1e-06,
+        "min_kinks": 4,
+        "support_kinks": 8,
+        "min_phase_share": 0.9,
+        "max_stale_minutes": 60,
+        "n_anchors": 8
+      },
+      "parameter_status": "formally retained by the user (min_kinks, support_kinks, min_phase_share, max_stale_minutes); n_anchors 8 for the native-state family, 9 for the E8-a rebuild",
+      "levels": {
+        "confirmed": "reliable phase grid and the kink at the second-newest anchor is present",
+        "grid": "reliable phase grid and that kink is absent (collinear neighbors; a reading missing from the schedule is indistinguishable)",
+        "uncertain": "fewer than min_kinks supporting kinks, phase not consistent, newest supporting kink older than max_stale_minutes, or fewer than two anchors"
+      },
+      "causal_rule": "prefix_causal only: the phase at t uses kinks at or before t - 15 minutes (a kink reads the following minute, which already points at the next reading); the features at t use only values on anchors at or before t",
+      "model_facing_fields": {
+        "anchor_fields": [
+          "phase",
+          "phase_reliable",
+          "last_anchor_index",
+          "anchor_age",
+          "anchor_value_0..7",
+          "level"
+        ],
+        "missing_indicator": "anchor_missing = level is uncertain, or fewer than the 5 anchors an operator needs are available",
+        "derived_features": "every native-state feature is a function of the anchor fields only, computed with row-independent arithmetic (a batched matrix product changed the last bits between a full run and a truncated run in the analysis closing check) and set to NaN where anchor_missing",
+        "gate": "analysis repeats the truncation and perturbation tests on the final model-facing columns before any use"
+      },
+      "conservative_rule_draft": [
+        "only anchors on a reliable phase grid are used",
+        "native-reading features of `uncertain` windows are NaN plus a missing indicator, never interpolated values (method specification)",
+        "E8 pairs windows with reliable anchors only and reports the excluded share",
+        "anchors are always called inferred native-reading anchors"
+      ],
+      "phase_mode": "prefix_causal (method specification)",
+      "wording": "the anchors are inferred native-reading anchors, never described as directly observed native readings"
+    },
+    "n_anchors_for_lag_rebuild": 9,
+    "lag_rule": "the lag at t + o is the newest anchor at or before t + o (last reading held)",
+    "reliable_window": "level not uncertain and all anchors the oldest lag needs present",
+    "fit": "the anchor-causal base is fitted on the reliable training windows only; the evaluation windows are the reliable core windows of the evaluation split; the original base is evaluated on the same windows",
+    "factors": "M, T_k and O_k are frozen and not re-selected"
+  },
+  "e9": {
+    "versions": {
+      "logged": "meal events at their logged time",
+      "delay_free": "dinner and snack events available 30 minutes after their log time",
+      "delay_all": "all meal events available 30 minutes after their log time"
+    },
+    "models": [
+      "base + M",
+      "base + T"
+    ],
+    "alpha": "frozen per (protocol, version, model) from e9_validation.csv"
+  },
+  "configs": {
+    "A": {
+      "base": {
+        "columns": [],
+        "alpha": null,
+        "alpha_sources": [
+          "e2_validation.csv",
+          "e2_validation.csv",
+          "e2_O_validation.csv",
+          "e2_O_validation.csv",
+          "e2_O_validation.csv"
+        ]
+      },
+      "base + M": {
+        "columns": [
+          "<M>"
+        ],
+        "alpha": 1000.0,
+        "alpha_sources": [
+          "e2_validation.csv",
+          "e2_validation.csv",
+          "e2_O_validation.csv",
+          "e2_O_validation.csv",
+          "e2_O_validation.csv"
+        ]
+      },
+      "base + T": {
+        "columns": [
+          "actstat_calories_mean_15m",
+          "int_snack_carbs_x_native_slope_1h",
+          "int_lunch_carbs_x_bmi",
+          "actstat_hr_mean_120m",
+          "actstat_hr_max_15m",
+          "int_breakfast_carbs_x_native_slope_1h",
+          "native_missing"
+        ],
+        "alpha": 0.001,
+        "alpha_sources": [
+          "e2_validation.csv",
+          "e2_validation.csv",
+          "e2_O_validation.csv",
+          "e2_O_validation.csv",
+          "e5_validation.csv",
+          "e5_validation.csv"
+        ]
+      },
+      "base + O": {
+        "columns": [
+          "O_A_0011",
+          "O_A_0018",
+          "O_A_0007",
+          "O_A_0021",
+          "O_A_0019",
+          "O_A_0008",
+          "O_A_0025",
+          "native_missing"
+        ],
+        "alpha": 0.001,
+        "alpha_sources": [
+          "e2_O_validation.csv",
+          "e2_O_validation.csv"
+        ]
+      },
+      "base + M + T": {
+        "columns": [
+          "<M>",
+          "actstat_calories_mean_15m",
+          "int_snack_carbs_x_native_slope_1h",
+          "int_lunch_carbs_x_bmi",
+          "actstat_hr_mean_120m",
+          "actstat_hr_max_15m",
+          "int_breakfast_carbs_x_native_slope_1h",
+          "native_missing"
+        ],
+        "alpha": 1000.0,
+        "alpha_sources": [
+          "e2_validation.csv",
+          "e2_validation.csv",
+          "e2_O_validation.csv",
+          "e2_O_validation.csv"
+        ]
+      },
+      "base + M + O": {
+        "columns": [
+          "<M>",
+          "O_A_0011",
+          "O_A_0018",
+          "O_A_0007",
+          "O_A_0021",
+          "O_A_0019",
+          "O_A_0008",
+          "O_A_0025",
+          "native_missing"
+        ],
+        "alpha": 1000.0,
+        "alpha_sources": [
+          "e2_O_validation.csv",
+          "e2_O_validation.csv"
+        ]
+      },
+      "E1:G": {
+        "columns": [
+          "<groups G>"
+        ],
+        "alpha": null,
+        "alpha_sources": [
+          "e1_validation.csv",
+          "e1_validation.csv",
+          "e1_validation.csv"
+        ],
+        "groups": "G"
+      },
+      "E1:G+A": {
+        "columns": [
+          "<groups G+A>"
+        ],
+        "alpha": 1000.0,
+        "alpha_sources": [
+          "e1_validation.csv",
+          "e1_validation.csv"
+        ],
+        "groups": "G+A"
+      },
+      "E1:G+A+B": {
+        "columns": [
+          "<groups G+A+B>"
+        ],
+        "alpha": 1000.0,
+        "alpha_sources": [
+          "e1_validation.csv"
+        ],
+        "groups": "G+A+B"
+      },
+      "E1:G+A+D": {
+        "columns": [
+          "<groups G+A+D>"
+        ],
+        "alpha": 1000.0,
+        "alpha_sources": [
+          "e1_validation.csv",
+          "e1_validation.csv"
+        ],
+        "groups": "G+A+D"
+      },
+      "E1:G+A+D+B": {
+        "columns": [
+          "<groups G+A+D+B>"
+        ],
+        "alpha": 1000.0,
+        "alpha_sources": [
+          "e1_validation.csv",
+          "e1_validation.csv",
+          "e1_validation.csv"
+        ],
+        "groups": "G+A+D+B"
+      },
+      "E1:G+B": {
+        "columns": [
+          "<groups G+B>"
+        ],
+        "alpha": 1000.0,
+        "alpha_sources": [
+          "e1_validation.csv"
+        ],
+        "groups": "G+B"
+      },
+      "E1:G+D": {
+        "columns": [
+          "<groups G+D>"
+        ],
+        "alpha": 1000.0,
+        "alpha_sources": [
+          "e1_validation.csv"
+        ],
+        "groups": "G+D"
+      },
+      "E1:G+D+B": {
+        "columns": [
+          "<groups G+D+B>"
+        ],
+        "alpha": 1000.0,
+        "alpha_sources": [
+          "e1_validation.csv"
+        ],
+        "groups": "G+D+B"
+      },
+      "base + T minus activity_kernels": {
+        "columns": [
+          "int_snack_carbs_x_native_slope_1h",
+          "int_lunch_carbs_x_bmi",
+          "int_breakfast_carbs_x_native_slope_1h",
+          "native_missing"
+        ],
+        "alpha": 1000.0,
+        "alpha_sources": [
+          "e5_validation.csv"
+        ],
+        "removed_family": "activity_kernels",
+        "removed": [
+          "actstat_calories_mean_15m",
+          "actstat_hr_mean_120m",
+          "actstat_hr_max_15m"
+        ]
+      },
+      "base + T minus meal_x_baseline_state": {
+        "columns": [
+          "actstat_calories_mean_15m",
+          "actstat_hr_mean_120m",
+          "actstat_hr_max_15m"
+        ],
+        "alpha": 0.001,
+        "alpha_sources": [
+          "e5_validation.csv"
+        ],
+        "removed_family": "meal_x_baseline_state",
+        "removed": [
+          "int_snack_carbs_x_native_slope_1h",
+          "int_lunch_carbs_x_bmi",
+          "int_breakfast_carbs_x_native_slope_1h"
+        ]
+      },
+      "base + M@logged": {
+        "columns": [
+          "<M>"
+        ],
+        "alpha": 1000.0,
+        "alpha_sources": [
+          "e9_validation.csv"
+        ],
+        "meal_version": "logged"
+      },
+      "base + T@logged": {
+        "columns": [
+          "actstat_calories_mean_15m",
+          "int_snack_carbs_x_native_slope_1h",
+          "int_lunch_carbs_x_bmi",
+          "actstat_hr_mean_120m",
+          "actstat_hr_max_15m",
+          "int_breakfast_carbs_x_native_slope_1h",
+          "native_missing"
+        ],
+        "alpha": 0.001,
+        "alpha_sources": [
+          "e9_validation.csv"
+        ],
+        "meal_version": "logged"
+      },
+      "base + M@delay_free": {
+        "columns": [
+          "<M>"
+        ],
+        "alpha": 0.01,
+        "alpha_sources": [
+          "e9_validation.csv"
+        ],
+        "meal_version": "delay_free"
+      },
+      "base + T@delay_free": {
+        "columns": [
+          "actstat_calories_mean_15m",
+          "int_snack_carbs_x_native_slope_1h",
+          "int_lunch_carbs_x_bmi",
+          "actstat_hr_mean_120m",
+          "actstat_hr_max_15m",
+          "int_breakfast_carbs_x_native_slope_1h",
+          "native_missing"
+        ],
+        "alpha": 0.001,
+        "alpha_sources": [
+          "e9_validation.csv"
+        ],
+        "meal_version": "delay_free"
+      },
+      "base + M@delay_all": {
+        "columns": [
+          "<M>"
+        ],
+        "alpha": 1000.0,
+        "alpha_sources": [
+          "e9_validation.csv"
+        ],
+        "meal_version": "delay_all"
+      },
+      "base + T@delay_all": {
+        "columns": [
+          "actstat_calories_mean_15m",
+          "int_snack_carbs_x_native_slope_1h",
+          "int_lunch_carbs_x_bmi",
+          "actstat_hr_mean_120m",
+          "actstat_hr_max_15m",
+          "int_breakfast_carbs_x_native_slope_1h",
+          "native_missing"
+        ],
+        "alpha": 0.001,
+        "alpha_sources": [
+          "e9_validation.csv"
+        ],
+        "meal_version": "delay_all"
+      },
+      "original base, reliable windows": {
+        "columns": [],
+        "alpha": null,
+        "alpha_sources": [
+          "e2_validation.csv",
+          "e2_validation.csv",
+          "e2_O_validation.csv",
+          "e2_O_validation.csv",
+          "e2_O_validation.csv"
+        ],
+        "lags": "original",
+        "windows": "core_and_anchor_reliable"
+      },
+      "anchor-causal base": {
+        "columns": [],
+        "alpha": null,
+        "alpha_sources": [
+          "e2_validation.csv",
+          "e2_validation.csv",
+          "e2_O_validation.csv",
+          "e2_O_validation.csv",
+          "e2_O_validation.csv"
+        ],
+        "lags": "anchor_causal",
+        "windows": "core_and_anchor_reliable"
+      },
+      "anchor-causal base + M": {
+        "columns": [
+          "<M>"
+        ],
+        "alpha": 1000.0,
+        "alpha_sources": [
+          "e8_validation.csv"
+        ],
+        "lags": "anchor_causal",
+        "windows": "core_and_anchor_reliable"
+      },
+      "anchor-causal base + T": {
+        "columns": [
+          "actstat_calories_mean_15m",
+          "int_snack_carbs_x_native_slope_1h",
+          "int_lunch_carbs_x_bmi",
+          "actstat_hr_mean_120m",
+          "actstat_hr_max_15m",
+          "int_breakfast_carbs_x_native_slope_1h",
+          "native_missing"
+        ],
+        "alpha": 0.001,
+        "alpha_sources": [
+          "e8_validation.csv"
+        ],
+        "lags": "anchor_causal",
+        "windows": "core_and_anchor_reliable"
+      },
+      "anchor-causal base + O": {
+        "columns": [
+          "O_A_0011",
+          "O_A_0018",
+          "O_A_0007",
+          "O_A_0021",
+          "O_A_0019",
+          "O_A_0008",
+          "O_A_0025",
+          "native_missing"
+        ],
+        "alpha": 0.001,
+        "alpha_sources": [
+          "e8_validation.csv"
+        ],
+        "lags": "anchor_causal",
+        "windows": "core_and_anchor_reliable"
+      }
+    },
+    "B": {
+      "base": {
+        "columns": [],
+        "alpha": null,
+        "alpha_sources": [
+          "e2_validation.csv",
+          "e2_validation.csv",
+          "e2_O_validation.csv",
+          "e2_O_validation.csv",
+          "e2_O_validation.csv"
+        ]
+      },
+      "base + M": {
+        "columns": [
+          "<M>"
+        ],
+        "alpha": 1000.0,
+        "alpha_sources": [
+          "e2_validation.csv",
+          "e2_validation.csv",
+          "e2_O_validation.csv",
+          "e2_O_validation.csv",
+          "e2_O_validation.csv"
+        ]
+      },
+      "base + T": {
+        "columns": [
+          "actstat_hr_max_15m",
+          "abs_lunch_carbs_t20_k2",
+          "int_snack_carbs_x_native_slope_1h",
+          "ratio_last_meal_carb_share",
+          "ratio_kernel_protein_x_carbs",
+          "int_dinner_carbs_x_native_slope_1h",
+          "abs_dinner_fiber_t20_k3",
+          "native_missing"
+        ],
+        "alpha": 0.001,
+        "alpha_sources": [
+          "e2_validation.csv",
+          "e2_validation.csv",
+          "e2_O_validation.csv",
+          "e2_O_validation.csv",
+          "e5_validation.csv",
+          "e5_validation.csv",
+          "e5_validation.csv",
+          "e5_validation.csv"
+        ]
+      },
+      "base + O": {
+        "columns": [
+          "O_B_0003",
+          "O_B_0018",
+          "O_B_0017",
+          "O_B_0005",
+          "native_missing"
+        ],
+        "alpha": 0.001,
+        "alpha_sources": [
+          "e2_O_validation.csv",
+          "e2_O_validation.csv"
+        ]
+      },
+      "base + M + T": {
+        "columns": [
+          "<M>",
+          "actstat_hr_max_15m",
+          "abs_lunch_carbs_t20_k2",
+          "int_snack_carbs_x_native_slope_1h",
+          "ratio_last_meal_carb_share",
+          "ratio_kernel_protein_x_carbs",
+          "int_dinner_carbs_x_native_slope_1h",
+          "abs_dinner_fiber_t20_k3",
+          "native_missing"
+        ],
+        "alpha": 1000.0,
+        "alpha_sources": [
+          "e2_validation.csv",
+          "e2_validation.csv",
+          "e2_O_validation.csv",
+          "e2_O_validation.csv"
+        ]
+      },
+      "base + M + O": {
+        "columns": [
+          "<M>",
+          "O_B_0003",
+          "O_B_0018",
+          "O_B_0017",
+          "O_B_0005",
+          "native_missing"
+        ],
+        "alpha": 1.0,
+        "alpha_sources": [
+          "e2_O_validation.csv",
+          "e2_O_validation.csv"
+        ]
+      },
+      "E1:G": {
+        "columns": [
+          "<groups G>"
+        ],
+        "alpha": null,
+        "alpha_sources": [
+          "e1_validation.csv",
+          "e1_validation.csv",
+          "e1_validation.csv"
+        ],
+        "groups": "G"
+      },
+      "E1:G+A": {
+        "columns": [
+          "<groups G+A>"
+        ],
+        "alpha": 1000.0,
+        "alpha_sources": [
+          "e1_validation.csv",
+          "e1_validation.csv"
+        ],
+        "groups": "G+A"
+      },
+      "E1:G+A+B": {
+        "columns": [
+          "<groups G+A+B>"
+        ],
+        "alpha": 1000.0,
+        "alpha_sources": [
+          "e1_validation.csv"
+        ],
+        "groups": "G+A+B"
+      },
+      "E1:G+A+D": {
+        "columns": [
+          "<groups G+A+D>"
+        ],
+        "alpha": 1000.0,
+        "alpha_sources": [
+          "e1_validation.csv",
+          "e1_validation.csv"
+        ],
+        "groups": "G+A+D"
+      },
+      "E1:G+A+D+B": {
+        "columns": [
+          "<groups G+A+D+B>"
+        ],
+        "alpha": 1000.0,
+        "alpha_sources": [
+          "e1_validation.csv",
+          "e1_validation.csv",
+          "e1_validation.csv"
+        ],
+        "groups": "G+A+D+B"
+      },
+      "E1:G+B": {
+        "columns": [
+          "<groups G+B>"
+        ],
+        "alpha": 1000.0,
+        "alpha_sources": [
+          "e1_validation.csv"
+        ],
+        "groups": "G+B"
+      },
+      "E1:G+D": {
+        "columns": [
+          "<groups G+D>"
+        ],
+        "alpha": 0.001,
+        "alpha_sources": [
+          "e1_validation.csv"
+        ],
+        "groups": "G+D"
+      },
+      "E1:G+D+B": {
+        "columns": [
+          "<groups G+D+B>"
+        ],
+        "alpha": 100.0,
+        "alpha_sources": [
+          "e1_validation.csv"
+        ],
+        "groups": "G+D+B"
+      },
+      "base + T minus meal_absorption": {
+        "columns": [
+          "actstat_hr_max_15m",
+          "int_snack_carbs_x_native_slope_1h",
+          "ratio_last_meal_carb_share",
+          "ratio_kernel_protein_x_carbs",
+          "int_dinner_carbs_x_native_slope_1h",
+          "native_missing"
+        ],
+        "alpha": 0.001,
+        "alpha_sources": [
+          "e5_validation.csv"
+        ],
+        "removed_family": "meal_absorption",
+        "removed": [
+          "abs_lunch_carbs_t20_k2",
+          "abs_dinner_fiber_t20_k3"
+        ]
+      },
+      "base + T minus nutrient_ratios": {
+        "columns": [
+          "actstat_hr_max_15m",
+          "abs_lunch_carbs_t20_k2",
+          "int_snack_carbs_x_native_slope_1h",
+          "int_dinner_carbs_x_native_slope_1h",
+          "abs_dinner_fiber_t20_k3",
+          "native_missing"
+        ],
+        "alpha": 0.001,
+        "alpha_sources": [
+          "e5_validation.csv"
+        ],
+        "removed_family": "nutrient_ratios",
+        "removed": [
+          "ratio_last_meal_carb_share",
+          "ratio_kernel_protein_x_carbs"
+        ]
+      },
+      "base + T minus activity_kernels": {
+        "columns": [
+          "abs_lunch_carbs_t20_k2",
+          "int_snack_carbs_x_native_slope_1h",
+          "ratio_last_meal_carb_share",
+          "ratio_kernel_protein_x_carbs",
+          "int_dinner_carbs_x_native_slope_1h",
+          "abs_dinner_fiber_t20_k3",
+          "native_missing"
+        ],
+        "alpha": 0.001,
+        "alpha_sources": [
+          "e5_validation.csv"
+        ],
+        "removed_family": "activity_kernels",
+        "removed": [
+          "actstat_hr_max_15m"
+        ]
+      },
+      "base + T minus meal_x_baseline_state": {
+        "columns": [
+          "actstat_hr_max_15m",
+          "abs_lunch_carbs_t20_k2",
+          "ratio_last_meal_carb_share",
+          "ratio_kernel_protein_x_carbs",
+          "abs_dinner_fiber_t20_k3"
+        ],
+        "alpha": 0.001,
+        "alpha_sources": [
+          "e5_validation.csv"
+        ],
+        "removed_family": "meal_x_baseline_state",
+        "removed": [
+          "int_snack_carbs_x_native_slope_1h",
+          "int_dinner_carbs_x_native_slope_1h"
+        ]
+      },
+      "base + M@logged": {
+        "columns": [
+          "<M>"
+        ],
+        "alpha": 1000.0,
+        "alpha_sources": [
+          "e9_validation.csv"
+        ],
+        "meal_version": "logged"
+      },
+      "base + T@logged": {
+        "columns": [
+          "actstat_hr_max_15m",
+          "abs_lunch_carbs_t20_k2",
+          "int_snack_carbs_x_native_slope_1h",
+          "ratio_last_meal_carb_share",
+          "ratio_kernel_protein_x_carbs",
+          "int_dinner_carbs_x_native_slope_1h",
+          "abs_dinner_fiber_t20_k3",
+          "native_missing"
+        ],
+        "alpha": 0.001,
+        "alpha_sources": [
+          "e9_validation.csv"
+        ],
+        "meal_version": "logged"
+      },
+      "base + M@delay_free": {
+        "columns": [
+          "<M>"
+        ],
+        "alpha": 1000.0,
+        "alpha_sources": [
+          "e9_validation.csv"
+        ],
+        "meal_version": "delay_free"
+      },
+      "base + T@delay_free": {
+        "columns": [
+          "actstat_hr_max_15m",
+          "abs_lunch_carbs_t20_k2",
+          "int_snack_carbs_x_native_slope_1h",
+          "ratio_last_meal_carb_share",
+          "ratio_kernel_protein_x_carbs",
+          "int_dinner_carbs_x_native_slope_1h",
+          "abs_dinner_fiber_t20_k3",
+          "native_missing"
+        ],
+        "alpha": 1000.0,
+        "alpha_sources": [
+          "e9_validation.csv"
+        ],
+        "meal_version": "delay_free"
+      },
+      "base + M@delay_all": {
+        "columns": [
+          "<M>"
+        ],
+        "alpha": 1000.0,
+        "alpha_sources": [
+          "e9_validation.csv"
+        ],
+        "meal_version": "delay_all"
+      },
+      "base + T@delay_all": {
+        "columns": [
+          "actstat_hr_max_15m",
+          "abs_lunch_carbs_t20_k2",
+          "int_snack_carbs_x_native_slope_1h",
+          "ratio_last_meal_carb_share",
+          "ratio_kernel_protein_x_carbs",
+          "int_dinner_carbs_x_native_slope_1h",
+          "abs_dinner_fiber_t20_k3",
+          "native_missing"
+        ],
+        "alpha": 1000.0,
+        "alpha_sources": [
+          "e9_validation.csv"
+        ],
+        "meal_version": "delay_all"
+      },
+      "original base, reliable windows": {
+        "columns": [],
+        "alpha": null,
+        "alpha_sources": [
+          "e2_validation.csv",
+          "e2_validation.csv",
+          "e2_O_validation.csv",
+          "e2_O_validation.csv",
+          "e2_O_validation.csv"
+        ],
+        "lags": "original",
+        "windows": "core_and_anchor_reliable"
+      },
+      "anchor-causal base": {
+        "columns": [],
+        "alpha": null,
+        "alpha_sources": [
+          "e2_validation.csv",
+          "e2_validation.csv",
+          "e2_O_validation.csv",
+          "e2_O_validation.csv",
+          "e2_O_validation.csv"
+        ],
+        "lags": "anchor_causal",
+        "windows": "core_and_anchor_reliable"
+      },
+      "anchor-causal base + M": {
+        "columns": [
+          "<M>"
+        ],
+        "alpha": 316.227766016838,
+        "alpha_sources": [
+          "e8_validation.csv"
+        ],
+        "lags": "anchor_causal",
+        "windows": "core_and_anchor_reliable"
+      },
+      "anchor-causal base + T": {
+        "columns": [
+          "actstat_hr_max_15m",
+          "abs_lunch_carbs_t20_k2",
+          "int_snack_carbs_x_native_slope_1h",
+          "ratio_last_meal_carb_share",
+          "ratio_kernel_protein_x_carbs",
+          "int_dinner_carbs_x_native_slope_1h",
+          "abs_dinner_fiber_t20_k3",
+          "native_missing"
+        ],
+        "alpha": 0.001,
+        "alpha_sources": [
+          "e8_validation.csv"
+        ],
+        "lags": "anchor_causal",
+        "windows": "core_and_anchor_reliable"
+      },
+      "anchor-causal base + O": {
+        "columns": [
+          "O_B_0003",
+          "O_B_0018",
+          "O_B_0017",
+          "O_B_0005",
+          "native_missing"
+        ],
+        "alpha": 0.001,
+        "alpha_sources": [
+          "e8_validation.csv"
+        ],
+        "lags": "anchor_causal",
+        "windows": "core_and_anchor_reliable"
+      }
+    }
+  },
+  "comparisons": [
+    {
+      "id": "A:P1",
+      "protocol_tag": "A",
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "family": "primary",
+      "role": "confirmatory (Holm family of 4)",
+      "from_config": "base",
+      "to_config": "base + M",
+      "purpose": "RQ1: the existing features on the strong base",
+      "validation_reference": {
+        "artifact": "e2_O_validation.csv",
+        "from_config": "base",
+        "to_config": "base + M"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "A:P2",
+      "protocol_tag": "A",
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "family": "primary",
+      "role": "confirmatory (Holm family of 4)",
+      "from_config": "base",
+      "to_config": "base + T",
+      "purpose": "RQ1/RQ3: constructed factors T_k",
+      "validation_reference": {
+        "artifact": "e2_O_validation.csv",
+        "from_config": "base",
+        "to_config": "base + T"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "A:P3",
+      "protocol_tag": "A",
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "family": "primary",
+      "role": "confirmatory (Holm family of 4)",
+      "from_config": "base + M",
+      "to_config": "base + M + T",
+      "purpose": "RQ1: T_k on top of M",
+      "validation_reference": {
+        "artifact": "e2_O_validation.csv",
+        "from_config": "base + M",
+        "to_config": "base + M + T"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "A:P4",
+      "protocol_tag": "A",
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "family": "primary",
+      "role": "confirmatory (Holm family of 4)",
+      "from_config": "base",
+      "to_config": "base + O",
+      "purpose": "RQ3: OpenFE factors O_k",
+      "validation_reference": {
+        "artifact": "e2_O_validation.csv",
+        "from_config": "base",
+        "to_config": "base + O"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "A:S1",
+      "protocol_tag": "A",
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "family": "secondary E2",
+      "role": "pre-specified secondary (descriptive)",
+      "from_config": "base",
+      "to_config": "base + M + T",
+      "purpose": "combination M + T against the base",
+      "validation_reference": {
+        "artifact": "e2_validation.csv",
+        "derived": "rmse_to(base + M + T) - rmse_from(base)",
+        "from_config": "base + M",
+        "to_config": "base + M + T"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "A:S2",
+      "protocol_tag": "A",
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "family": "secondary E2",
+      "role": "pre-specified secondary (descriptive)",
+      "from_config": "base",
+      "to_config": "base + M + O",
+      "purpose": "combination M + O against the base",
+      "validation_reference": {
+        "artifact": "e2_O_validation.csv",
+        "derived": "rmse_to(base + M + O) - rmse_from(base)",
+        "from_config": "base + M",
+        "to_config": "base + M + O"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "A:S3",
+      "protocol_tag": "A",
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "family": "secondary E2",
+      "role": "secondary, descriptive; not a Holm primary",
+      "from_config": "base + T",
+      "to_config": "base + O",
+      "purpose": "H3: direct comparison of the constructor with OpenFE",
+      "validation_reference": {
+        "artifact": "e2_O_validation.csv",
+        "from_config": "base + T",
+        "to_config": "base + O"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "A:E1-1",
+      "protocol_tag": "A",
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "family": "E1",
+      "role": "pre-specified secondary (descriptive)",
+      "from_config": "E1:G",
+      "to_config": "E1:G+A",
+      "purpose": "E1 G->G+A: group A",
+      "validation_reference": {
+        "artifact": "e1_validation.csv",
+        "contrast_id": "G->G+A",
+        "cohort": "cohort_core"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "A:E1-2",
+      "protocol_tag": "A",
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "family": "E1",
+      "role": "pre-specified secondary (descriptive)",
+      "from_config": "E1:G+A",
+      "to_config": "E1:G+A+D",
+      "purpose": "E1 G+A->G+A+D: group D",
+      "validation_reference": {
+        "artifact": "e1_validation.csv",
+        "contrast_id": "G+A->G+A+D",
+        "cohort": "cohort_core"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "A:E1-3",
+      "protocol_tag": "A",
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "family": "E1",
+      "role": "pre-specified secondary (descriptive)",
+      "from_config": "E1:G+A+D",
+      "to_config": "E1:G+A+D+B",
+      "purpose": "E1 G+A+D->G+A+D+B: group B",
+      "validation_reference": {
+        "artifact": "e1_validation.csv",
+        "contrast_id": "G+A+D->G+A+D+B",
+        "cohort": "cohort_core"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "A:E1-4",
+      "protocol_tag": "A",
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "family": "E1",
+      "role": "pre-specified secondary (descriptive)",
+      "from_config": "E1:G",
+      "to_config": "E1:G+D",
+      "purpose": "E1 G->G+D: group D",
+      "validation_reference": {
+        "artifact": "e1_validation.csv",
+        "contrast_id": "G->G+D",
+        "cohort": "cohort_core"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "A:E1-5",
+      "protocol_tag": "A",
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "family": "E1",
+      "role": "pre-specified secondary (descriptive)",
+      "from_config": "E1:G",
+      "to_config": "E1:G+B",
+      "purpose": "E1 G->G+B: group B",
+      "validation_reference": {
+        "artifact": "e1_validation.csv",
+        "contrast_id": "G->G+B",
+        "cohort": "cohort_core"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "A:E1-6",
+      "protocol_tag": "A",
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "family": "E1",
+      "role": "pre-specified secondary (descriptive)",
+      "from_config": "E1:G+D+B",
+      "to_config": "E1:G+A+D+B",
+      "purpose": "E1 G+D+B->G+A+D+B: group A",
+      "validation_reference": {
+        "artifact": "e1_validation.csv",
+        "contrast_id": "G+D+B->G+A+D+B",
+        "cohort": "cohort_core"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "A:E1-7",
+      "protocol_tag": "A",
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "family": "E1",
+      "role": "pre-specified secondary (descriptive)",
+      "from_config": "E1:G+A+B",
+      "to_config": "E1:G+A+D+B",
+      "purpose": "E1 G+A+B->G+A+D+B: group D",
+      "validation_reference": {
+        "artifact": "e1_validation.csv",
+        "contrast_id": "G+A+B->G+A+D+B",
+        "cohort": "cohort_core"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "A:E5-1",
+      "protocol_tag": "A",
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "family": "E5",
+      "role": "pre-specified secondary (descriptive)",
+      "from_config": "base + T",
+      "to_config": "base + T minus activity_kernels",
+      "purpose": "E5: remove family activity_kernels from T_k",
+      "validation_reference": {
+        "artifact": "e5_validation.csv",
+        "family_removed": "activity_kernels"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "A:E5-2",
+      "protocol_tag": "A",
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "family": "E5",
+      "role": "pre-specified secondary (descriptive)",
+      "from_config": "base + T",
+      "to_config": "base + T minus meal_x_baseline_state",
+      "purpose": "E5: remove family meal_x_baseline_state from T_k",
+      "validation_reference": {
+        "artifact": "e5_validation.csv",
+        "family_removed": "meal_x_baseline_state"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "A:E9-1",
+      "protocol_tag": "A",
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "family": "E9",
+      "role": "descriptive sensitivity (descriptive)",
+      "from_config": "base + M@logged",
+      "to_config": "base + M@delay_free",
+      "purpose": "E9: base + M with Dinner and Snack delayed 30 minutes against logged times",
+      "validation_reference": {
+        "artifact": "e9_validation.csv",
+        "record_type": "same model, delayed minus logged",
+        "setting": "Dinner and Snack delayed 30 minutes",
+        "model": "base + M"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "A:E9-2",
+      "protocol_tag": "A",
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "family": "E9",
+      "role": "descriptive sensitivity (descriptive)",
+      "from_config": "base + M@logged",
+      "to_config": "base + M@delay_all",
+      "purpose": "E9: base + M with all meals delayed 30 minutes against logged times",
+      "validation_reference": {
+        "artifact": "e9_validation.csv",
+        "record_type": "same model, delayed minus logged",
+        "setting": "all meals delayed 30 minutes",
+        "model": "base + M"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "A:E9-3",
+      "protocol_tag": "A",
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "family": "E9",
+      "role": "descriptive sensitivity (descriptive)",
+      "from_config": "base + T@logged",
+      "to_config": "base + T@delay_free",
+      "purpose": "E9: base + T with Dinner and Snack delayed 30 minutes against logged times",
+      "validation_reference": {
+        "artifact": "e9_validation.csv",
+        "record_type": "same model, delayed minus logged",
+        "setting": "Dinner and Snack delayed 30 minutes",
+        "model": "base + T"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "A:E9-4",
+      "protocol_tag": "A",
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "family": "E9",
+      "role": "descriptive sensitivity (descriptive)",
+      "from_config": "base + T@logged",
+      "to_config": "base + T@delay_all",
+      "purpose": "E9: base + T with all meals delayed 30 minutes against logged times",
+      "validation_reference": {
+        "artifact": "e9_validation.csv",
+        "record_type": "same model, delayed minus logged",
+        "setting": "all meals delayed 30 minutes",
+        "model": "base + T"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "A:E8-1",
+      "protocol_tag": "A",
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "family": "E8 minimal",
+      "role": "exploratory validity sensitivity",
+      "from_config": "original base, reliable windows",
+      "to_config": "anchor-causal base",
+      "purpose": "E8-a: loss from rebuilding the base from native readings",
+      "validation_reference": {
+        "artifact": "e8_base_validation.csv",
+        "from": "original base",
+        "to": "anchor-causal base"
+      },
+      "windows": "core_and_anchor_reliable"
+    },
+    {
+      "id": "A:E8-2",
+      "protocol_tag": "A",
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "family": "E8 minimal",
+      "role": "exploratory validity sensitivity",
+      "from_config": "anchor-causal base",
+      "to_config": "anchor-causal base + M",
+      "purpose": "E8-b: marginal gain of M on the anchor-causal base",
+      "validation_reference": {
+        "artifact": "e8_validation.csv",
+        "contrast_type": "marginal effect of the block on the base of the same lags",
+        "lags": "anchor-causal lags",
+        "block": "+ M"
+      },
+      "windows": "core_and_anchor_reliable"
+    },
+    {
+      "id": "A:E8-3",
+      "protocol_tag": "A",
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "family": "E8 minimal",
+      "role": "exploratory validity sensitivity",
+      "from_config": "anchor-causal base",
+      "to_config": "anchor-causal base + T",
+      "purpose": "E8-b: marginal gain of T on the anchor-causal base",
+      "validation_reference": {
+        "artifact": "e8_validation.csv",
+        "contrast_type": "marginal effect of the block on the base of the same lags",
+        "lags": "anchor-causal lags",
+        "block": "+ T"
+      },
+      "windows": "core_and_anchor_reliable"
+    },
+    {
+      "id": "A:E8-4",
+      "protocol_tag": "A",
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "family": "E8 minimal",
+      "role": "exploratory validity sensitivity",
+      "from_config": "anchor-causal base",
+      "to_config": "anchor-causal base + O",
+      "purpose": "E8-b: marginal gain of O on the anchor-causal base",
+      "validation_reference": {
+        "artifact": "e8_validation.csv",
+        "contrast_type": "marginal effect of the block on the base of the same lags",
+        "lags": "anchor-causal lags",
+        "block": "+ O"
+      },
+      "windows": "core_and_anchor_reliable"
+    },
+    {
+      "id": "B:P1",
+      "protocol_tag": "B",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "family": "primary",
+      "role": "confirmatory (Holm family of 4)",
+      "from_config": "base",
+      "to_config": "base + M",
+      "purpose": "RQ1: the existing features on the strong base",
+      "validation_reference": {
+        "artifact": "e2_O_validation.csv",
+        "from_config": "base",
+        "to_config": "base + M"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "B:P2",
+      "protocol_tag": "B",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "family": "primary",
+      "role": "confirmatory (Holm family of 4)",
+      "from_config": "base",
+      "to_config": "base + T",
+      "purpose": "RQ1/RQ3: constructed factors T_k",
+      "validation_reference": {
+        "artifact": "e2_O_validation.csv",
+        "from_config": "base",
+        "to_config": "base + T"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "B:P3",
+      "protocol_tag": "B",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "family": "primary",
+      "role": "confirmatory (Holm family of 4)",
+      "from_config": "base + M",
+      "to_config": "base + M + T",
+      "purpose": "RQ1: T_k on top of M",
+      "validation_reference": {
+        "artifact": "e2_O_validation.csv",
+        "from_config": "base + M",
+        "to_config": "base + M + T"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "B:P4",
+      "protocol_tag": "B",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "family": "primary",
+      "role": "confirmatory (Holm family of 4)",
+      "from_config": "base",
+      "to_config": "base + O",
+      "purpose": "RQ3: OpenFE factors O_k",
+      "validation_reference": {
+        "artifact": "e2_O_validation.csv",
+        "from_config": "base",
+        "to_config": "base + O"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "B:S1",
+      "protocol_tag": "B",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "family": "secondary E2",
+      "role": "pre-specified secondary (descriptive)",
+      "from_config": "base",
+      "to_config": "base + M + T",
+      "purpose": "combination M + T against the base",
+      "validation_reference": {
+        "artifact": "e2_validation.csv",
+        "derived": "rmse_to(base + M + T) - rmse_from(base)",
+        "from_config": "base + M",
+        "to_config": "base + M + T"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "B:S2",
+      "protocol_tag": "B",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "family": "secondary E2",
+      "role": "pre-specified secondary (descriptive)",
+      "from_config": "base",
+      "to_config": "base + M + O",
+      "purpose": "combination M + O against the base",
+      "validation_reference": {
+        "artifact": "e2_O_validation.csv",
+        "derived": "rmse_to(base + M + O) - rmse_from(base)",
+        "from_config": "base + M",
+        "to_config": "base + M + O"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "B:S3",
+      "protocol_tag": "B",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "family": "secondary E2",
+      "role": "secondary, descriptive; not a Holm primary",
+      "from_config": "base + T",
+      "to_config": "base + O",
+      "purpose": "H3: direct comparison of the constructor with OpenFE",
+      "validation_reference": {
+        "artifact": "e2_O_validation.csv",
+        "from_config": "base + T",
+        "to_config": "base + O"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "B:E1-1",
+      "protocol_tag": "B",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "family": "E1",
+      "role": "pre-specified secondary (descriptive)",
+      "from_config": "E1:G",
+      "to_config": "E1:G+A",
+      "purpose": "E1 G->G+A: group A",
+      "validation_reference": {
+        "artifact": "e1_validation.csv",
+        "contrast_id": "G->G+A",
+        "cohort": "cohort_core"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "B:E1-2",
+      "protocol_tag": "B",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "family": "E1",
+      "role": "pre-specified secondary (descriptive)",
+      "from_config": "E1:G+A",
+      "to_config": "E1:G+A+D",
+      "purpose": "E1 G+A->G+A+D: group D",
+      "validation_reference": {
+        "artifact": "e1_validation.csv",
+        "contrast_id": "G+A->G+A+D",
+        "cohort": "cohort_core"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "B:E1-3",
+      "protocol_tag": "B",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "family": "E1",
+      "role": "pre-specified secondary (descriptive)",
+      "from_config": "E1:G+A+D",
+      "to_config": "E1:G+A+D+B",
+      "purpose": "E1 G+A+D->G+A+D+B: group B",
+      "validation_reference": {
+        "artifact": "e1_validation.csv",
+        "contrast_id": "G+A+D->G+A+D+B",
+        "cohort": "cohort_core"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "B:E1-4",
+      "protocol_tag": "B",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "family": "E1",
+      "role": "pre-specified secondary (descriptive)",
+      "from_config": "E1:G",
+      "to_config": "E1:G+D",
+      "purpose": "E1 G->G+D: group D",
+      "validation_reference": {
+        "artifact": "e1_validation.csv",
+        "contrast_id": "G->G+D",
+        "cohort": "cohort_core"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "B:E1-5",
+      "protocol_tag": "B",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "family": "E1",
+      "role": "pre-specified secondary (descriptive)",
+      "from_config": "E1:G",
+      "to_config": "E1:G+B",
+      "purpose": "E1 G->G+B: group B",
+      "validation_reference": {
+        "artifact": "e1_validation.csv",
+        "contrast_id": "G->G+B",
+        "cohort": "cohort_core"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "B:E1-6",
+      "protocol_tag": "B",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "family": "E1",
+      "role": "pre-specified secondary (descriptive)",
+      "from_config": "E1:G+D+B",
+      "to_config": "E1:G+A+D+B",
+      "purpose": "E1 G+D+B->G+A+D+B: group A",
+      "validation_reference": {
+        "artifact": "e1_validation.csv",
+        "contrast_id": "G+D+B->G+A+D+B",
+        "cohort": "cohort_core"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "B:E1-7",
+      "protocol_tag": "B",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "family": "E1",
+      "role": "pre-specified secondary (descriptive)",
+      "from_config": "E1:G+A+B",
+      "to_config": "E1:G+A+D+B",
+      "purpose": "E1 G+A+B->G+A+D+B: group D",
+      "validation_reference": {
+        "artifact": "e1_validation.csv",
+        "contrast_id": "G+A+B->G+A+D+B",
+        "cohort": "cohort_core"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "B:E5-1",
+      "protocol_tag": "B",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "family": "E5",
+      "role": "pre-specified secondary (descriptive)",
+      "from_config": "base + T",
+      "to_config": "base + T minus meal_absorption",
+      "purpose": "E5: remove family meal_absorption from T_k",
+      "validation_reference": {
+        "artifact": "e5_validation.csv",
+        "family_removed": "meal_absorption"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "B:E5-2",
+      "protocol_tag": "B",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "family": "E5",
+      "role": "pre-specified secondary (descriptive)",
+      "from_config": "base + T",
+      "to_config": "base + T minus nutrient_ratios",
+      "purpose": "E5: remove family nutrient_ratios from T_k",
+      "validation_reference": {
+        "artifact": "e5_validation.csv",
+        "family_removed": "nutrient_ratios"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "B:E5-3",
+      "protocol_tag": "B",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "family": "E5",
+      "role": "pre-specified secondary (descriptive)",
+      "from_config": "base + T",
+      "to_config": "base + T minus activity_kernels",
+      "purpose": "E5: remove family activity_kernels from T_k",
+      "validation_reference": {
+        "artifact": "e5_validation.csv",
+        "family_removed": "activity_kernels"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "B:E5-4",
+      "protocol_tag": "B",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "family": "E5",
+      "role": "pre-specified secondary (descriptive)",
+      "from_config": "base + T",
+      "to_config": "base + T minus meal_x_baseline_state",
+      "purpose": "E5: remove family meal_x_baseline_state from T_k",
+      "validation_reference": {
+        "artifact": "e5_validation.csv",
+        "family_removed": "meal_x_baseline_state"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "B:E9-1",
+      "protocol_tag": "B",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "family": "E9",
+      "role": "descriptive sensitivity (descriptive)",
+      "from_config": "base + M@logged",
+      "to_config": "base + M@delay_free",
+      "purpose": "E9: base + M with Dinner and Snack delayed 30 minutes against logged times",
+      "validation_reference": {
+        "artifact": "e9_validation.csv",
+        "record_type": "same model, delayed minus logged",
+        "setting": "Dinner and Snack delayed 30 minutes",
+        "model": "base + M"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "B:E9-2",
+      "protocol_tag": "B",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "family": "E9",
+      "role": "descriptive sensitivity (descriptive)",
+      "from_config": "base + M@logged",
+      "to_config": "base + M@delay_all",
+      "purpose": "E9: base + M with all meals delayed 30 minutes against logged times",
+      "validation_reference": {
+        "artifact": "e9_validation.csv",
+        "record_type": "same model, delayed minus logged",
+        "setting": "all meals delayed 30 minutes",
+        "model": "base + M"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "B:E9-3",
+      "protocol_tag": "B",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "family": "E9",
+      "role": "descriptive sensitivity (descriptive)",
+      "from_config": "base + T@logged",
+      "to_config": "base + T@delay_free",
+      "purpose": "E9: base + T with Dinner and Snack delayed 30 minutes against logged times",
+      "validation_reference": {
+        "artifact": "e9_validation.csv",
+        "record_type": "same model, delayed minus logged",
+        "setting": "Dinner and Snack delayed 30 minutes",
+        "model": "base + T"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "B:E9-4",
+      "protocol_tag": "B",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "family": "E9",
+      "role": "descriptive sensitivity (descriptive)",
+      "from_config": "base + T@logged",
+      "to_config": "base + T@delay_all",
+      "purpose": "E9: base + T with all meals delayed 30 minutes against logged times",
+      "validation_reference": {
+        "artifact": "e9_validation.csv",
+        "record_type": "same model, delayed minus logged",
+        "setting": "all meals delayed 30 minutes",
+        "model": "base + T"
+      },
+      "windows": "core"
+    },
+    {
+      "id": "B:E8-1",
+      "protocol_tag": "B",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "family": "E8 minimal",
+      "role": "exploratory validity sensitivity",
+      "from_config": "original base, reliable windows",
+      "to_config": "anchor-causal base",
+      "purpose": "E8-a: loss from rebuilding the base from native readings",
+      "validation_reference": {
+        "artifact": "e8_base_validation.csv",
+        "from": "original base",
+        "to": "anchor-causal base"
+      },
+      "windows": "core_and_anchor_reliable"
+    },
+    {
+      "id": "B:E8-2",
+      "protocol_tag": "B",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "family": "E8 minimal",
+      "role": "exploratory validity sensitivity",
+      "from_config": "anchor-causal base",
+      "to_config": "anchor-causal base + M",
+      "purpose": "E8-b: marginal gain of M on the anchor-causal base",
+      "validation_reference": {
+        "artifact": "e8_validation.csv",
+        "contrast_type": "marginal effect of the block on the base of the same lags",
+        "lags": "anchor-causal lags",
+        "block": "+ M"
+      },
+      "windows": "core_and_anchor_reliable"
+    },
+    {
+      "id": "B:E8-3",
+      "protocol_tag": "B",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "family": "E8 minimal",
+      "role": "exploratory validity sensitivity",
+      "from_config": "anchor-causal base",
+      "to_config": "anchor-causal base + T",
+      "purpose": "E8-b: marginal gain of T on the anchor-causal base",
+      "validation_reference": {
+        "artifact": "e8_validation.csv",
+        "contrast_type": "marginal effect of the block on the base of the same lags",
+        "lags": "anchor-causal lags",
+        "block": "+ T"
+      },
+      "windows": "core_and_anchor_reliable"
+    },
+    {
+      "id": "B:E8-4",
+      "protocol_tag": "B",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "family": "E8 minimal",
+      "role": "exploratory validity sensitivity",
+      "from_config": "anchor-causal base",
+      "to_config": "anchor-causal base + O",
+      "purpose": "E8-b: marginal gain of O on the anchor-causal base",
+      "validation_reference": {
+        "artifact": "e8_validation.csv",
+        "contrast_type": "marginal effect of the block on the base of the same lags",
+        "lags": "anchor-causal lags",
+        "block": "+ O"
+      },
+      "windows": "core_and_anchor_reliable"
+    }
+  ],
+  "comparison_counts": {
+    "A": 24,
+    "B": 26,
+    "total": 50
+  },
+  "metrics": {
+    "primary": "subject-equal RMSE",
+    "also_reported": [
+      "pooled-window RMSE",
+      "subject-equal MAE",
+      "improved share"
+    ],
+    "min_windows_per_subject": 20,
+    "also_without_the_rule": true,
+    "cohorts": {
+      "primary": "core (cohort_core)",
+      "supplementary": "full (all admitted windows)"
+    },
+    "strata": {
+      "definition": "from the logged-time diet features at the origin: P30 = a meal logged in the last 30 min; P31_120 = none in 30 min but one in 120 min; NoMeal120 = none in 120 min",
+      "applied_to": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "rule": "20-window minimum per subject within the stratum; also reported without it"
+    },
+    "metabolic_groups": {
+      "definition": "HbA1c < 5.7, 5.7-6.4, > 6.4 percent of the evaluation subjects (offline grouping, descriptive)",
+      "applied_to": [
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ]
+    }
+  },
+  "statistics": {
+    "bootstrap": {
+      "resamples": 2000,
+      "seed": 42,
+      "unit": "subjects, paired",
+      "ci": 0.95
+    },
+    "holm": {
+      "family": "the four primary contrasts P1-P4 of each protocol, separately for A and B",
+      "p_value": "two-sided approximate percentile-bootstrap p-value with the +1 correction: p = min(1, 2 * (min(N[d* >= 0], N[d* <= 0]) + 1) / 2001)",
+      "algorithm": "m = 4 p-values of one protocol sorted in ascending order; adjusted_(k) = max over j <= k of min(1, (m - j + 1) * p_(j)); tied p-values give the same adjusted value in any order (src/factor_evaluation.holm); the family is the four P1-P4 rows with cohort core, stratum all, group all and the 20-window rule applied, A and B separately"
+    },
+    "p_value_label": "exploratory approximate bootstrap p-values",
+    "output_labels": {
+      "columns": {
+        "p_value_method": "exploratory approximate subject-bootstrap (set on the rows that carry a p-value)",
+        "nominal_fwer_control_verified": "false on every row",
+        "test_split_independent": "false on every row: the evaluation split is never an independent hold-out (validation in analysis, a previously used test split in analysis)",
+        "inference_role": "pre-specified primary (P1-P4) / secondary descriptive / exploratory sensitivity (E8)"
+      },
+      "role_field": "`role` is kept unchanged as a machine label for the program (the prefix confirmatory identifies P1-P4); it is not a statement about the evidence",
+      "implementation": "src/factor_evaluation.add_inference_labels, applied at the end of run_comparisons; it adds the four columns and changes no value"
+    },
+    "definition": {
+      "statistic": "equal-weight mean over subjects of d_s = RMSE_to,s - RMSE_from,s (negative = lower error in 'to'); with the 20-window rule only subjects with >= 20 windows in both configurations are kept, and the rule is applied before the resampling (src/residuals.subject_table, src/evaluation.paired_inputs)",
+      "bootstrap_algorithm": "subjects are the clusters: 2,000 resamples of n subjects drawn with replacement, numpy.random.default_rng(42).integers(0, n, size=(2000, n)); every comparison with the same n uses the same index draws, and the interval and the p-value use the same draws; d* is the equal-weight mean of d_s over a resample (src/evaluation.draw_subjects, replicate_statistics)",
+      "p_value_formula": "p = min(1, 2 * (min(N[d* >= 0], N[d* <= 0]) + 1) / 2001) where d* are the 2,000 resampled means; two-sided; resampled means equal to 0 count on both sides; smallest value 2 / 2001 (src/factor_evaluation.bootstrap_p)",
+      "confidence_interval": "95% percentile-bootstrap interval: numpy.percentile of the same 2,000 resampled means at 2.5 and 97.5 (linear interpolation); no bias correction or studentisation; the point estimate is the observed mean (src/evaluation.paired_cluster_bootstrap)",
+      "holm_algorithm": "m = 4 p-values of one protocol sorted in ascending order; adjusted_(k) = max over j <= k of min(1, (m - j + 1) * p_(j)); tied p-values give the same adjusted value in any order (src/factor_evaluation.holm); the family is the four P1-P4 rows with cohort core, stratum all, group all and the 20-window rule applied, A and B separately",
+      "nature_of_the_p_value": "an approximate percentile-bootstrap sign p-value (the smallest alpha at which the percentile interval excludes 0, with the +1 correction); it is NOT a permutation p-value (no null distribution is generated and the observed data are not re-centered) and it has no validated nominal 5% error rate in this project"
+    },
+    "calibration_limits": {
+      "source": "Historical synthetic calibration; not a project performance result. Original evidence is in history/test_execution.zip.",
+      "rejection_rate_of_p_below_0.05_when_the_true_effect_is_zero": {
+        "n = 9 (Protocol B)": "9.2% normal, 11.7% heavy-tailed, 19.0% skewed",
+        "n = 20": "6.7%, 7.8%, 13.7%",
+        "n = 44 (Protocol A)": "5.2%, 6.5%, 8.5%"
+      },
+      "holm_family_wise_error_four_true_null_contrasts_nominal_5%": {
+        "n = 9": "16.9% (paired t-test and exact sign-flip: 4.7%)",
+        "n = 44": "6.6% (paired t-test: 5.3%)"
+      },
+      "coverage_of_the_95%_percentile_interval": {
+        "n = 9": "81%-91%",
+        "n = 20": "86%-93%",
+        "n = 44": "91%-95%"
+      },
+      "consequence": "both protocols are affected, Protocol B (9 subjects) clearly more than Protocol A (44 subjects); the p-values and intervals are optimistic for small n and for skewed or heavy-tailed differences; the Holm-adjusted values inherit this and do not give strict family-wise error control"
+    },
+    "interpretation_rules": [
+      "every p-value of the bootstrap (p_bootstrap, p_holm_primary_family) is called 'exploratory approximate bootstrap p-values' wherever it is shown; the Holm adjustment does not turn it into a calibrated test",
+      "results are reported by effect size (delta RMSE in mg/dL), subject-level differences (improved share and the per-subject distribution), the 0.1 mg/dL practical-effect threshold and the percentile intervals; no result is called significant or confirmed because a Holm-adjusted p-value is below 0.05 or because an interval excludes 0; the same rule holds for Protocol A and Protocol B",
+      "the test split was used before (Q5): a second locked evaluation on a previously used test split, not a new independent hold-out; the pre-specified primary comparisons are not confirmatory findings on independent data, and the reuse, the earlier results that influenced decisions and the selection on the validation split are not removed by the Holm step"
+    ],
+    "terminology": {
+      "machine_field": "the strings 'confirmatory (Holm family of 4)' in comparisons[].role and the prefix test in src/factor_evaluation.run_comparisons identify P1-P4 for the program and are kept unchanged",
+      "human_readable_name": "pre-specified primary comparison (P1-P4)",
+      "not_to_be_written": "confirmatory finding, confirmed on an independent test set, significant at the 5% level (for the bootstrap p-values)"
+    },
+    "practical_effect_threshold_mg_dl": 0.1,
+    "outcome_rule": "src/evaluation.classify_effect (negligible if |delta| < 0.1; improved / worse need the sign and a majority of improved subjects)",
+    "interpretation": "effect sizes, subject-level differences, the practical threshold and the intervals first; the p-values are exploratory approximate bootstrap p-values and the Holm step does not remove the limitations of the reused test split or give strict error control; all non-primary comparisons are descriptive or exploratory",
+    "roles": {
+      "pre-specified primary comparisons (machine label: confirmatory)": "P1-P4, on a previously used test split",
+      "pre-specified secondary": "S1, S2, E1, E5",
+      "comparison_scope additions, descriptive": "S3 (T vs O), E9",
+      "exploratory validity sensitivity": "E8-1 to E8-4"
+    }
+  },
+  "status": "FIXED scientific evaluation plan; not execution permission"
+}

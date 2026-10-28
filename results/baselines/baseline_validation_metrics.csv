@@ -1,0 +1,545 @@
+model_id,evaluation_protocol,config,split,subjects,windows,subject_mean_mae,subject_mean_rmse,pooled_mae,pooled_rmse,fit_seconds,selected,role,scope,subject,mae,rmse
+glucobench_linear_regression,Within-subject Future Prediction,in_len=12,train,45.0,79300,8.1287011987801,11.854350889651899,8.09412371956408,11.974089044016122,0.03698690002784133,False,formal baseline (primary),summary,,,
+glucobench_linear_regression,Within-subject Future Prediction,in_len=12,validation,45.0,26330,7.698735889170603,11.223492096000871,7.599768170726058,11.587691155102961,,False,formal baseline (primary),summary,,,
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,45.0,79300,8.01990711434435,11.70570283848552,7.981436312534577,11.816204973912862,0.05024140002205968,True,formal baseline (primary),summary,,,
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,45.0,26330,7.567410424052004,11.075340762754617,7.4809658418957135,11.484796794097843,,True,formal baseline (primary),summary,,,
+glucobench_linear_regression,Unseen-subject Generalization,in_len=12,train,27.0,81958,7.8344242153913175,11.426915198223385,7.842707889291539,11.604855020405344,0.02551910001784563,False,formal baseline (primary),summary,,,
+glucobench_linear_regression,Unseen-subject Generalization,in_len=12,validation,9.0,24259,8.449172461474411,12.491519036855683,8.298839918077782,12.537839741085245,,False,formal baseline (primary),summary,,,
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,train,27.0,81958,7.719396934381467,11.257877912079211,7.727686485187633,11.435227160595955,0.04849190032109618,True,formal baseline (primary),summary,,,
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,validation,9.0,24259,8.341578705110685,12.37914794145039,8.185974998998708,12.377864519785367,,True,formal baseline (primary),summary,,,
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,45.0,79300,11.58489974735802,18.06577996397055,11.633147235474377,18.26471910218901,0.027786700055003166,True,formal baseline (secondary),summary,,,
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.5,train,45.0,79300,11.883907976696552,18.435132433471107,11.931054307853234,18.647599858941245,0.02605449967086315,False,formal baseline (secondary),summary,,,
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.8,train,45.0,79300,12.464137369420888,19.126388178534405,12.52513599898204,19.457548471181724,0.02670740010216832,False,formal baseline (secondary),summary,,,
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,45.0,26330,11.19107590315327,17.518011082845614,10.761522997395444,17.994006948651958,0.008773999754339457,True,formal baseline (secondary),summary,,,
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.5,validation,45.0,26330,11.486296713347334,17.884084715760995,11.074841873414353,18.351339135601975,0.008536400273442268,False,formal baseline (secondary),summary,,,
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.8,validation,45.0,26330,12.10805402716638,18.60046100769461,11.759058601784064,19.08387118707634,0.008394999895244837,False,formal baseline (secondary),summary,,,
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,train,27.0,81958,11.357145951303266,17.447708877548603,11.383378918816005,17.74136892188265,0.027550000231713057,True,formal baseline (secondary),summary,,,
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.5,train,27.0,81958,11.630062890271324,17.78758919499816,11.658178235053175,18.09045060430218,0.027164500206708908,False,formal baseline (secondary),summary,,,
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.8,train,27.0,81958,12.148416369231095,18.407888800081,12.18182104925679,18.74922000897455,0.02661120006814599,False,formal baseline (secondary),summary,,,
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,validation,9.0,24259,11.320194821315363,18.216810142585356,11.677144244893805,18.524152157838824,0.007947499863803387,True,formal baseline (secondary),summary,,,
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.5,validation,9.0,24259,11.713247751487431,18.720904519525362,12.107227675484491,19.112033096621232,0.007997800130397081,False,formal baseline (secondary),summary,,,
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.8,validation,9.0,24259,12.55717251303404,19.764830489171516,13.082945822258326,20.580372394091544,0.007897899951785803,False,formal baseline (secondary),summary,,,
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,45.0,79300,8.294841182018548,12.046475917652298,8.278189744111376,12.185222689399577,0.015050499700009823,True,project comparison,summary,,,
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,45.0,26330,7.974312420172923,11.477405451586272,7.767397851966802,11.720518990880716,,True,project comparison,summary,,,
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=1.0,train,45.0,79300,8.284105529385693,12.047099390579431,8.268376147071724,12.191392898333474,0.015242299996316433,False,project comparison,summary,,,
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=1.0,validation,45.0,26330,7.9712993683113735,11.485043343708496,7.758688221564732,11.721947895430773,,False,project comparison,summary,,,
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=10.0,train,45.0,79300,8.332106645889223,12.147411060154392,8.320402740407703,12.322979219421446,0.01474260026589036,False,project comparison,summary,,,
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=10.0,validation,45.0,26330,8.03664508305481,11.591948632802804,7.824238953883628,11.840712048750605,,False,project comparison,summary,,,
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=100,max_depth=3,learning_rate=0.1",train,45.0,79300,9.777912795281676,14.13242362660071,9.844347453459873,14.54603961752411,3.13109889999032,False,project comparison,summary,,,
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=100,max_depth=3,learning_rate=0.1",validation,45.0,26330,9.483054026489635,13.599228208785126,9.454501197246373,14.21609156955444,,False,project comparison,summary,,,
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,45.0,79300,9.25035194798541,13.286673395264565,9.314783068426047,13.657884671641838,0.33557770028710365,True,project comparison,summary,,,
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,45.0,26330,9.075597032900289,12.971720430477346,9.043107359268083,13.56315601824078,,True,project comparison,summary,,,
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,train,27.0,81958,8.02573295442673,11.635186254827696,8.037844666795612,11.823528219549324,0.023736400064080954,True,project comparison,summary,,,
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,validation,9.0,24259,8.57283138424743,12.681505075984525,8.494283924463236,12.790741839157652,,True,project comparison,summary,,,
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=1.0,train,27.0,81958,8.014996529544003,11.638361969563615,8.027250362688964,11.829357527302754,0.01707830000668764,False,project comparison,summary,,,
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=1.0,validation,9.0,24259,8.573623537278884,12.695929124995814,8.500191725972106,12.820517603349893,,False,project comparison,summary,,,
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=10.0,train,27.0,81958,8.059283254894481,11.74102403416288,8.072107023337873,11.950375079722228,0.01653030002489686,False,project comparison,summary,,,
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=10.0,validation,9.0,24259,8.687766759802741,12.881485664118072,8.638224830111401,13.092605213183187,,False,project comparison,summary,,,
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=100,max_depth=3,learning_rate=0.1",train,27.0,81958,9.480745865071064,13.650309171589747,9.498098552186141,13.948291813588666,0.12992300000041723,False,project comparison,summary,,,
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=100,max_depth=3,learning_rate=0.1",validation,9.0,24259,10.391741577704153,15.286024894429476,10.702501849571917,16.172069049857008,,False,project comparison,summary,,,
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",train,27.0,81958,8.96792000227283,12.828464841340198,8.982360491925533,13.09420781578589,0.35356369987130165,True,project comparison,summary,,,
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",validation,9.0,24259,9.95714160915002,14.686213262887698,10.281939370414602,15.47063779759948,,True,project comparison,summary,,,
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1738,,,,,,True,formal baseline (primary),subject,1.0,6.227717966101141,8.615319742714624
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,2013,,,,,,True,formal baseline (primary),subject,2.0,7.108344269749945,10.312867364777675
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1685,,,,,,True,formal baseline (primary),subject,3.0,8.206858880120297,13.24021621335536
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1683,,,,,,True,formal baseline (primary),subject,4.0,6.337621436956388,9.437063084058565
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1706,,,,,,True,formal baseline (primary),subject,5.0,8.148849620516117,12.004644982920256
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1706,,,,,,True,formal baseline (primary),subject,6.0,6.6136565643199905,9.496858770001024
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,69,,,,,,True,formal baseline (primary),subject,7.0,9.831655799315334,13.644923543979935
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1742,,,,,,True,formal baseline (primary),subject,8.0,6.150261696548838,9.185014512074028
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1695,,,,,,True,formal baseline (primary),subject,9.0,7.436136174829937,10.367167335811727
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1909,,,,,,True,formal baseline (primary),subject,10.0,8.898626572696037,13.258323413886073
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1747,,,,,,True,formal baseline (primary),subject,11.0,7.654995636009751,11.878852513368857
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1731,,,,,,True,formal baseline (primary),subject,12.0,10.990879272817352,16.47889065143785
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1871,,,,,,True,formal baseline (primary),subject,13.0,7.827233054621672,11.759287334668624
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,2040,,,,,,True,formal baseline (primary),subject,14.0,6.859965367771245,10.447605945647519
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,2039,,,,,,True,formal baseline (primary),subject,15.0,7.713309364417766,11.597289436133634
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1925,,,,,,True,formal baseline (primary),subject,16.0,6.6541652534530344,9.437342225011124
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1913,,,,,,True,formal baseline (primary),subject,17.0,7.891770359862843,10.812091489929307
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,548,,,,,,True,formal baseline (primary),subject,18.0,7.803434218050005,11.548662394467147
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1669,,,,,,True,formal baseline (primary),subject,19.0,7.29468824010408,10.337602088233371
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1922,,,,,,True,formal baseline (primary),subject,20.0,7.383960345804413,10.313396277058649
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1905,,,,,,True,formal baseline (primary),subject,21.0,9.007166628557464,13.199917555144085
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,2085,,,,,,True,formal baseline (primary),subject,22.0,8.313937201735335,11.780816017685883
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1913,,,,,,True,formal baseline (primary),subject,23.0,9.007539785948854,13.28845217044226
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1929,,,,,,True,formal baseline (primary),subject,26.0,8.554785708612375,12.975840421462125
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1715,,,,,,True,formal baseline (primary),subject,27.0,6.693091744996837,9.233148869243903
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,2219,,,,,,True,formal baseline (primary),subject,28.0,6.3460083294647305,9.107524825227289
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,2098,,,,,,True,formal baseline (primary),subject,29.0,7.378237406050047,11.548026603783539
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1826,,,,,,True,formal baseline (primary),subject,30.0,9.679832917910108,14.41731628008793
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1617,,,,,,True,formal baseline (primary),subject,31.0,7.462647632676493,9.785592433581348
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1625,,,,,,True,formal baseline (primary),subject,32.0,8.133259273845914,11.440957525518824
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1838,,,,,,True,formal baseline (primary),subject,33.0,10.399594671952999,15.423300388127387
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1734,,,,,,True,formal baseline (primary),subject,34.0,8.019740456830215,11.225304769868574
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1698,,,,,,True,formal baseline (primary),subject,35.0,10.40658046033504,15.12638301822988
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,2024,,,,,,True,formal baseline (primary),subject,36.0,8.80681365164401,12.948842089704772
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1711,,,,,,True,formal baseline (primary),subject,38.0,7.230360253562341,10.946448439387064
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,2035,,,,,,True,formal baseline (primary),subject,39.0,8.122390956867141,12.266355035087624
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1688,,,,,,True,formal baseline (primary),subject,41.0,7.225261542769225,10.677489468312313
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1713,,,,,,True,formal baseline (primary),subject,42.0,7.021563589669286,10.136433716263813
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1680,,,,,,True,formal baseline (primary),subject,43.0,7.4702589540625075,10.333527681717545
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1715,,,,,,True,formal baseline (primary),subject,44.0,7.092025135975725,10.211905005182771
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1839,,,,,,True,formal baseline (primary),subject,45.0,8.739248761470332,13.07098574859975
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1663,,,,,,True,formal baseline (primary),subject,46.0,10.053170463058697,15.250612732875595
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1853,,,,,,True,formal baseline (primary),subject,47.0,9.781502041171741,13.720586646828089
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,2018,,,,,,True,formal baseline (primary),subject,48.0,8.274921837876745,11.65150183509974
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,train,,1808,,,,,,True,formal baseline (primary),subject,49.0,8.641750644385514,12.81593913485099
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,559,,,,,,True,formal baseline (primary),subject,1.0,6.349776488950354,9.223517336207905
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,651,,,,,,True,formal baseline (primary),subject,2.0,7.591705063370604,10.505508990290515
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,553,,,,,,True,formal baseline (primary),subject,3.0,7.489141123511581,12.830585239324042
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,466,,,,,,True,formal baseline (primary),subject,4.0,6.07937858988076,8.632647972839528
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,548,,,,,,True,formal baseline (primary),subject,5.0,6.328672049884653,9.801055627295327
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,548,,,,,,True,formal baseline (primary),subject,6.0,5.545474858406243,7.956099686949993
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,1,,,,,,True,formal baseline (primary),subject,7.0,10.847710236090762,10.847710236090762
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,560,,,,,,True,formal baseline (primary),subject,8.0,5.210424024515391,7.52456291901521
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,545,,,,,,True,formal baseline (primary),subject,9.0,6.258652902663874,8.835887940708107
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,616,,,,,,True,formal baseline (primary),subject,10.0,6.464063646357554,9.705135275901492
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,562,,,,,,True,formal baseline (primary),subject,11.0,8.022349862967232,11.444851291967554
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,557,,,,,,True,formal baseline (primary),subject,12.0,10.580663292061782,16.188045213258295
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,604,,,,,,True,formal baseline (primary),subject,13.0,5.022385431896857,7.1951531042556
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,660,,,,,,True,formal baseline (primary),subject,14.0,7.3335841185121655,10.646009141397363
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,551,,,,,,True,formal baseline (primary),subject,15.0,9.337529328120379,20.561821845910924
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,622,,,,,,True,formal baseline (primary),subject,16.0,4.625644197201072,6.537312473180343
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,617,,,,,,True,formal baseline (primary),subject,17.0,5.627505648347592,7.649360364449164
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,1073,,,,,,True,formal baseline (primary),subject,18.0,6.85359099289857,9.917539140973123
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,548,,,,,,True,formal baseline (primary),subject,19.0,5.86542468805858,8.374898929084347
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,620,,,,,,True,formal baseline (primary),subject,20.0,6.849571745771356,9.688324261504043
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,615,,,,,,True,formal baseline (primary),subject,21.0,8.366914431263737,12.677037204875095
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,675,,,,,,True,formal baseline (primary),subject,22.0,6.7242923600135445,9.16076968854253
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,617,,,,,,True,formal baseline (primary),subject,23.0,7.263846158694234,10.291648726072516
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,623,,,,,,True,formal baseline (primary),subject,26.0,9.40079692452439,14.114414065559375
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,551,,,,,,True,formal baseline (primary),subject,27.0,5.005344801700759,7.005971207249855
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,719,,,,,,True,formal baseline (primary),subject,28.0,6.622587877212018,9.33420273637072
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,679,,,,,,True,formal baseline (primary),subject,29.0,6.0527278193386636,9.24914340325535
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,589,,,,,,True,formal baseline (primary),subject,30.0,11.305718161000804,16.28683700181093
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,519,,,,,,True,formal baseline (primary),subject,31.0,6.233079092965859,8.00165928090052
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,521,,,,,,True,formal baseline (primary),subject,32.0,10.924891457514143,16.147852513381796
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,604,,,,,,True,formal baseline (primary),subject,33.0,11.786291657368412,17.038387429865065
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,558,,,,,,True,formal baseline (primary),subject,34.0,8.895503376441146,12.54520153875419
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,546,,,,,,True,formal baseline (primary),subject,35.0,9.475503480601782,13.675446213872267
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,655,,,,,,True,formal baseline (primary),subject,36.0,6.4579387986335846,9.640532303545088
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,550,,,,,,True,formal baseline (primary),subject,38.0,7.470518951302217,11.176741272017592
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,658,,,,,,True,formal baseline (primary),subject,39.0,8.592918969033196,12.69120289246421
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,542,,,,,,True,formal baseline (primary),subject,41.0,5.62663557194242,8.004975528006335
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,551,,,,,,True,formal baseline (primary),subject,42.0,6.78280493469825,9.835201346723768
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,551,,,,,,True,formal baseline (primary),subject,43.0,5.156597749241153,7.033095673315143
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,551,,,,,,True,formal baseline (primary),subject,44.0,7.152480604823651,9.911995977718552
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,593,,,,,,True,formal baseline (primary),subject,45.0,8.924722358850854,14.155877850766979
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,557,,,,,,True,formal baseline (primary),subject,46.0,11.072896379014104,16.327500152235107
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,598,,,,,,True,formal baseline (primary),subject,47.0,8.592175749697068,12.35983045740183
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,664,,,,,,True,formal baseline (primary),subject,48.0,9.058833188919909,13.256030497443597
+glucobench_linear_regression,Within-subject Future Prediction,in_len=24,validation,,583,,,,,,True,formal baseline (primary),subject,49.0,9.304199938076978,14.402752371205745
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1738,,,,,,True,project comparison,subject,1.0,6.582013958556078,9.196327933862563
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,2013,,,,,,True,project comparison,subject,2.0,7.253535059324185,10.527510496703782
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1685,,,,,,True,project comparison,subject,3.0,8.236485423230668,13.263893670511523
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1683,,,,,,True,project comparison,subject,4.0,6.69208397118707,9.806701095047126
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1706,,,,,,True,project comparison,subject,5.0,8.492211333656806,12.320782773703579
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1706,,,,,,True,project comparison,subject,6.0,6.939445377342335,9.831881587298174
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,69,,,,,,True,project comparison,subject,7.0,8.978897267850119,12.653693915021712
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1742,,,,,,True,project comparison,subject,8.0,6.477532256833559,9.57974014171984
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1695,,,,,,True,project comparison,subject,9.0,7.930393398532962,11.009414446717727
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1909,,,,,,True,project comparison,subject,10.0,8.971495899141146,13.241891765371884
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1747,,,,,,True,project comparison,subject,11.0,8.210439942749911,12.633375177156132
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1731,,,,,,True,project comparison,subject,12.0,11.060909494316983,16.762584329029522
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1871,,,,,,True,project comparison,subject,13.0,8.185744284122956,12.281186095876718
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,2040,,,,,,True,project comparison,subject,14.0,7.078527468986012,10.651734901561564
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,2039,,,,,,True,project comparison,subject,15.0,7.656742765751024,11.012007806733319
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1925,,,,,,True,project comparison,subject,16.0,6.851850381774505,9.467345434847163
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1913,,,,,,True,project comparison,subject,17.0,7.900918523034021,10.637755997705053
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,548,,,,,,True,project comparison,subject,18.0,8.288426366312327,12.046330674074238
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1669,,,,,,True,project comparison,subject,19.0,7.720069672841211,10.817895504950808
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1922,,,,,,True,project comparison,subject,20.0,7.788068149457061,10.748586061617415
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1905,,,,,,True,project comparison,subject,21.0,9.361886125698907,13.718584384596227
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,2085,,,,,,True,project comparison,subject,22.0,8.850972845504423,12.413206236244497
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1913,,,,,,True,project comparison,subject,23.0,9.197332707093986,13.656352039113862
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1929,,,,,,True,project comparison,subject,26.0,9.194831473838896,13.696217110917694
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1715,,,,,,True,project comparison,subject,27.0,7.023716513915493,9.616175329902516
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,2219,,,,,,True,project comparison,subject,28.0,6.614851814203878,9.521797302408844
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,2098,,,,,,True,project comparison,subject,29.0,7.75862081813485,12.095906158947827
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1826,,,,,,True,project comparison,subject,30.0,9.923302770512539,14.903425063321373
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1617,,,,,,True,project comparison,subject,31.0,7.731824033764032,10.06940025100332
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1625,,,,,,True,project comparison,subject,32.0,8.4632009056985,11.821023997275345
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1838,,,,,,True,project comparison,subject,33.0,10.853804113881733,16.085547645595764
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1734,,,,,,True,project comparison,subject,34.0,8.152874277740768,11.40841712114148
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1698,,,,,,True,project comparison,subject,35.0,10.474261058289231,15.420626328681287
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,2024,,,,,,True,project comparison,subject,36.0,9.27927656316696,13.580269625128667
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1711,,,,,,True,project comparison,subject,38.0,7.526471160475026,11.43860050008666
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,2035,,,,,,True,project comparison,subject,39.0,8.489874054011562,12.78728132972674
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1688,,,,,,True,project comparison,subject,41.0,7.613762459169655,11.185939066184106
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1713,,,,,,True,project comparison,subject,42.0,7.103484391814015,10.260050941580124
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1680,,,,,,True,project comparison,subject,43.0,7.7700069844130555,10.695329494082372
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1715,,,,,,True,project comparison,subject,44.0,7.54470996157579,10.619412539055725
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1839,,,,,,True,project comparison,subject,45.0,9.19968483172516,13.645373232942973
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1663,,,,,,True,project comparison,subject,46.0,10.23756926400731,15.597452173291737
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1853,,,,,,True,project comparison,subject,47.0,10.259920562383495,14.33853668341227
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,2018,,,,,,True,project comparison,subject,48.0,8.517519455761603,11.930742395968688
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,train,,1808,,,,,,True,project comparison,subject,49.0,8.828303049052792,13.095109534233456
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,559,,,,,,True,project comparison,subject,1.0,6.663243242549106,9.4559043803046
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,651,,,,,,True,project comparison,subject,2.0,7.733255031671327,10.5481818404663
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,553,,,,,,True,project comparison,subject,3.0,7.8582108888497535,13.199197677264939
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,466,,,,,,True,project comparison,subject,4.0,6.495659852358631,9.071821365117822
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,548,,,,,,True,project comparison,subject,5.0,6.337653584769642,9.901995437221737
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,548,,,,,,True,project comparison,subject,6.0,5.900141136883219,8.26954387404194
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,1,,,,,,True,project comparison,subject,7.0,16.84138637372702,16.84138637372702
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,560,,,,,,True,project comparison,subject,8.0,5.422034723713252,7.73297754162566
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,545,,,,,,True,project comparison,subject,9.0,6.412892955875122,9.071792842489177
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,616,,,,,,True,project comparison,subject,10.0,6.8704557116083045,10.255544251953005
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,562,,,,,,True,project comparison,subject,11.0,8.706276691660475,12.247679277689922
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,557,,,,,,True,project comparison,subject,12.0,10.916735168244136,16.82692976986002
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,604,,,,,,True,project comparison,subject,13.0,5.210580145398582,7.411645314653542
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,660,,,,,,True,project comparison,subject,14.0,7.485083696412458,10.915288430317815
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,551,,,,,,True,project comparison,subject,15.0,8.145494564442926,16.877817959250468
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,622,,,,,,True,project comparison,subject,16.0,5.008122949297628,6.89115406352832
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,617,,,,,,True,project comparison,subject,17.0,6.001772773411637,8.024467797506379
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,1073,,,,,,True,project comparison,subject,18.0,7.2540412175684175,10.248426831403627
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,548,,,,,,True,project comparison,subject,19.0,6.430869534530175,9.061009618950497
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,620,,,,,,True,project comparison,subject,20.0,6.959715917796345,9.888671502691354
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,615,,,,,,True,project comparison,subject,21.0,8.686912874708586,12.864210399566755
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,675,,,,,,True,project comparison,subject,22.0,7.1599053260501195,9.666622072643236
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,617,,,,,,True,project comparison,subject,23.0,7.681242619599728,10.801767824597437
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,623,,,,,,True,project comparison,subject,26.0,9.970201362345554,14.881294095536132
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,551,,,,,,True,project comparison,subject,27.0,5.490792266807338,7.358554656479502
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,719,,,,,,True,project comparison,subject,28.0,6.9743642749195605,9.719769034672895
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,679,,,,,,True,project comparison,subject,29.0,6.387462595174551,9.597681311475336
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,589,,,,,,True,project comparison,subject,30.0,11.868128135673771,17.13617356899063
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,519,,,,,,True,project comparison,subject,31.0,6.680263316933715,8.335702445323916
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,521,,,,,,True,project comparison,subject,32.0,10.6128118248917,15.349554664199049
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,604,,,,,,True,project comparison,subject,33.0,12.299839415864382,17.944351747026282
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,558,,,,,,True,project comparison,subject,34.0,9.181594069741971,12.742369812580126
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,546,,,,,,True,project comparison,subject,35.0,9.453355838917739,13.63899045416176
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,655,,,,,,True,project comparison,subject,36.0,6.748540289121232,10.201415820766897
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,550,,,,,,True,project comparison,subject,38.0,7.699511807965206,11.363961760807442
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,658,,,,,,True,project comparison,subject,39.0,8.675347541371416,13.05541590340803
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,542,,,,,,True,project comparison,subject,41.0,5.9840511688876985,8.24367423896375
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,551,,,,,,True,project comparison,subject,42.0,6.8544747132094805,10.129525432848181
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,551,,,,,,True,project comparison,subject,43.0,5.405000452709924,7.31193649601172
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,551,,,,,,True,project comparison,subject,44.0,7.484739258897684,10.37698956976262
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,593,,,,,,True,project comparison,subject,45.0,9.417061397709483,14.780940295217725
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,557,,,,,,True,project comparison,subject,46.0,11.462070460622929,16.83514470757006
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,598,,,,,,True,project comparison,subject,47.0,9.027127094944975,12.903687641042207
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,664,,,,,,True,project comparison,subject,48.0,9.654887665835332,14.040842179331667
+ridge_glucose_history_features,Within-subject Future Prediction,alpha=0.1,validation,,583,,,,,,True,project comparison,subject,49.0,9.330746974109251,14.461233038334822
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,train,,2750,,,,,,True,formal baseline (primary),subject,4.0,6.330192243738178,9.343073041278052
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,train,,2862,,,,,,True,formal baseline (primary),subject,5.0,7.748668931833033,11.607246278238147
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,train,,2862,,,,,,True,formal baseline (primary),subject,6.0,5.975952514709776,8.657147899818852
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,train,,2922,,,,,,True,formal baseline (primary),subject,8.0,5.855976014863832,8.640548489129268
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,train,,3201,,,,,,True,formal baseline (primary),subject,10.0,7.912593364440659,11.902228999926084
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,train,,2931,,,,,,True,formal baseline (primary),subject,11.0,7.757952975301885,11.711696731433063
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,train,,3207,,,,,,True,formal baseline (primary),subject,17.0,7.067269329109946,9.860764195491777
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,train,,2824,,,,,,True,formal baseline (primary),subject,19.0,6.909854781492705,9.876731401052309
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,train,,3195,,,,,,True,formal baseline (primary),subject,21.0,8.491987524123857,12.633127338026528
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,train,,3495,,,,,,True,formal baseline (primary),subject,22.0,7.898248088853182,11.25256440240762
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,train,,3234,,,,,,True,formal baseline (primary),subject,26.0,8.794597679297063,13.392872201849793
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,train,,2877,,,,,,True,formal baseline (primary),subject,27.0,6.190280797523779,8.583267311013394
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,train,,3717,,,,,,True,formal baseline (primary),subject,28.0,6.3412443826885045,9.138776968520895
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,train,,3516,,,,,,True,formal baseline (primary),subject,29.0,6.9882609934944675,10.81424908380939
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,train,,3063,,,,,,True,formal baseline (primary),subject,30.0,9.996928295257227,14.695296751600633
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,train,,2715,,,,,,True,formal baseline (primary),subject,31.0,6.996460105834342,9.192312750066538
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,train,,2727,,,,,,True,formal baseline (primary),subject,32.0,8.8100519682037,12.805073232452182
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,train,,2910,,,,,,True,formal baseline (primary),subject,34.0,8.520881926189407,11.974831608110636
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,train,,2850,,,,,,True,formal baseline (primary),subject,35.0,10.416885513184837,15.000448845781367
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,train,,2871,,,,,,True,formal baseline (primary),subject,38.0,7.052555498194575,10.64623478750661
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,train,,3411,,,,,,True,formal baseline (primary),subject,39.0,8.407863367265467,12.453341832712617
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,train,,2874,,,,,,True,formal baseline (primary),subject,42.0,6.867487702400813,9.895151050323417
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,train,,2842,,,,,,True,formal baseline (primary),subject,43.0,6.7608510181536,9.383256750718045
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,train,,2877,,,,,,True,formal baseline (primary),subject,44.0,7.049362106082057,10.099009084061858
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,train,,3084,,,,,,True,formal baseline (primary),subject,45.0,8.936697893440524,13.821315098461287
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,train,,3108,,,,,,True,formal baseline (primary),subject,47.0,9.182310494653004,12.977473068127857
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,train,,3033,,,,,,True,formal baseline (primary),subject,49.0,9.162301717969232,13.604664424220465
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,validation,,2916,,,,,,True,formal baseline (primary),subject,1.0,6.181511156299894,8.652121109222696
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,validation,,110,,,,,,True,formal baseline (primary),subject,7.0,9.542821121455152,15.14912846385322
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,validation,,2878,,,,,,True,formal baseline (primary),subject,12.0,10.748475639237743,16.28595613327033
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,validation,,3228,,,,,,True,formal baseline (primary),subject,16.0,6.10094244237103,8.685926678910919
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,validation,,2755,,,,,,True,formal baseline (primary),subject,18.0,6.27521297020888,9.316512125047836
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,validation,,3222,,,,,,True,formal baseline (primary),subject,20.0,7.277357079022935,10.222347342333448
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,validation,,3207,,,,,,True,formal baseline (primary),subject,23.0,8.769107510725197,12.876105344441235
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,validation,,3106,,,,,,True,formal baseline (primary),subject,33.0,10.316102055643672,15.285995064298513
+glucobench_linear_regression,Unseen-subject Generalization,in_len=24,validation,,2837,,,,,,True,formal baseline (primary),subject,46.0,9.862678371031675,14.938239211675306
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,train,,2750,,,,,,True,project comparison,subject,4.0,6.650857500592988,9.705965420572092
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,train,,2862,,,,,,True,project comparison,subject,5.0,7.975357561941832,11.841176962635569
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,train,,2862,,,,,,True,project comparison,subject,6.0,6.279699240735966,8.95768534178582
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,train,,2922,,,,,,True,project comparison,subject,8.0,6.116909509160592,8.966633509272778
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,train,,3201,,,,,,True,project comparison,subject,10.0,8.1448474186474,12.041047684963038
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,train,,2931,,,,,,True,project comparison,subject,11.0,8.28491196175739,12.41309189332217
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,train,,3207,,,,,,True,project comparison,subject,17.0,7.170757823460721,9.807329261712836
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,train,,2824,,,,,,True,project comparison,subject,19.0,7.340575041354218,10.345819528440046
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,train,,3195,,,,,,True,project comparison,subject,21.0,8.90027209204311,13.117359582466392
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,train,,3495,,,,,,True,project comparison,subject,22.0,8.401451718073151,11.841252686701182
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,train,,3234,,,,,,True,project comparison,subject,26.0,9.389710458844755,14.137237858683198
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,train,,2877,,,,,,True,project comparison,subject,27.0,6.496807341367053,8.898696395261208
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,train,,3717,,,,,,True,project comparison,subject,28.0,6.616321995735968,9.556603916349685
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,train,,3516,,,,,,True,project comparison,subject,29.0,7.335395979654401,11.302522899006213
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,train,,3063,,,,,,True,project comparison,subject,30.0,10.341322522526976,15.268635243402226
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,train,,2715,,,,,,True,project comparison,subject,31.0,7.305828275748862,9.482187514689208
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,train,,2727,,,,,,True,project comparison,subject,32.0,8.784541906470558,12.583587325643721
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,train,,2910,,,,,,True,project comparison,subject,34.0,8.7884437112869,12.362261881007276
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,train,,2850,,,,,,True,project comparison,subject,35.0,10.435254143002778,15.160852219575837
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,train,,2871,,,,,,True,project comparison,subject,38.0,7.288682481804639,11.038214524693846
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,train,,3411,,,,,,True,project comparison,subject,39.0,8.767780146722911,13.037439891079694
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,train,,2874,,,,,,True,project comparison,subject,42.0,7.002463675583774,10.093500567812043
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,train,,2842,,,,,,True,project comparison,subject,43.0,6.998160554784763,9.725861547970487
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,train,,2877,,,,,,True,project comparison,subject,44.0,7.462972462092838,10.527638679453103
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,train,,3084,,,,,,True,project comparison,subject,45.0,9.402789075624728,14.39371709742489
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,train,,3108,,,,,,True,project comparison,subject,47.0,9.595082096081882,13.555081591064905
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,train,,3033,,,,,,True,project comparison,subject,49.0,9.417593074420514,13.988627855358322
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,validation,,2916,,,,,,True,project comparison,subject,1.0,6.520549524333712,9.101112444957394
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,validation,,110,,,,,,True,project comparison,subject,7.0,9.12899933193342,14.546777052548181
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,validation,,2878,,,,,,True,project comparison,subject,12.0,10.866435732181229,16.622259526703573
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,validation,,3228,,,,,,True,project comparison,subject,16.0,6.356364646637951,8.80041156532262
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,validation,,2755,,,,,,True,project comparison,subject,18.0,6.740041182312223,9.78737462047892
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,validation,,3222,,,,,,True,project comparison,subject,20.0,7.606518551475953,10.625560972257613
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,validation,,3207,,,,,,True,project comparison,subject,23.0,9.036648378426737,13.292032966992108
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,validation,,3106,,,,,,True,project comparison,subject,33.0,10.788621368337132,16.021350442584758
+ridge_glucose_history_features,Unseen-subject Generalization,alpha=0.1,validation,,2837,,,,,,True,project comparison,subject,46.0,10.11130374258851,15.336666092015568
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1738,,,,,,True,project comparison,subject,1.0,6.5298653657101,8.901159657645522
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,2013,,,,,,True,project comparison,subject,2.0,8.130353796073921,11.807269372940773
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1685,,,,,,True,project comparison,subject,3.0,9.73255311510759,15.773983467082283
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1683,,,,,,True,project comparison,subject,4.0,7.530021106888784,10.950282133329878
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1706,,,,,,True,project comparison,subject,5.0,9.760328053536108,13.788302833507228
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1706,,,,,,True,project comparison,subject,6.0,7.603374525108879,10.445196325957097
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,69,,,,,,True,project comparison,subject,7.0,5.976597028586924,7.737066447592792
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1742,,,,,,True,project comparison,subject,8.0,7.8453592993320305,11.456302666129464
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1695,,,,,,True,project comparison,subject,9.0,8.66582625924248,12.082104665624602
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1909,,,,,,True,project comparison,subject,10.0,9.61029638193459,13.697624267476012
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1747,,,,,,True,project comparison,subject,11.0,9.040726185205866,13.946732990898981
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1731,,,,,,True,project comparison,subject,12.0,12.693870446215524,19.07318411402097
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1871,,,,,,True,project comparison,subject,13.0,9.868688882864038,14.498351673532826
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,2040,,,,,,True,project comparison,subject,14.0,8.445145039529294,12.55460346359857
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,2039,,,,,,True,project comparison,subject,15.0,7.138951181282232,9.966109787192993
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1925,,,,,,True,project comparison,subject,16.0,7.71735228427602,10.254936678288837
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1913,,,,,,True,project comparison,subject,17.0,7.421582492043494,9.767853358511175
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,548,,,,,,True,project comparison,subject,18.0,9.528207755061018,13.360331407664336
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1669,,,,,,True,project comparison,subject,19.0,8.072881270565349,11.068498219826068
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1922,,,,,,True,project comparison,subject,20.0,9.564648557335667,13.13735597124228
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1905,,,,,,True,project comparison,subject,21.0,9.8624117484304,14.222337441370058
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,2085,,,,,,True,project comparison,subject,22.0,8.818898048037159,12.516389505861877
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1913,,,,,,True,project comparison,subject,23.0,10.92731313323169,16.07454569402158
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1929,,,,,,True,project comparison,subject,26.0,10.357650657533835,15.297398795303188
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1715,,,,,,True,project comparison,subject,27.0,7.4608356060856025,10.18790591387228
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,2219,,,,,,True,project comparison,subject,28.0,7.679019661595703,10.881158323728231
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,2098,,,,,,True,project comparison,subject,29.0,8.94757566622198,13.804111792809042
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1826,,,,,,True,project comparison,subject,30.0,10.918805308788803,16.239066197077047
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1617,,,,,,True,project comparison,subject,31.0,7.759256523874651,10.436874489194446
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1625,,,,,,True,project comparison,subject,32.0,8.72219698150813,11.829261338919979
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1838,,,,,,True,project comparison,subject,33.0,12.980232151127938,18.98103351504163
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1734,,,,,,True,project comparison,subject,34.0,8.319734362530236,10.91559480299657
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1698,,,,,,True,project comparison,subject,35.0,12.233879473349225,17.764733742813064
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,2024,,,,,,True,project comparison,subject,36.0,11.734266881270393,17.02040735726426
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1711,,,,,,True,project comparison,subject,38.0,8.710269845288199,13.460427587207338
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,2035,,,,,,True,project comparison,subject,39.0,9.747694954802439,14.724882386472267
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1688,,,,,,True,project comparison,subject,41.0,8.803216784763885,12.998222576772772
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1713,,,,,,True,project comparison,subject,42.0,8.74721070061626,12.350012392298517
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1680,,,,,,True,project comparison,subject,43.0,9.194260067055085,12.577849571357087
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1715,,,,,,True,project comparison,subject,44.0,9.113710705634537,12.559722520902264
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1839,,,,,,True,project comparison,subject,45.0,11.024256397494938,16.175822911958306
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1663,,,,,,True,project comparison,subject,46.0,12.107178161755034,17.872917898574347
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1853,,,,,,True,project comparison,subject,47.0,12.426611850247534,17.414474836084
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,2018,,,,,,True,project comparison,subject,48.0,8.512108055790426,11.951096753358586
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",train,,1808,,,,,,True,project comparison,subject,49.0,10.280614906409507,15.376804939583979
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,559,,,,,,True,project comparison,subject,1.0,6.797016616932915,9.767693944399285
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,651,,,,,,True,project comparison,subject,2.0,9.798372628201463,13.460961949894209
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,553,,,,,,True,project comparison,subject,3.0,9.553424821007535,16.201294170245703
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,466,,,,,,True,project comparison,subject,4.0,7.958420744299254,10.753361842097755
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,548,,,,,,True,project comparison,subject,5.0,8.269021435813793,12.732735083463298
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,548,,,,,,True,project comparison,subject,6.0,6.430557521137114,9.277881521693763
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,1,,,,,,True,project comparison,subject,7.0,10.583277984336775,10.583277984336775
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,560,,,,,,True,project comparison,subject,8.0,6.659804432174859,9.577028359715356
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,545,,,,,,True,project comparison,subject,9.0,8.294450570384923,11.467195165590612
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,616,,,,,,True,project comparison,subject,10.0,8.1331288313957,11.796514621765095
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,562,,,,,,True,project comparison,subject,11.0,9.536083876931968,13.34344407929199
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,557,,,,,,True,project comparison,subject,12.0,14.026740611648904,21.798690687793957
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,604,,,,,,True,project comparison,subject,13.0,6.478387088942124,9.184414257796613
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,660,,,,,,True,project comparison,subject,14.0,8.861212465806313,12.93228678920378
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,551,,,,,,True,project comparison,subject,15.0,5.023897006426736,9.505498519445885
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,622,,,,,,True,project comparison,subject,16.0,5.7792224664329925,7.974444975985198
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,617,,,,,,True,project comparison,subject,17.0,6.6257802310793155,8.530932593142621
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,1073,,,,,,True,project comparison,subject,18.0,8.767222250601984,12.214868943146858
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,548,,,,,,True,project comparison,subject,19.0,6.222800697404451,8.30053023871859
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,620,,,,,,True,project comparison,subject,20.0,8.155153238590342,11.989136643035915
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,615,,,,,,True,project comparison,subject,21.0,9.385200958749609,13.552010554937493
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,675,,,,,,True,project comparison,subject,22.0,7.312757046608187,10.038432167957534
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,617,,,,,,True,project comparison,subject,23.0,9.564836648635975,13.331844509292845
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,623,,,,,,True,project comparison,subject,26.0,11.305621232807763,16.323233434311938
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,551,,,,,,True,project comparison,subject,27.0,5.944869172094846,7.664743706917186
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,719,,,,,,True,project comparison,subject,28.0,7.862067523424582,10.998413445246902
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,679,,,,,,True,project comparison,subject,29.0,7.6736601851331265,11.052792956601364
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,589,,,,,,True,project comparison,subject,30.0,14.905335208475512,21.79122925792094
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,519,,,,,,True,project comparison,subject,31.0,6.826253170163752,8.257269606215777
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,521,,,,,,True,project comparison,subject,32.0,11.156001713072397,15.305440169840585
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,604,,,,,,True,project comparison,subject,33.0,15.122666101735497,22.190793640392858
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,558,,,,,,True,project comparison,subject,34.0,8.615076956153052,11.465859155490909
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,546,,,,,,True,project comparison,subject,35.0,12.724548227626375,17.386222794538174
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,655,,,,,,True,project comparison,subject,36.0,8.876618961632252,12.977553946533591
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,550,,,,,,True,project comparison,subject,38.0,8.68732884618397,12.929989959298378
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,658,,,,,,True,project comparison,subject,39.0,9.822250274258456,15.06750076891473
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,542,,,,,,True,project comparison,subject,41.0,7.633403027978179,10.432450587613298
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,551,,,,,,True,project comparison,subject,42.0,8.584139581782306,13.004728804149444
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,551,,,,,,True,project comparison,subject,43.0,7.013436984257548,9.245920110728932
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,551,,,,,,True,project comparison,subject,44.0,8.435979823469944,11.832173983196816
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,593,,,,,,True,project comparison,subject,45.0,11.471117714737671,18.20629853841434
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,557,,,,,,True,project comparison,subject,46.0,14.381546339165926,21.47468123712914
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,598,,,,,,True,project comparison,subject,47.0,12.290183913996339,17.109383241671374
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,664,,,,,,True,project comparison,subject,48.0,9.646420447150795,13.937684958124384
+shallow_gbt_glucose_history_features,Within-subject Future Prediction,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,583,,,,,,True,project comparison,subject,49.0,11.206570901669497,16.758575465278366
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",train,,2750,,,,,,True,project comparison,subject,4.0,7.546982297140089,10.789825125761054
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",train,,2862,,,,,,True,project comparison,subject,5.0,9.325416563889414,13.648157229859756
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",train,,2862,,,,,,True,project comparison,subject,6.0,6.930768412818737,9.70710359810935
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",train,,2922,,,,,,True,project comparison,subject,8.0,7.369592143514961,10.548598976381196
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",train,,3201,,,,,,True,project comparison,subject,10.0,8.848650672940213,12.686059162820678
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",train,,2931,,,,,,True,project comparison,subject,11.0,9.054579163925247,13.473294617538194
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",train,,3207,,,,,,True,project comparison,subject,17.0,7.195691050379902,9.448383532108275
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",train,,2824,,,,,,True,project comparison,subject,19.0,7.520368666362746,10.39130708978987
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",train,,3195,,,,,,True,project comparison,subject,21.0,9.119977344926316,13.25128432434469
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",train,,3495,,,,,,True,project comparison,subject,22.0,8.360274110298759,11.81079911522152
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",train,,3234,,,,,,True,project comparison,subject,26.0,10.353056092920701,15.222702200583848
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",train,,2877,,,,,,True,project comparison,subject,27.0,6.901200550669174,9.32992460988913
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",train,,3717,,,,,,True,project comparison,subject,28.0,7.781898002143613,11.126325734161624
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",train,,3516,,,,,,True,project comparison,subject,29.0,8.497353900382963,12.85441512329342
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",train,,3063,,,,,,True,project comparison,subject,30.0,11.420539476776447,16.87513334328301
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",train,,2715,,,,,,True,project comparison,subject,31.0,7.44212074559738,9.820129645490573
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",train,,2727,,,,,,True,project comparison,subject,32.0,8.67231178854524,12.031236683307355
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",train,,2910,,,,,,True,project comparison,subject,34.0,8.517450919880412,11.264161248959985
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",train,,2850,,,,,,True,project comparison,subject,35.0,12.413372211168245,17.708746334792902
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",train,,2871,,,,,,True,project comparison,subject,38.0,8.433663647180097,12.965916346982624
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",train,,3411,,,,,,True,project comparison,subject,39.0,9.975979327115722,14.839820578114525
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",train,,2874,,,,,,True,project comparison,subject,42.0,8.529426907820483,12.276478300540218
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",train,,2842,,,,,,True,project comparison,subject,43.0,8.425346047024005,11.463437780691043
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",train,,2877,,,,,,True,project comparison,subject,44.0,9.056124295797966,12.599678735991928
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",train,,3084,,,,,,True,project comparison,subject,45.0,11.403290418079461,17.082390197569726
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",train,,3108,,,,,,True,project comparison,subject,47.0,11.897775474375624,16.558662624302663
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",train,,3033,,,,,,True,project comparison,subject,49.0,11.140629829692495,16.594578456296155
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,2916,,,,,,True,project comparison,subject,1.0,6.710100942947528,9.173968298352865
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,110,,,,,,True,project comparison,subject,7.0,7.177486268590143,12.855469818502026
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,2878,,,,,,True,project comparison,subject,12.0,13.33733216816639,20.357021134581
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,3228,,,,,,True,project comparison,subject,16.0,7.313214458178888,9.795822366872299
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,2755,,,,,,True,project comparison,subject,18.0,8.054575945449665,11.368486564094274
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,3222,,,,,,True,project comparison,subject,20.0,9.563461381342785,13.459253869382444
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,3207,,,,,,True,project comparison,subject,23.0,11.325020888315606,16.56317564930549
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,3106,,,,,,True,project comparison,subject,33.0,13.452657826777767,19.796097073829895
+shallow_gbt_glucose_history_features,Unseen-subject Generalization,"max_iter=300,max_depth=3,learning_rate=0.1",validation,,2837,,,,,,True,project comparison,subject,46.0,12.680424602581397,18.80662459106898
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1738,,,,,,True,formal baseline (secondary),subject,1.0,9.704408751720596,14.034415460055039
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,2013,,,,,,True,formal baseline (secondary),subject,2.0,10.250061699880092,19.516714030349632
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1685,,,,,,True,formal baseline (secondary),subject,3.0,11.342870643197603,20.13183338796802
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1683,,,,,,True,formal baseline (secondary),subject,4.0,10.052499609632923,15.411272641083455
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1706,,,,,,True,formal baseline (secondary),subject,5.0,12.21013037536626,18.784780475084435
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1706,,,,,,True,formal baseline (secondary),subject,6.0,9.966191409341485,15.298412640231549
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,69,,,,,,True,formal baseline (secondary),subject,7.0,9.326298900699262,17.90175228053713
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1742,,,,,,True,formal baseline (secondary),subject,8.0,9.236548079085715,14.641982181211612
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1695,,,,,,True,formal baseline (secondary),subject,9.0,11.250782096162371,16.7319833652319
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1909,,,,,,True,formal baseline (secondary),subject,10.0,13.452516784640265,21.60385533608278
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1747,,,,,,True,formal baseline (secondary),subject,11.0,12.59664963764881,20.991173082168086
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1731,,,,,,True,formal baseline (secondary),subject,12.0,14.34231360470942,22.639268061232396
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1871,,,,,,True,formal baseline (secondary),subject,13.0,12.903081121037774,19.803776824740602
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,2040,,,,,,True,formal baseline (secondary),subject,14.0,10.339423521161438,15.931969347919269
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,2039,,,,,,True,formal baseline (secondary),subject,15.0,9.564931223611309,16.756094980337636
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1925,,,,,,True,formal baseline (secondary),subject,16.0,9.797053934915041,15.22455765783763
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1913,,,,,,True,formal baseline (secondary),subject,17.0,10.711874949186669,15.85950101376332
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,548,,,,,,True,formal baseline (secondary),subject,18.0,12.31132767712495,20.798224586815117
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1669,,,,,,True,formal baseline (secondary),subject,19.0,11.210867372113537,16.749240164148876
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1922,,,,,,True,formal baseline (secondary),subject,20.0,10.666724002803225,14.987961028415155
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1905,,,,,,True,formal baseline (secondary),subject,21.0,14.431025354385373,22.545183189029842
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,2085,,,,,,True,formal baseline (secondary),subject,22.0,13.384600231139027,19.650081719031668
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1913,,,,,,True,formal baseline (secondary),subject,23.0,13.677118443204867,21.6403607144792
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1929,,,,,,True,formal baseline (secondary),subject,26.0,14.125955808341013,23.571006241271732
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1715,,,,,,True,formal baseline (secondary),subject,27.0,9.717088815618816,14.62354589411509
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,2219,,,,,,True,formal baseline (secondary),subject,28.0,9.693738898549132,14.12877579683018
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,2098,,,,,,True,formal baseline (secondary),subject,29.0,12.038836312679983,20.270162493324595
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1826,,,,,,True,formal baseline (secondary),subject,30.0,11.091434477308422,17.703248374271922
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1617,,,,,,True,formal baseline (secondary),subject,31.0,10.585989715230868,14.547873017228795
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1625,,,,,,True,formal baseline (secondary),subject,32.0,12.397586314196177,19.144651372660537
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1838,,,,,,True,formal baseline (secondary),subject,33.0,15.518103139781742,22.834064315781472
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1734,,,,,,True,formal baseline (secondary),subject,34.0,12.003525906849825,17.701947438681184
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1698,,,,,,True,formal baseline (secondary),subject,35.0,13.490536078949631,19.348312239796563
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,2024,,,,,,True,formal baseline (secondary),subject,36.0,12.449186865488635,20.415432933758023
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1711,,,,,,True,formal baseline (secondary),subject,38.0,10.378939687552124,16.341330618437034
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,2035,,,,,,True,formal baseline (secondary),subject,39.0,11.203819722923098,16.923537239188185
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1688,,,,,,True,formal baseline (secondary),subject,41.0,9.816343135664061,14.554875879274059
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1713,,,,,,True,formal baseline (secondary),subject,42.0,10.302728438785923,15.17946236235662
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1680,,,,,,True,formal baseline (secondary),subject,43.0,11.122332986619131,16.42229776493341
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1715,,,,,,True,formal baseline (secondary),subject,44.0,10.482197136033447,15.61604062489235
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1839,,,,,,True,formal baseline (secondary),subject,45.0,12.118507545186283,19.47376816090823
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1663,,,,,,True,formal baseline (secondary),subject,46.0,12.57327200890883,20.76044989585539
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1853,,,,,,True,formal baseline (secondary),subject,47.0,14.01070481255081,19.883268310168145
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,2018,,,,,,True,formal baseline (secondary),subject,48.0,12.136939905420075,18.828557894511302
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,train,,1808,,,,,,True,formal baseline (secondary),subject,49.0,11.333421495704922,17.053095342675707
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,559,,,,,,True,formal baseline (secondary),subject,1.0,9.595198450376698,15.262957061475538
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,651,,,,,,True,formal baseline (secondary),subject,2.0,10.854438380744714,16.567780365877205
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,553,,,,,,True,formal baseline (secondary),subject,3.0,10.987147490265482,21.342602535810894
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,466,,,,,,True,formal baseline (secondary),subject,4.0,9.614619123988508,13.926123379444926
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,548,,,,,,True,formal baseline (secondary),subject,5.0,8.76630610777559,14.572253444513146
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,548,,,,,,True,formal baseline (secondary),subject,6.0,8.27258635859291,12.097611893690289
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,1,,,,,,True,formal baseline (secondary),subject,7.0,30.608644581363468,30.608644581363468
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,560,,,,,,True,formal baseline (secondary),subject,8.0,7.476258141687469,11.456744443262366
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,545,,,,,,True,formal baseline (secondary),subject,9.0,9.337095646739828,13.309638594841797
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,616,,,,,,True,formal baseline (secondary),subject,10.0,10.04419538723747,16.644273199852986
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,562,,,,,,True,formal baseline (secondary),subject,11.0,13.824617720983305,19.570326535728302
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,557,,,,,,True,formal baseline (secondary),subject,12.0,13.662854956840777,22.53226653510825
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,604,,,,,,True,formal baseline (secondary),subject,13.0,7.800318339356666,11.218357717436847
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,660,,,,,,True,formal baseline (secondary),subject,14.0,10.828410639200557,17.365892960592905
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,551,,,,,,True,formal baseline (secondary),subject,15.0,6.78678436884499,37.35410559713372
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,622,,,,,,True,formal baseline (secondary),subject,16.0,6.641839889136694,10.41779419750073
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,617,,,,,,True,formal baseline (secondary),subject,17.0,8.481385094191193,11.935472631849358
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,1073,,,,,,True,formal baseline (secondary),subject,18.0,10.487442844058224,16.140477906382603
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,548,,,,,,True,formal baseline (secondary),subject,19.0,8.996168384129923,13.759132979114225
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,620,,,,,,True,formal baseline (secondary),subject,20.0,8.958567000148188,14.142325530371362
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,615,,,,,,True,formal baseline (secondary),subject,21.0,14.025932442033108,22.31679591599893
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,675,,,,,,True,formal baseline (secondary),subject,22.0,10.071631398550355,14.203138319923228
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,617,,,,,,True,formal baseline (secondary),subject,23.0,10.393078070398603,15.639929370590588
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,623,,,,,,True,formal baseline (secondary),subject,26.0,15.885468681843603,25.368194463228395
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,551,,,,,,True,formal baseline (secondary),subject,27.0,7.292782187686097,10.505270777252797
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,719,,,,,,True,formal baseline (secondary),subject,28.0,10.031224287858015,14.14507994651484
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,679,,,,,,True,formal baseline (secondary),subject,29.0,9.699019023018808,15.607302673194882
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,589,,,,,,True,formal baseline (secondary),subject,30.0,14.061318974046959,20.547090719160686
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,519,,,,,,True,formal baseline (secondary),subject,31.0,9.273489888204287,12.068079347207119
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,521,,,,,,True,formal baseline (secondary),subject,32.0,16.798103915057027,28.022964559656998
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,604,,,,,,True,formal baseline (secondary),subject,33.0,17.134955983765824,27.459994178178995
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,558,,,,,,True,formal baseline (secondary),subject,34.0,13.475668467989111,19.681547133189053
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,546,,,,,,True,formal baseline (secondary),subject,35.0,11.907555319094435,17.022817191295914
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,655,,,,,,True,formal baseline (secondary),subject,36.0,8.752200567362507,15.42866971794324
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,550,,,,,,True,formal baseline (secondary),subject,38.0,11.292734372894392,17.082325358959764
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,658,,,,,,True,formal baseline (secondary),subject,39.0,10.502819885656741,16.138025397918334
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,542,,,,,,True,formal baseline (secondary),subject,41.0,7.60776689594669,10.92003761215252
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,551,,,,,,True,formal baseline (secondary),subject,42.0,9.118945497848369,14.470706977207309
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,551,,,,,,True,formal baseline (secondary),subject,43.0,8.008702763096657,11.359052422973242
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,551,,,,,,True,formal baseline (secondary),subject,44.0,10.49706083269116,14.830246900628842
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,593,,,,,,True,formal baseline (secondary),subject,45.0,12.594872408687422,22.41530445115946
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,557,,,,,,True,formal baseline (secondary),subject,46.0,13.73129520095513,23.04538415904302
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,598,,,,,,True,formal baseline (secondary),subject,47.0,12.709294644360382,18.17855582078391
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,664,,,,,,True,formal baseline (secondary),subject,48.0,14.82851847523076,22.84186936932063
+sparacino2007_ar1_wls,Within-subject Future Prediction,mu=0.2,validation,,583,,,,,,True,formal baseline (secondary),subject,49.0,11.879096551958009,18.787333853218854
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,train,,2750,,,,,,True,formal baseline (secondary),subject,4.0,9.982384363406771,15.124465205337579
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,train,,2862,,,,,,True,formal baseline (secondary),subject,5.0,11.189066377760264,17.60658410624344
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,train,,2862,,,,,,True,formal baseline (secondary),subject,6.0,9.12297796674812,13.942655472120576
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,train,,2922,,,,,,True,formal baseline (secondary),subject,8.0,8.648574333617551,13.602035830865008
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,train,,3201,,,,,,True,formal baseline (secondary),subject,10.0,12.129889154372966,19.461104491909737
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,train,,2931,,,,,,True,formal baseline (secondary),subject,11.0,13.06163584550459,20.49205711825931
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,train,,3207,,,,,,True,formal baseline (secondary),subject,17.0,10.013841794734624,15.022561107456834
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,train,,2824,,,,,,True,formal baseline (secondary),subject,19.0,10.797367844790704,16.384776299609303
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,train,,3195,,,,,,True,formal baseline (secondary),subject,21.0,13.87598836251404,21.83828023117563
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,train,,3495,,,,,,True,formal baseline (secondary),subject,22.0,12.703354357688818,18.7581964117976
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,train,,3234,,,,,,True,formal baseline (secondary),subject,26.0,14.829955866735382,24.752568963204734
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,train,,2877,,,,,,True,formal baseline (secondary),subject,27.0,8.995337317327072,13.465160100686058
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,train,,3717,,,,,,True,formal baseline (secondary),subject,28.0,9.601269946615979,14.150338814946618
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,train,,3516,,,,,,True,formal baseline (secondary),subject,29.0,11.304352666386935,18.72700875919054
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,train,,3063,,,,,,True,formal baseline (secondary),subject,30.0,11.619143012026717,18.02858946166645
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,train,,2715,,,,,,True,formal baseline (secondary),subject,31.0,10.164097319516587,13.823734679481717
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,train,,2727,,,,,,True,formal baseline (secondary),subject,32.0,12.698796346772768,21.668981069473777
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,train,,2910,,,,,,True,formal baseline (secondary),subject,34.0,13.267450173752552,19.705800681793846
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,train,,2850,,,,,,True,formal baseline (secondary),subject,35.0,13.302790310489256,19.005652664707775
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,train,,2871,,,,,,True,formal baseline (secondary),subject,38.0,10.10936242131109,15.846545371285835
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,train,,3411,,,,,,True,formal baseline (secondary),subject,39.0,11.132710451319163,16.69224627436494
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,train,,2874,,,,,,True,formal baseline (secondary),subject,42.0,9.82668650380654,14.620742221589822
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,train,,2842,,,,,,True,formal baseline (secondary),subject,43.0,10.16304440214573,15.127941776862519
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,train,,2877,,,,,,True,formal baseline (secondary),subject,44.0,10.36111924473762,15.328899400986698
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,train,,3084,,,,,,True,formal baseline (secondary),subject,45.0,12.836844493584318,21.238864567270582
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,train,,3108,,,,,,True,formal baseline (secondary),subject,47.0,13.15818232800765,18.765606962310795
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,train,,3033,,,,,,True,formal baseline (secondary),subject,49.0,11.746717479514459,17.906741649214524
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,validation,,2916,,,,,,True,formal baseline (secondary),subject,1.0,9.77980023148494,14.439202198277634
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,validation,,110,,,,,,True,formal baseline (secondary),subject,7.0,8.346575170269206,18.25358883670238
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,validation,,2878,,,,,,True,formal baseline (secondary),subject,12.0,13.898600370481748,22.33563713846655
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,validation,,3228,,,,,,True,formal baseline (secondary),subject,16.0,9.098787927728106,14.161978288119013
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,validation,,2755,,,,,,True,formal baseline (secondary),subject,18.0,9.791245738319436,15.884933875721012
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,validation,,3222,,,,,,True,formal baseline (secondary),subject,20.0,10.24956935135343,14.85354422554876
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,validation,,3207,,,,,,True,formal baseline (secondary),subject,23.0,13.232514485149391,20.887261017146496
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,validation,,3106,,,,,,True,formal baseline (secondary),subject,33.0,15.089639520835972,22.93249847806416
+sparacino2007_ar1_wls,Unseen-subject Generalization,mu=0.2,validation,,2837,,,,,,True,formal baseline (secondary),subject,46.0,12.39502059621604,20.202647225222194

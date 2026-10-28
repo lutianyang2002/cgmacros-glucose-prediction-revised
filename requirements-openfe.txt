@@ -1,0 +1,14 @@
+# Independent OpenFE environment; CPython 3.11.9. Do not combine with requirements.txt:
+# OpenFE 0.0.12 calls mean_squared_error(squared=False), removed in sklearn 1.6.
+# Pinned dependencies for OpenFE feature generation.
+numpy==2.4.2
+pandas==2.3.3
+scipy==1.17.1
+scikit-learn==1.5.2
+joblib==1.5.3
+pyarrow==23.0.1
+matplotlib==3.10.8
+lightgbm==4.7.0
+openfe==0.0.12
+tqdm==4.70.1
+-e .

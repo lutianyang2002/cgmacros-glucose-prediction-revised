@@ -1,0 +1,8 @@
+task_id,stage,rule,input_count,excluded_count,remaining_count
+primary_libre_30min,0,candidate_origins,141263,0,141263
+primary_libre_30min,1,insufficient_history_extent,141263,1080,140183
+primary_libre_30min,2,target_outside_subject_extent,140183,270,139913
+primary_libre_30min,3,disallowed_source_discontinuity,139913,5299,134614
+primary_libre_30min,4,incomplete_published_primary_history,134614,70,134544
+primary_libre_30min,5,target_unavailable,134544,5,134539
+primary_libre_30min,6,eligible_windows,134539,0,134539

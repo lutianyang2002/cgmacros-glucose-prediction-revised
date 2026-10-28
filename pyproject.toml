@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cgmacros-glucose-prediction"
+version = "0.1.0"
+description = "Glucose prediction experiments on the CGMacros v1.0.0 dataset."
+requires-python = ">=3.11"
+# Runtime dependencies are pinned in requirements.txt (main pipeline) and
+# requirements-ppgr.txt (separate PPGR reproduction interpreter).
+dependencies = []
+
+[tool.setuptools]
+packages = ["src"]

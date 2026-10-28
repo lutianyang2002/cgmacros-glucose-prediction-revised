@@ -1,0 +1,7 @@
+{
+  "status": "COMPLETED",
+  "started": "2026-10-18T12:03:32+00:00",
+  "finished": "2026-10-18T12:07:00+00:00",
+  "record_kind": "Read-only summary of the archived completed evaluation; not execution permission",
+  "evidence_archive": "history/test_execution.zip"
+}

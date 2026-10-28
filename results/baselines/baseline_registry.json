@@ -1,0 +1,771 @@
+{
+  "registry_id": "baseline_registry_v1",
+  "spec_id": "baseline_reproduction_spec_v2",
+  "status": "selected on validation data only; test data not read before the corresponding analysis",
+  "task": {
+    "task_id": "primary_libre_30min",
+    "target_field": "libre_gl",
+    "target_unit": "mg/dL",
+    "history_interval": "[t - 120 minutes, t]",
+    "forecast_horizon_minutes": 30,
+    "origin_stride_minutes": 5,
+    "grid_resolution_minutes": 1
+  },
+  "protocols": {
+    "Within-subject Future Prediction": {
+      "rule": "Models and any learned preprocessing are fitted on each subject's training partition only; validation guides model and hyperparameter selection; test is used only for frozen evaluation.",
+      "provenance": "the corresponding analysis split_rules"
+    },
+    "Unseen-subject Generalization": {
+      "rule": "Test subjects may not contribute to population-level fitting, reusable subject-specific fitting, preprocessing fitting, or hyperparameter tuning. Deterministic calculations based solely on the current causally available input window are permitted at prediction time.",
+      "prohibited": [
+        "population-level model fitting on test subjects",
+        "reusable subject-specific fitting on test subjects",
+        "preprocessing fitted on test-subject statistics",
+        "hyperparameter tuning on test subjects",
+        "information after the prediction origin",
+        "test labels"
+      ],
+      "permitted": [
+        "deterministic calculation on the current window [t-120, t] only",
+        "local feature calculation",
+        "local closed-form coefficient estimation, including the Sparacino coefficient a"
+      ],
+      "conditions": [
+        "belongs to the current window only",
+        "not stored across windows",
+        "not reused for future windows",
+        "no future information",
+        "no test labels",
+        "hyperparameters fixed on permitted data"
+      ],
+      "provenance": "project-specified decision"
+    }
+  },
+  "protocol_names": {
+    "A": "Within-subject Future Prediction",
+    "B": "Unseen-subject Generalization"
+  },
+  "sample_keys": {
+    "window_key": [
+      "subject",
+      "origin_time",
+      "task_id"
+    ],
+    "fold_key": [
+      "evaluation_protocol",
+      "subject",
+      "origin_time",
+      "task_id"
+    ],
+    "admitted_counts": [
+      {
+        "evaluation_protocol": "Unseen-subject Generalization",
+        "split": "test",
+        "windows": 28322,
+        "subjects": 9
+      },
+      {
+        "evaluation_protocol": "Unseen-subject Generalization",
+        "split": "train",
+        "windows": 81958,
+        "subjects": 27
+      },
+      {
+        "evaluation_protocol": "Unseen-subject Generalization",
+        "split": "validation",
+        "windows": 24259,
+        "subjects": 9
+      },
+      {
+        "evaluation_protocol": "Within-subject Future Prediction",
+        "split": "test",
+        "windows": 26269,
+        "subjects": 45
+      },
+      {
+        "evaluation_protocol": "Within-subject Future Prediction",
+        "split": "train",
+        "windows": 79300,
+        "subjects": 45
+      },
+      {
+        "evaluation_protocol": "Within-subject Future Prediction",
+        "split": "validation",
+        "windows": 26330,
+        "subjects": 45
+      }
+    ]
+  },
+  "upstream_paths": {
+    "task_protocol": "results/forecast_windows/task_protocol.json",
+    "window_construction_rules": "results/forecast_windows/window_construction_rules.json",
+    "split_rules": "results/forecast_windows/split_rules.json",
+    "feature_registry": "results/forecast_windows/feature_registry.csv",
+    "sample_flow": "results/forecast_windows/sample_flow.csv",
+    "window_manifest": "results/forecast_windows/window_manifest.parquet",
+    "fold_assignments": "results/forecast_windows/fold_assignments.parquet",
+    "glucose_history_samples": "results/forecast_windows/glucose_history_samples.parquet",
+    "base_grid": "results/aligned_data/dynamic_aligned_1min.parquet"
+  },
+  "random_seeds": {
+    "shallow_gbt_random_state": [
+      0
+    ],
+    "reference_slope_audit_sample": "DataFrame.sample(random_state=0)",
+    "other steps": "deterministic (closed-form or ordinary least squares)"
+  },
+  "selection_rule": "lowest validation subject-mean RMSE within each model and protocol; test never used",
+  "final_refit": "none; selected models remain fitted on the training split only",
+  "imputation": "none required; all frozen windows are complete",
+  "models": {
+    "formal baseline reproduction": {
+      "glucobench_linear_regression": {
+        "role": "formal baseline (primary)",
+        "protocols": {
+          "Within-subject Future Prediction": {
+            "config": "in_len=24",
+            "inputs": [
+              "g-115",
+              "g-110",
+              "g-105",
+              "g-100",
+              "g-95",
+              "g-90",
+              "g-85",
+              "g-80",
+              "g-75",
+              "g-70",
+              "g-65",
+              "g-60",
+              "g-55",
+              "g-50",
+              "g-45",
+              "g-40",
+              "g-35",
+              "g-30",
+              "g-25",
+              "g-20",
+              "g-15",
+              "g-10",
+              "g-5",
+              "g0"
+            ],
+            "params": {
+              "in_len": 24,
+              "lag_step_minutes": 5,
+              "fit_intercept": true,
+              "intercept_scaled": 0.011458467778100334,
+              "coef_scaled": [
+                0.390648606015416,
+                -0.5888652905769254,
+                0.3810558888800217,
+                -0.12092009016355122,
+                -0.688714007300139,
+                0.82062032082942,
+                0.2976880359309832,
+                -0.3155511624079456,
+                0.053248663542008606,
+                -0.047198782741423466,
+                -2.1055941944559557,
+                2.397347905716649,
+                0.14940111051194754,
+                0.5747925997899894,
+                -0.95622233680964,
+                0.001435992527756282,
+                -4.312435781273695,
+                4.893192845768222,
+                0.053484843721696484,
+                1.7056232596679581,
+                -2.240000498275682,
+                0.023026093706031037,
+                -5.698669704564875,
+                6.272948049940787
+              ],
+              "scaler_data_min": 40.0,
+              "scaler_data_max": 405.0,
+              "training_windows": 79300
+            },
+            "fit_key": "glucobench_linear_regression|Within-subject Future Prediction|in_len=24",
+            "preprocessing": "MinMaxScaler",
+            "preprocessing_fitted_on": "training split of this protocol"
+          },
+          "Unseen-subject Generalization": {
+            "config": "in_len=24",
+            "inputs": [
+              "g-115",
+              "g-110",
+              "g-105",
+              "g-100",
+              "g-95",
+              "g-90",
+              "g-85",
+              "g-80",
+              "g-75",
+              "g-70",
+              "g-65",
+              "g-60",
+              "g-55",
+              "g-50",
+              "g-45",
+              "g-40",
+              "g-35",
+              "g-30",
+              "g-25",
+              "g-20",
+              "g-15",
+              "g-10",
+              "g-5",
+              "g0"
+            ],
+            "params": {
+              "in_len": 24,
+              "lag_step_minutes": 5,
+              "fit_intercept": true,
+              "intercept_scaled": 0.011262867272826077,
+              "coef_scaled": [
+                0.4128699386183286,
+                -0.6007696149029109,
+                0.3551511482040248,
+                -0.12031232479600605,
+                -0.7132213431862297,
+                0.8694210020267247,
+                0.32418824208273744,
+                -0.25239307733137356,
+                -0.06653712511193507,
+                -0.04940633564931225,
+                -2.1940304460249336,
+                2.5124236429226943,
+                0.16446104977379578,
+                0.601494935750256,
+                -1.0013270280481836,
+                0.004764146267274474,
+                -4.46380451581769,
+                5.069046247699647,
+                0.05738176035184135,
+                1.6605996456300705,
+                -2.196115440155407,
+                0.02631421443018206,
+                -5.6751677190426015,
+                6.216161875522684
+              ],
+              "scaler_data_min": 40.0,
+              "scaler_data_max": 405.0,
+              "training_windows": 81958
+            },
+            "fit_key": "glucobench_linear_regression|Unseen-subject Generalization|in_len=24",
+            "preprocessing": "MinMaxScaler",
+            "preprocessing_fitted_on": "training split of this protocol"
+          }
+        },
+        "reproduction_status": "public implementation verified / adapted method reproduction"
+      },
+      "sparacino2007_ar1_wls": {
+        "role": "formal baseline (secondary)",
+        "protocols": {
+          "Within-subject Future Prediction": {
+            "config": "mu=0.2",
+            "inputs": [
+              "g-120",
+              "g-117",
+              "g-114",
+              "g-111",
+              "g-108",
+              "g-105",
+              "g-102",
+              "g-99",
+              "g-96",
+              "g-93",
+              "g-90",
+              "g-87",
+              "g-84",
+              "g-81",
+              "g-78",
+              "g-75",
+              "g-72",
+              "g-69",
+              "g-66",
+              "g-63",
+              "g-60",
+              "g-57",
+              "g-54",
+              "g-51",
+              "g-48",
+              "g-45",
+              "g-42",
+              "g-39",
+              "g-36",
+              "g-33",
+              "g-30",
+              "g-27",
+              "g-24",
+              "g-21",
+              "g-18",
+              "g-15",
+              "g-12",
+              "g-9",
+              "g-6",
+              "g-3",
+              "g0"
+            ],
+            "params": {
+              "mu": 0.2,
+              "step_minutes": 3,
+              "T": 10,
+              "intercept": false,
+              "filter": "none (R1)",
+              "estimator": "closed-form exponentially weighted LS (R3)",
+              "fitted_parameters": "none; coefficient a is computed per window"
+            },
+            "fit_key": "sparacino2007_ar1_wls|Within-subject Future Prediction|mu=0.2",
+            "preprocessing": "none",
+            "preprocessing_fitted_on": "not applicable"
+          },
+          "Unseen-subject Generalization": {
+            "config": "mu=0.2",
+            "inputs": [
+              "g-120",
+              "g-117",
+              "g-114",
+              "g-111",
+              "g-108",
+              "g-105",
+              "g-102",
+              "g-99",
+              "g-96",
+              "g-93",
+              "g-90",
+              "g-87",
+              "g-84",
+              "g-81",
+              "g-78",
+              "g-75",
+              "g-72",
+              "g-69",
+              "g-66",
+              "g-63",
+              "g-60",
+              "g-57",
+              "g-54",
+              "g-51",
+              "g-48",
+              "g-45",
+              "g-42",
+              "g-39",
+              "g-36",
+              "g-33",
+              "g-30",
+              "g-27",
+              "g-24",
+              "g-21",
+              "g-18",
+              "g-15",
+              "g-12",
+              "g-9",
+              "g-6",
+              "g-3",
+              "g0"
+            ],
+            "params": {
+              "mu": 0.2,
+              "step_minutes": 3,
+              "T": 10,
+              "intercept": false,
+              "filter": "none (R1)",
+              "estimator": "closed-form exponentially weighted LS (R3)",
+              "fitted_parameters": "none; coefficient a is computed per window"
+            },
+            "fit_key": "sparacino2007_ar1_wls|Unseen-subject Generalization|mu=0.2",
+            "preprocessing": "none",
+            "preprocessing_fitted_on": "not applicable"
+          }
+        },
+        "reproduction_status": "published-equation method reproduction / reference implementation unavailable",
+        "decisions": [
+          {
+            "decision_id": "R1",
+            "topic": "filtering",
+            "provenance": "project-specified decision",
+            "rule": "Main analysis uses no low-pass filter. The published first-order Butterworth filter may only be applied causally in an optional sensitivity analysis; zero-phase filtering is not permitted.",
+            "classification": "project adaptation"
+          },
+          {
+            "decision_id": "R2",
+            "topic": "forgetting factor",
+            "provenance": "project-specified decision",
+            "rule": "Candidate set mu in {0.2, 0.5, 0.8}. The formal mu is selected on validation data only, separately within each evaluation protocol, and locked before test evaluation. Test data never inform mu. Results for all three values may be reported as pre-registered sensitivity.",
+            "classification": "project adaptation"
+          },
+          {
+            "decision_id": "R3",
+            "topic": "estimator",
+            "provenance": "project-specified decision",
+            "rule": "Closed-form implementation of the published exponentially weighted AR(1) estimator: a = sum_k mu^k u(n-k) u(n-k-1) / sum_k mu^k u(n-k-1)^2 over the window pairs; forecast a^T * u(n). No claim of numerical identity with the original Matlab RLS.",
+            "classification": "project adaptation"
+          }
+        ]
+      }
+    },
+    "simple reference": {
+      "persistence": {
+        "role": "simple reference (not a reproduction)",
+        "definition": "prediction = glucose_lag_0min (published value at the origin); no parameters"
+      },
+      "linear_trend_30min": {
+        "role": "simple reference (not a reproduction)",
+        "definition": "prediction = glucose_lag_0min + 30 x glucose_slope_30min; no parameters"
+      }
+    },
+    "project comparison": {
+      "ridge_glucose_history_features": {
+        "role": "project comparison",
+        "protocols": {
+          "Within-subject Future Prediction": {
+            "config": "alpha=0.1",
+            "inputs": [
+              "glucose_lag_0min",
+              "glucose_lag_30min",
+              "glucose_lag_60min",
+              "glucose_lag_120min",
+              "glucose_mean_30min",
+              "glucose_std_30min",
+              "glucose_slope_30min",
+              "glucose_mean_120min",
+              "glucose_std_120min",
+              "glucose_slope_120min"
+            ],
+            "params": {
+              "alpha": 0.1,
+              "scaler_mean": [
+                109.15711307271962,
+                109.06559226565784,
+                109.00149978982766,
+                109.03771920975198,
+                109.10982413320858,
+                3.6360011821356806,
+                0.0030430066848364033,
+                109.03856592984759,
+                10.834737270178334,
+                0.001036630114732286
+              ],
+              "scaler_scale": [
+                41.47357409702421,
+                41.38120393742603,
+                41.33226911121355,
+                41.430257308406695,
+                41.06748885347545,
+                3.861056758018301,
+                0.5756073634851646,
+                38.62357988952705,
+                10.078878785515787,
+                0.3616082164447401
+              ],
+              "intercept": 109.26736948297606,
+              "coef": [
+                292.465455768358,
+                -0.8395342901287725,
+                71.17228990407229,
+                -14.469996261644475,
+                -33.472560106295525,
+                0.0929953576808921,
+                -57.9464814194128,
+                -256.16228957011066,
+                -1.6435698153040763,
+                -85.72203753160856
+              ],
+              "training_windows": 79300
+            },
+            "fit_key": "ridge_glucose_history_features|Within-subject Future Prediction|alpha=0.1",
+            "preprocessing": "StandardScaler",
+            "preprocessing_fitted_on": "training split of this protocol"
+          },
+          "Unseen-subject Generalization": {
+            "config": "alpha=0.1",
+            "inputs": [
+              "glucose_lag_0min",
+              "glucose_lag_30min",
+              "glucose_lag_60min",
+              "glucose_lag_120min",
+              "glucose_mean_30min",
+              "glucose_std_30min",
+              "glucose_slope_30min",
+              "glucose_mean_120min",
+              "glucose_std_120min",
+              "glucose_slope_120min"
+            ],
+            "params": {
+              "alpha": 0.1,
+              "scaler_mean": [
+                109.39900924863954,
+                109.35776047894451,
+                109.33887275596445,
+                109.3562271732676,
+                109.37752092797595,
+                3.528528583629062,
+                0.0013790042473892335,
+                109.35345957954546,
+                10.386617076388196,
+                0.0003037440306362059
+              ],
+              "scaler_scale": [
+                40.40550247191919,
+                40.37418605963667,
+                40.37489109448586,
+                40.433203395924174,
+                40.04475199172716,
+                3.7014425747611224,
+                0.5542994226295681,
+                37.80924402702894,
+                9.612962066726904,
+                0.34520645780571624
+              ],
+              "intercept": 109.45152883184063,
+              "coef": [
+                277.5370764716766,
+                4.075384593425307,
+                69.00290636717583,
+                -14.365279966476468,
+                -27.93486345411067,
+                0.16296338428575288,
+                -53.86447710328156,
+                -252.13763267519235,
+                -1.638241974664307,
+                -82.51748247852524
+              ],
+              "training_windows": 81958
+            },
+            "fit_key": "ridge_glucose_history_features|Unseen-subject Generalization|alpha=0.1",
+            "preprocessing": "StandardScaler",
+            "preprocessing_fitted_on": "training split of this protocol"
+          }
+        }
+      },
+      "shallow_gbt_glucose_history_features": {
+        "role": "project comparison",
+        "protocols": {
+          "Within-subject Future Prediction": {
+            "config": "max_iter=300,max_depth=3,learning_rate=0.1",
+            "inputs": [
+              "glucose_lag_0min",
+              "glucose_lag_30min",
+              "glucose_lag_60min",
+              "glucose_lag_120min",
+              "glucose_mean_30min",
+              "glucose_std_30min",
+              "glucose_slope_30min",
+              "glucose_mean_120min",
+              "glucose_std_120min",
+              "glucose_slope_120min"
+            ],
+            "params": {
+              "max_iter": 300,
+              "max_depth": 3,
+              "learning_rate": 0.1,
+              "n_iter": 300,
+              "training_windows": 79300
+            },
+            "fit_key": "shallow_gbt_glucose_history_features|Within-subject Future Prediction|max_iter=300,max_depth=3,learning_rate=0.1",
+            "preprocessing": "none",
+            "preprocessing_fitted_on": "not applicable"
+          },
+          "Unseen-subject Generalization": {
+            "config": "max_iter=300,max_depth=3,learning_rate=0.1",
+            "inputs": [
+              "glucose_lag_0min",
+              "glucose_lag_30min",
+              "glucose_lag_60min",
+              "glucose_lag_120min",
+              "glucose_mean_30min",
+              "glucose_std_30min",
+              "glucose_slope_30min",
+              "glucose_mean_120min",
+              "glucose_std_120min",
+              "glucose_slope_120min"
+            ],
+            "params": {
+              "max_iter": 300,
+              "max_depth": 3,
+              "learning_rate": 0.1,
+              "n_iter": 300,
+              "training_windows": 81958
+            },
+            "fit_key": "shallow_gbt_glucose_history_features|Unseen-subject Generalization|max_iter=300,max_depth=3,learning_rate=0.1",
+            "preprocessing": "none",
+            "preprocessing_fitted_on": "not applicable"
+          }
+        }
+      }
+    }
+  },
+  "tuning_grids": {
+    "ridge_glucose_history_features": [
+      {
+        "alpha": 0.1
+      },
+      {
+        "alpha": 1.0
+      },
+      {
+        "alpha": 10.0
+      }
+    ],
+    "shallow_gbt_glucose_history_features": [
+      {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "max_iter": 100
+      },
+      {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "max_iter": 300
+      }
+    ]
+  },
+  "validation_results": [
+    {
+      "category": "formal baseline reproduction",
+      "model_id": "glucobench_linear_regression",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "config": "in_len=24",
+      "subjects": 9.0,
+      "windows": 24259.0,
+      "subject_mean_mae": 8.341578705110685,
+      "subject_mean_rmse": 12.37914794145039,
+      "pooled_mae": 8.185974998998708,
+      "pooled_rmse": 12.377864519785367
+    },
+    {
+      "category": "formal baseline reproduction",
+      "model_id": "sparacino2007_ar1_wls",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "config": "mu=0.2",
+      "subjects": 9.0,
+      "windows": 24259.0,
+      "subject_mean_mae": 11.320194821315363,
+      "subject_mean_rmse": 18.216810142585356,
+      "pooled_mae": 11.677144244893805,
+      "pooled_rmse": 18.524152157838824
+    },
+    {
+      "category": "simple reference",
+      "model_id": "persistence",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "config": "no parameters",
+      "subjects": 9.0,
+      "windows": 24259.0,
+      "subject_mean_mae": 11.427916021041515,
+      "subject_mean_rmse": 17.209976879807595,
+      "pooled_mae": 12.035546944776508,
+      "pooled_rmse": 18.606347529446296
+    },
+    {
+      "category": "simple reference",
+      "model_id": "linear_trend_30min",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "config": "no parameters",
+      "subjects": 9.0,
+      "windows": 24259.0,
+      "subject_mean_mae": 14.024038673341321,
+      "subject_mean_rmse": 20.886496759207784,
+      "pooled_mae": 14.751133799361458,
+      "pooled_rmse": 22.00774086532761
+    },
+    {
+      "category": "project comparison",
+      "model_id": "ridge_glucose_history_features",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "config": "alpha=0.1",
+      "subjects": 9.0,
+      "windows": 24259.0,
+      "subject_mean_mae": 8.57283138424743,
+      "subject_mean_rmse": 12.681505075984525,
+      "pooled_mae": 8.494283924463236,
+      "pooled_rmse": 12.790741839157652
+    },
+    {
+      "category": "project comparison",
+      "model_id": "shallow_gbt_glucose_history_features",
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "config": "max_iter=300,max_depth=3,learning_rate=0.1",
+      "subjects": 9.0,
+      "windows": 24259.0,
+      "subject_mean_mae": 9.95714160915002,
+      "subject_mean_rmse": 14.686213262887698,
+      "pooled_mae": 10.281939370414602,
+      "pooled_rmse": 15.47063779759948
+    },
+    {
+      "category": "formal baseline reproduction",
+      "model_id": "glucobench_linear_regression",
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "config": "in_len=24",
+      "subjects": 45.0,
+      "windows": 26330.0,
+      "subject_mean_mae": 7.567410424052004,
+      "subject_mean_rmse": 11.075340762754617,
+      "pooled_mae": 7.4809658418957135,
+      "pooled_rmse": 11.484796794097843
+    },
+    {
+      "category": "formal baseline reproduction",
+      "model_id": "sparacino2007_ar1_wls",
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "config": "mu=0.2",
+      "subjects": 45.0,
+      "windows": 26330.0,
+      "subject_mean_mae": 11.19107590315327,
+      "subject_mean_rmse": 17.518011082845614,
+      "pooled_mae": 10.761522997395444,
+      "pooled_rmse": 17.994006948651958
+    },
+    {
+      "category": "simple reference",
+      "model_id": "persistence",
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "config": "no parameters",
+      "subjects": 45.0,
+      "windows": 26330.0,
+      "subject_mean_mae": 10.615591484519513,
+      "subject_mean_rmse": 15.442790243032128,
+      "pooled_mae": 10.428801114065074,
+      "pooled_rmse": 16.235790103355125
+    },
+    {
+      "category": "simple reference",
+      "model_id": "linear_trend_30min",
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "config": "no parameters",
+      "subjects": 45.0,
+      "windows": 26330.0,
+      "subject_mean_mae": 13.72391279921417,
+      "subject_mean_rmse": 19.8494876132616,
+      "pooled_mae": 13.297763395938237,
+      "pooled_rmse": 20.14185934162952
+    },
+    {
+      "category": "project comparison",
+      "model_id": "ridge_glucose_history_features",
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "config": "alpha=0.1",
+      "subjects": 45.0,
+      "windows": 26330.0,
+      "subject_mean_mae": 7.974312420172923,
+      "subject_mean_rmse": 11.477405451586272,
+      "pooled_mae": 7.767397851966802,
+      "pooled_rmse": 11.720518990880716
+    },
+    {
+      "category": "project comparison",
+      "model_id": "shallow_gbt_glucose_history_features",
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "config": "max_iter=300,max_depth=3,learning_rate=0.1",
+      "subjects": 45.0,
+      "windows": 26330.0,
+      "subject_mean_mae": 9.075597032900289,
+      "subject_mean_rmse": 12.971720430477346,
+      "pooled_mae": 9.043107359268083,
+      "pooled_rmse": 13.56315601824078
+    }
+  ]
+}

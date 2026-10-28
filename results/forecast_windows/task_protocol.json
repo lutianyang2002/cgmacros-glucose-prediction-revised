@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "protocol_id": "primary_libre_120m_to_30m_stride5",
+  "protocol_status": "primary_frozen_not_evaluated",
+  "primary_task": {
+    "task_id": "primary_libre_30min",
+    "task_status": "primary",
+    "target_device": "Libre",
+    "target_field": "libre_gl",
+    "target_unit": "mg/dL",
+    "prediction_type": "single_future_point_glucose_forecasting",
+    "history_minutes": 120,
+    "history_interval": "[t - 120 minutes, t]",
+    "forecast_horizon_minutes": 30,
+    "origin_stride_minutes": 5,
+    "grid_resolution_minutes": 1,
+    "base_grid_artifact": "results/aligned_data/dynamic_aligned_1min.parquet"
+  },
+  "input_availability_policy": {
+    "global_cutoff_rule": "An input may be used only if both its event time and its availability time are at or before origin time t.",
+    "future_information_rule": "No value, aggregate, metadata, or preprocessing result that depends on times after t may enter the input.",
+    "glucose_history": {
+      "status": "conditional_strictly_historical_offline",
+      "rule": "Released glucose values require timestamps at or before t; target-horizon glucose is excluded from input."
+    },
+    "activity": {
+      "status": "conditional_strictly_historical_offline",
+      "rule": "Only activity minutes available by t may be used; future minutes, centered filters, completed-day summaries, and missing-as-zero substitutions are excluded."
+    },
+    "meal_logs": {
+      "status": "conditional_after_verified_record_creation",
+      "rule": "Meal type and nutrients cannot be backfilled before the log existed; the released meal timestamp does not establish upload time."
+    },
+    "amount_consumed": {
+      "status": "not_available_before_verified_meal_completion",
+      "rule": "Final Amount Consumed cannot be used before meal completion and cannot retrospectively rescale nutrients without a separate justified rule."
+    },
+    "meal_photos": {
+      "status": "offline_only_until_timing_verified",
+      "rule": "Photo content requires verified capture, upload, and feature-extraction availability by t; paths and folder identities are excluded as predictors."
+    },
+    "static_measurements": {
+      "status": "conditional_or_offline_only",
+      "rule": "Bio, Gut, and Microbiome results may enter only when result availability before the prediction period is established; later-returned results cannot be backfilled."
+    },
+    "calendar_context": {
+      "status": "shifted_clock_only",
+      "rule": "Shifted calendar dates cannot represent real season, holiday, or calendar context."
+    },
+    "identifiers_and_metadata": {
+      "status": "excluded",
+      "rule": "Subject identifiers, file paths, image paths, export indices, and source metadata are not ordinary predictive features."
+    }
+  },
+  "offline_interpretation": {
+    "scope": "retrospective forecasting protocol on released, shifted, one-minute aligned data"
+  },
+  "sensitivity_candidates": [
+    {
+      "task_id": "sensitivity_horizon_60min",
+      "change": {
+        "forecast_horizon_minutes": 60
+      },
+      "status": "not_evaluated_in_protocol_definition"
+    },
+    {
+      "task_id": "sensitivity_alternative_history",
+      "change": {
+        "history_minutes": "to_be_prespecified_before_evaluation"
+      },
+      "status": "not_evaluated_in_protocol_definition"
+    },
+    {
+      "task_id": "sensitivity_dexcom_target",
+      "change": {
+        "target_device": "Dexcom",
+        "target_field": "dexcom_gl",
+        "target_unit": "mg/dL"
+      },
+      "status": "not_evaluated_in_protocol_definition"
+    }
+  ]
+}

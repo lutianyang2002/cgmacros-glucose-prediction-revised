@@ -1,0 +1,801 @@
+{
+  "protocol_id": "factor_protocol_v1",
+  "base_and_residual": {
+    "base": "the corresponding analysis GlucoBench linear regression, in_len=24 (target lags at 5-minute spacing, offsets -115 .. 0), min-max scaler and OLS fitted on the training rows of each protocol; coefficients frozen",
+    "form": "fixed-baseline residual augmentation: r = y - y_hat_base; ridge-penalised factor block f(x) fitted on r; prediction y_hat_base + f(x). Not equivalent to a joint ARX fit; joint ARX is not executed (T18 none).",
+    "residual_mode": "B (OOF), method specification; see oof_specification",
+    "factor_block_preprocessing": "imputation and standardization fitted on the training rows only (as in the corresponding analysis)"
+  },
+  "availability_rules": {
+    "glucose_derived_candidates": "inferred native-reading anchors only (anchor_rule); no interpolated minute after the newest anchor; the base's 24 interpolated lags are unchanged and are tested by E8",
+    "MET": "only with a lag of at least 10 minutes (REC 3.4 primitives); the REC activity grid lists heart rate and activity calories only, so no MET candidate is enumerated. The existing A-group features of M include MET windows ending at t (REC 2.6 method specification: possible slight look-ahead); E1 reports them as locked.",
+    "HbA1c": "percent (original paper p.2, Table 2; the dictionary label mmol/mol is a dictionary error)",
+    "baseline_metabolic_covariates": {
+      "BMI": "kg/m2; enrollment measurement; main interaction family (confirm at method specification)",
+      "laboratory_values": "fasting glucose [mg/dL], fasting insulin [uU/mL, dictionary mcU/mL], HbA1c [percent], HOMA-IR = glucose x insulin / 405; availability at the prediction time not provable: conditional family only (pending_decisions.Q7_baseline_covariates)"
+    },
+    "M_composition": "50 existing features = 47 window-level A/D primary features (activity_diet_feature_registry, variant primary) + 3 core B features (age, gender, BMI)",
+    "meal_events": "logged meal row time (about the pre-meal photo time) as the event time; nutrients known at that time for the designed breakfast and lunch; the 30-minute delayed version is generated for E9"
+  },
+  "anchor_rule": {
+    "name": "inferred native-reading anchors (statistical inference from the second difference; the raw CSV and the data dictionary carry no native-reading flag)",
+    "function": "src/factor_construction.py::native_libre_anchors",
+    "parameters": {
+      "period": 15,
+      "kink_tolerance": 1e-06,
+      "min_kinks": 4,
+      "support_kinks": 8,
+      "min_phase_share": 0.9,
+      "max_stale_minutes": 60,
+      "n_anchors": 8
+    },
+    "parameter_status": "formally retained by the user (min_kinks, support_kinks, min_phase_share, max_stale_minutes); n_anchors 8 for the native-state family, 9 for the E8-a rebuild",
+    "levels": {
+      "confirmed": "reliable phase grid and the kink at the second-newest anchor is present",
+      "grid": "reliable phase grid and that kink is absent (collinear neighbors; a reading missing from the schedule is indistinguishable)",
+      "uncertain": "fewer than min_kinks supporting kinks, phase not consistent, newest supporting kink older than max_stale_minutes, or fewer than two anchors"
+    },
+    "causal_rule": "prefix_causal only: the phase at t uses kinks at or before t - 15 minutes (a kink reads the following minute, which already points at the next reading); the features at t use only values on anchors at or before t",
+    "model_facing_fields": {
+      "anchor_fields": [
+        "phase",
+        "phase_reliable",
+        "last_anchor_index",
+        "anchor_age",
+        "anchor_value_0..7",
+        "level"
+      ],
+      "missing_indicator": "anchor_missing = level is uncertain, or fewer than the 5 anchors an operator needs are available",
+      "derived_features": "every native-state feature is a function of the anchor fields only, computed with row-independent arithmetic (a batched matrix product changed the last bits between a full run and a truncated run in the analysis closing check) and set to NaN where anchor_missing",
+      "gate": "analysis repeats the truncation and perturbation tests on the final model-facing columns before any use"
+    },
+    "conservative_rule_draft": [
+      "only anchors on a reliable phase grid are used",
+      "native-reading features of `uncertain` windows are NaN plus a missing indicator, never interpolated values (method specification)",
+      "E8 pairs windows with reliable anchors only and reports the excluded share",
+      "anchors are always called inferred native-reading anchors"
+    ],
+    "phase_mode": "prefix_causal (method specification)",
+    "wording": "the anchors are inferred native-reading anchors, never described as directly observed native readings"
+  },
+  "candidate_families": {
+    "total_cap": 300,
+    "planned_size_main": 206,
+    "planned_size_if_lab_family_approved": 218,
+    "source_primitives": "meal events (carbs, protein, fat, fiber, calories) by meal type; hr and activity_calories with coverage mask; BMI; native-reading glucose state; every operator declares its earliest source time and a single function checks max_source_offset <= 0",
+    "kernel_definition": "method specification: see method_settings.gamma_kernel_definition",
+    "meal_absorption": {
+      "operator": "conv_gamma",
+      "tau_minutes": [
+        20,
+        30,
+        45,
+        60,
+        90
+      ],
+      "k": [
+        2,
+        3
+      ],
+      "nutrients": [
+        "carbs",
+        "protein",
+        "fat",
+        "fiber"
+      ],
+      "meal_types": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "snack"
+      ],
+      "kernels_per_meal_type": true,
+      "count": 160
+    },
+    "meal_x_baseline_state": {
+      "operator": "conv_gamma(carbs) x state, first-order",
+      "baseline_state": [
+        "bmi"
+      ],
+      "native_glucose_state": [
+        "last_reading",
+        "slope_1h"
+      ],
+      "tau_k": "(tau, k) pair of carbs for the same meal type (joint selection, method specification)",
+      "meal_types": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "snack"
+      ],
+      "count": 12,
+      "count_if_tau_per_k": 24
+    },
+    "meal_x_lab_state_conditional": {
+      "operator": "conv_gamma(carbs) x state",
+      "state": [
+        "fasting_glucose",
+        "hbA1c_percent",
+        "homa_ir"
+      ],
+      "meal_types": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "snack"
+      ],
+      "count": 12
+    },
+    "nutrient_ratios": {
+      "operators": [
+        "carbs/(carbs+protein+fat)",
+        "fiber/carbs",
+        "protein*carbs"
+      ],
+      "aggregation": [
+        "most_recent_meal",
+        "kernel_weighted_total (tau*)"
+      ],
+      "count": 6
+    },
+    "activity_kernels": {
+      "signals": [
+        "hr",
+        "activity_calories"
+      ],
+      "ts_mean_ts_max_windows_minutes": [
+        15,
+        30,
+        60,
+        120
+      ],
+      "exp_decay_tau_minutes": [
+        30,
+        60
+      ],
+      "activity_x_meal_kernel": "exp_decay(activity, tau) x conv_gamma(carbs) at tau*",
+      "count": 24
+    },
+    "native_glucose_state": {
+      "operators": [
+        "last_reading",
+        "difference_of_last_two_readings",
+        "slope_last_hour",
+        "curvature_last_hour"
+      ],
+      "max_readings": 8,
+      "count": 4
+    },
+    "planned_size_note": "sizes assume tau_per_k is not chosen; with tau_per_k the main interaction family doubles",
+    "counts_check": "main 206 = 160 absorption + 12 BMI/native-state interactions + 6 ratios + 24 activity + 4 native state; conditional lab family +12; consistent with joint (tau, k) and with Q7 (verified)"
+  },
+  "tau_star_rule": {
+    "data": "training rows of the protocol",
+    "target": "OOF base residual r",
+    "rule": "for each nutrient x meal type the (tau, k) pair with the largest |mean subject-level Spearman IC| (method specification: abs(mean IC), joint (tau, k)); the signed mean IC and the same-sign share are reported"
+  },
+  "screening": {
+    "ic": "subject-level Spearman IC against r, windows downsampled to a 15-minute step, then mean IC and same-sign share across subjects (A: 45, B: 27)",
+    "ic_min_windows": "no minimum (method specification)",
+    "keep_per_family": {
+      "K": 5,
+      "ranking": "|mean IC| (method specification), computed on the protocol's own training data"
+    },
+    "redundancy_filter": "drop a candidate with |rho| > 0.9 against a base feature or an already kept factor",
+    "p_values_and_fdr": "descriptive only (one-sample t / Wilcoxon, BY correction); never an inclusion threshold; candidates are not called statistically significant"
+  },
+  "selection": {
+    "data": "validation windows",
+    "method": "forward selection, each step adds the factor with the largest drop in validation subject-equal RMSE",
+    "k_max": 10,
+    "stopping": "smallest set within one standard error of the best validation curve; the full curve is recorded",
+    "ridge_alpha_grid": "logspace(-3, 3, 13) selected on validation"
+  },
+  "evaluation": {
+    "primary_metric": "subject-equal RMSE (pooled-window metrics also reported); main comparison: paired subject-equal delta RMSE against the GlucoBench LR base",
+    "min_windows_per_subject": 20,
+    "min_windows_rule_note": "REC 4.3: applies to subject-equal averages of evaluation subsets; also reported without the rule",
+    "strata": {
+      "P30": "last logged meal in [t-30, t]",
+      "P31_120": "last logged meal in [t-120, t-31]",
+      "NoMeal120": "no logged meal in [t-120, t]",
+      "based_on": "information before the origin only"
+    },
+    "main_contrasts_per_protocol": [
+      "GlucoBench -> +M",
+      "GlucoBench -> +T",
+      "+M -> +M+T",
+      "GlucoBench -> +O"
+    ],
+    "multiplicity": "Holm over the 4 main contrasts per protocol",
+    "bootstrap": {
+      "resamples": 2000,
+      "seed": 42,
+      "unit": "subjects, paired",
+      "ci": 0.95
+    },
+    "practical_effect_threshold_mg_dl": 0.1,
+    "cohorts": {
+      "primary": "core",
+      "supplementary": "full"
+    },
+    "wording": {
+      "training IC direction": "association",
+      "locked test improvement over the base": "predictive utility",
+      "agreement with the paper and PPGR literature": "plausible mechanism"
+    }
+  },
+  "E1": {
+    "definition": "existing 50 features M (47 A/D + 3 core B) as a residual block on the fixed base; contrasts follow ablation_matrix.csv",
+    "contrasts": [
+      "G -> G+A",
+      "G+A -> G+A+D",
+      "G+A+D -> G+A+D+B",
+      "G -> G+D",
+      "G -> G+B",
+      "G+D+B -> G+A+D+B",
+      "G+A+B -> G+A+D+B"
+    ],
+    "loco": "feature-level drop-one / add-one validation delta RMSE, subject-paired, validation only"
+  },
+  "openfe": {
+    "environment": ".venv-openfe (scikit-learn 1.5.2, openfe 0.0.12)",
+    "train_index_val_index": "explicit (A: last 25% of each training period as internal validation; B: 18/9 subject-grouped split of the 27 training subjects)",
+    "init_scores": "OOF per oof_specification; the internal split uses the separate_openfe_init_scores rule",
+    "feature_boosting": true,
+    "stage1_metric": "predictive",
+    "stage2_metric": "gain_importance",
+    "n_data_blocks": 8,
+    "min_candidate_features": 2000,
+    "seed": 42,
+    "downsampling": "15-minute step",
+    "settings_source": "library defaults of openfe 0.0.12 except feature_boosting (default False; True is required for init_scores)",
+    "inputs": "M, non-glucose primitives, baseline metabolic covariates allowed by Q7, native-reading state; no interpolated glucose lags, no subject column",
+    "operators_allowed": [
+      "abs",
+      "log",
+      "sqrt",
+      "square",
+      "sigmoid",
+      "round",
+      "residual",
+      "min",
+      "max",
+      "+",
+      "-",
+      "*",
+      "/"
+    ],
+    "operators_excluded": "all GroupByThen*, Combine*, freq (they use statistics across rows)",
+    "transform_application": "the selected formulas are applied by project code with training-set statistics only"
+  },
+  "oof_specification": {
+    "rec_revision": "see rec_revisions[0]",
+    "protocol_A": {
+      "blocks": "5 equal-duration time blocks inside each subject's training period [start_time, protocol_a_train_end_time] (edges in block_edges)",
+      "cross_fitting": "non-forward: block b is predicted by a base fitted on the retained training windows of the other blocks; fits pooled over the protocol's training windows",
+      "support_rule": "a window belongs to a block only if its whole support [history_start_time, target_time] lies in it; the others are dropped (5,117 of 79,300 windows, 6.45%, accepted by the user); the dropped windows are in no fit and have no OOF residual",
+      "effect": "factor-block training rows, IC screening and OpenFE only (74,183 rows); the evaluation windows are unchanged",
+      "block_edges": {
+        "1": [
+          "2020-05-01 10:30:00",
+          "2020-05-02 15:57:28.800000",
+          "2020-05-03 21:24:57.600000",
+          "2020-05-05 02:52:26.400000",
+          "2020-05-06 08:19:55.200000",
+          "2020-05-07 13:47:24"
+        ],
+        "2": [
+          "2019-11-15 20:12:00",
+          "2019-11-17 06:14:52.800000",
+          "2019-11-18 16:17:45.600000",
+          "2019-11-20 02:20:38.400000",
+          "2019-11-21 12:23:31.200000",
+          "2019-11-22 22:26:24"
+        ],
+        "3": [
+          "2020-03-11 09:03:00",
+          "2020-03-12 14:12:28.800000",
+          "2020-03-13 19:21:57.600000",
+          "2020-03-15 00:31:26.400000",
+          "2020-03-16 05:40:55.200000",
+          "2020-03-17 10:50:24"
+        ],
+        "4": [
+          "2023-09-11 09:54:00",
+          "2023-09-12 14:26:52.800000",
+          "2023-09-13 18:59:45.600000",
+          "2023-09-14 23:32:38.400000",
+          "2023-09-16 04:05:31.200000",
+          "2023-09-17 08:38:24"
+        ],
+        "5": [
+          "2020-08-17 11:14:00",
+          "2020-08-18 16:09:04.800000",
+          "2020-08-19 21:04:09.600000",
+          "2020-08-21 01:59:14.400000",
+          "2020-08-22 06:54:19.200000",
+          "2020-08-23 11:49:24"
+        ],
+        "6": [
+          "2023-04-07 11:19:00",
+          "2023-04-08 16:14:04.800000",
+          "2023-04-09 21:09:09.600000",
+          "2023-04-11 02:04:14.400000",
+          "2023-04-12 06:59:19.200000",
+          "2023-04-13 11:54:24"
+        ],
+        "7": [
+          "2023-11-03 10:41:00",
+          "2023-11-04 07:30:04.800000",
+          "2023-11-05 04:19:09.600000",
+          "2023-11-06 01:08:14.400000",
+          "2023-11-06 21:57:19.200000",
+          "2023-11-07 18:46:24"
+        ],
+        "8": [
+          "2023-01-30 10:52:00",
+          "2023-01-31 16:23:04.800000",
+          "2023-02-01 21:54:09.600000",
+          "2023-02-03 03:25:14.400000",
+          "2023-02-04 08:56:19.200000",
+          "2023-02-05 14:27:24"
+        ],
+        "9": [
+          "2020-09-15 09:05:00",
+          "2020-09-16 13:49:16.800000",
+          "2020-09-17 18:33:33.600000",
+          "2020-09-18 23:17:50.400000",
+          "2020-09-20 04:02:07.200000",
+          "2020-09-21 08:46:24"
+        ],
+        "10": [
+          "2020-06-21 09:18:00",
+          "2020-06-22 17:36:28.800000",
+          "2020-06-24 01:54:57.600000",
+          "2020-06-25 10:13:26.400000",
+          "2020-06-26 18:31:55.200000",
+          "2020-06-28 02:50:24"
+        ],
+        "11": [
+          "2020-10-03 09:21:00",
+          "2020-10-04 14:57:28.800000",
+          "2020-10-05 20:33:57.600000",
+          "2020-10-07 02:10:26.400000",
+          "2020-10-08 07:46:55.200000",
+          "2020-10-09 13:23:24"
+        ],
+        "12": [
+          "2023-02-26 08:43:00",
+          "2023-02-27 14:03:16.800000",
+          "2023-02-28 19:23:33.600000",
+          "2023-03-02 00:43:50.400000",
+          "2023-03-03 06:04:07.200000",
+          "2023-03-04 11:24:24"
+        ],
+        "13": [
+          "2024-01-25 08:42:00",
+          "2024-01-26 16:22:40.800000",
+          "2024-01-28 00:03:21.600000",
+          "2024-01-29 07:44:02.400000",
+          "2024-01-30 15:24:43.200000",
+          "2024-01-31 23:05:24"
+        ],
+        "14": [
+          "2023-05-09 09:01:00",
+          "2023-05-10 19:30:52.800000",
+          "2023-05-12 06:00:45.600000",
+          "2023-05-13 16:30:38.400000",
+          "2023-05-15 03:00:31.200000",
+          "2023-05-16 13:30:24"
+        ],
+        "15": [
+          "2024-01-25 09:12:00",
+          "2024-01-26 19:40:04.800000",
+          "2024-01-28 06:08:09.600000",
+          "2024-01-29 16:36:14.400000",
+          "2024-01-31 03:04:19.200000",
+          "2024-02-01 13:32:24"
+        ],
+        "16": [
+          "2023-07-14 09:12:00",
+          "2023-07-15 17:46:40.800000",
+          "2023-07-17 02:21:21.600000",
+          "2023-07-18 10:56:02.400000",
+          "2023-07-19 19:30:43.200000",
+          "2023-07-21 04:05:24"
+        ],
+        "17": [
+          "2023-10-10 08:51:00",
+          "2023-10-11 17:13:04.800000",
+          "2023-10-13 01:35:09.600000",
+          "2023-10-14 09:57:14.400000",
+          "2023-10-15 18:19:19.200000",
+          "2023-10-17 02:41:24"
+        ],
+        "18": [
+          "2024-01-28 08:10:00",
+          "2024-01-30 15:19:43.200000",
+          "2024-02-01 22:29:26.400000",
+          "2024-02-04 05:39:09.600000",
+          "2024-02-06 12:48:52.800000",
+          "2024-02-08 19:58:36"
+        ],
+        "19": [
+          "2020-09-29 08:32:00",
+          "2020-09-30 13:25:16.800000",
+          "2020-10-01 18:18:33.600000",
+          "2020-10-02 23:11:50.400000",
+          "2020-10-04 04:05:07.200000",
+          "2020-10-05 08:58:24"
+        ],
+        "20": [
+          "2024-03-19 07:36:00",
+          "2024-03-20 16:07:04.800000",
+          "2024-03-22 00:38:09.600000",
+          "2024-03-23 09:09:14.400000",
+          "2024-03-24 17:40:19.200000",
+          "2024-03-26 02:11:24"
+        ],
+        "21": [
+          "2020-06-08 08:12:00",
+          "2020-06-09 16:26:52.800000",
+          "2020-06-11 00:41:45.600000",
+          "2020-06-12 08:56:38.400000",
+          "2020-06-13 17:11:31.200000",
+          "2020-06-15 01:26:24"
+        ],
+        "22": [
+          "2021-03-28 08:09:00",
+          "2021-03-29 19:23:52.800000",
+          "2021-03-31 06:38:45.600000",
+          "2021-04-01 17:53:38.400000",
+          "2021-04-03 05:08:31.200000",
+          "2021-04-04 16:23:24"
+        ],
+        "23": [
+          "2021-05-05 08:37:00",
+          "2021-05-06 16:59:04.800000",
+          "2021-05-08 01:21:09.600000",
+          "2021-05-09 09:43:14.400000",
+          "2021-05-10 18:05:19.200000",
+          "2021-05-12 02:27:24"
+        ],
+        "26": [
+          "2021-03-26 08:16:00",
+          "2021-03-27 16:54:16.800000",
+          "2021-03-29 01:32:33.600000",
+          "2021-03-30 10:10:50.400000",
+          "2021-03-31 18:49:07.200000",
+          "2021-04-02 03:27:24"
+        ],
+        "27": [
+          "2024-06-10 08:12:00",
+          "2024-06-11 13:16:04.800000",
+          "2024-06-12 18:20:09.600000",
+          "2024-06-13 23:24:14.400000",
+          "2024-06-15 04:28:19.200000",
+          "2024-06-16 09:32:24"
+        ],
+        "28": [
+          "2023-11-28 08:04:00",
+          "2023-11-29 21:32:04.800000",
+          "2023-12-01 11:00:09.600000",
+          "2023-12-03 00:28:14.400000",
+          "2023-12-04 13:56:19.200000",
+          "2023-12-06 03:24:24"
+        ],
+        "29": [
+          "2024-01-17 08:13:00",
+          "2024-01-18 19:40:28.800000",
+          "2024-01-20 07:07:57.600000",
+          "2024-01-21 18:35:26.400000",
+          "2024-01-23 06:02:55.200000",
+          "2024-01-24 17:30:24"
+        ],
+        "30": [
+          "2021-01-23 09:27:00",
+          "2021-01-24 16:22:40.800000",
+          "2021-01-25 23:18:21.600000",
+          "2021-01-27 06:14:02.400000",
+          "2021-01-28 13:09:43.200000",
+          "2021-01-29 20:05:24"
+        ],
+        "31": [
+          "2022-06-29 20:05:00",
+          "2022-06-30 23:31:52.800000",
+          "2022-07-02 02:58:45.600000",
+          "2022-07-03 06:25:38.400000",
+          "2022-07-04 09:52:31.200000",
+          "2022-07-05 13:19:24"
+        ],
+        "32": [
+          "2022-01-01 20:54:00",
+          "2022-01-03 00:28:04.800000",
+          "2022-01-04 04:02:09.600000",
+          "2022-01-05 07:36:14.400000",
+          "2022-01-06 11:10:19.200000",
+          "2022-01-07 14:44:24"
+        ],
+        "33": [
+          "2022-04-16 09:30:00",
+          "2022-04-17 17:12:28.800000",
+          "2022-04-19 00:54:57.600000",
+          "2022-04-20 08:37:26.400000",
+          "2022-04-21 16:19:55.200000",
+          "2022-04-23 00:02:24"
+        ],
+        "34": [
+          "2022-03-02 09:12:00",
+          "2022-03-03 14:35:52.800000",
+          "2022-03-04 19:59:45.600000",
+          "2022-03-06 01:23:38.400000",
+          "2022-03-07 06:47:31.200000",
+          "2022-03-08 12:11:24"
+        ],
+        "35": [
+          "2024-12-12 09:07:00",
+          "2024-12-13 13:54:52.800000",
+          "2024-12-14 18:42:45.600000",
+          "2024-12-15 23:30:38.400000",
+          "2024-12-17 04:18:31.200000",
+          "2024-12-18 09:06:24"
+        ],
+        "36": [
+          "2022-03-29 09:58:00",
+          "2022-03-30 20:11:40.800000",
+          "2022-04-01 06:25:21.600000",
+          "2022-04-02 16:39:02.400000",
+          "2022-04-04 02:52:43.200000",
+          "2022-04-05 13:06:24"
+        ],
+        "38": [
+          "2022-01-25 08:56:00",
+          "2022-01-26 13:56:28.800000",
+          "2022-01-27 18:56:57.600000",
+          "2022-01-28 23:57:26.400000",
+          "2022-01-30 04:57:55.200000",
+          "2022-01-31 09:58:24"
+        ],
+        "39": [
+          "2025-02-07 09:28:00",
+          "2025-02-08 19:52:28.800000",
+          "2025-02-10 06:16:57.600000",
+          "2025-02-11 16:41:26.400000",
+          "2025-02-13 03:05:55.200000",
+          "2025-02-14 13:30:24"
+        ],
+        "41": [
+          "2022-04-26 09:04:00",
+          "2022-04-27 13:41:04.800000",
+          "2022-04-28 18:18:09.600000",
+          "2022-04-29 22:55:14.400000",
+          "2022-05-01 03:32:19.200000",
+          "2022-05-02 08:09:24"
+        ],
+        "42": [
+          "2025-07-25 10:10:00",
+          "2025-07-26 15:12:16.800000",
+          "2025-07-27 20:14:33.600000",
+          "2025-07-29 01:16:50.400000",
+          "2025-07-30 06:19:07.200000",
+          "2025-07-31 11:21:24"
+        ],
+        "43": [
+          "2025-10-14 09:09:00",
+          "2025-10-15 14:13:04.800000",
+          "2025-10-16 19:17:09.600000",
+          "2025-10-18 00:21:14.400000",
+          "2025-10-19 05:25:19.200000",
+          "2025-10-20 10:29:24"
+        ],
+        "44": [
+          "2022-10-17 08:36:00",
+          "2022-10-18 13:40:04.800000",
+          "2022-10-19 18:44:09.600000",
+          "2022-10-20 23:48:14.400000",
+          "2022-10-22 04:52:19.200000",
+          "2022-10-23 09:56:24"
+        ],
+        "45": [
+          "2025-03-25 19:59:00",
+          "2025-03-27 03:07:16.800000",
+          "2025-03-28 10:15:33.600000",
+          "2025-03-29 17:23:50.400000",
+          "2025-03-31 00:32:07.200000",
+          "2025-04-01 07:40:24"
+        ],
+        "46": [
+          "2025-05-01 08:32:00",
+          "2025-05-02 13:54:04.800000",
+          "2025-05-03 19:16:09.600000",
+          "2025-05-05 00:38:14.400000",
+          "2025-05-06 06:00:19.200000",
+          "2025-05-07 11:22:24"
+        ],
+        "47": [
+          "2025-10-30 08:49:00",
+          "2025-10-31 16:11:40.800000",
+          "2025-11-01 23:34:21.600000",
+          "2025-11-03 06:57:02.400000",
+          "2025-11-04 14:19:43.200000",
+          "2025-11-05 21:42:24"
+        ],
+        "48": [
+          "2022-11-14 09:14:00",
+          "2022-11-15 19:56:28.800000",
+          "2022-11-17 06:38:57.600000",
+          "2022-11-18 17:21:26.400000",
+          "2022-11-20 04:03:55.200000",
+          "2022-11-21 14:46:24"
+        ],
+        "49": [
+          "2025-05-11 08:53:00",
+          "2025-05-12 15:30:40.800000",
+          "2025-05-13 22:08:21.600000",
+          "2025-05-15 04:46:02.400000",
+          "2025-05-16 11:23:43.200000",
+          "2025-05-17 18:01:24"
+        ]
+      }
+    },
+    "protocol_B": {
+      "folds": "GroupKFold(n_splits=5), deterministic, no shuffle, groups = the 27 training subjects; validation and test subjects take no part in any fold fit",
+      "fold_membership_subjects": {
+        "fold_0": [
+          4,
+          6,
+          28,
+          34,
+          45
+        ],
+        "fold_1": [
+          11,
+          29,
+          31,
+          35,
+          44,
+          47
+        ],
+        "fold_2": [
+          8,
+          21,
+          22,
+          42,
+          43
+        ],
+        "fold_3": [
+          10,
+          19,
+          38,
+          39,
+          49
+        ],
+        "fold_4": [
+          5,
+          17,
+          26,
+          27,
+          30,
+          32
+        ]
+      },
+      "membership_sha256": "94a490ecb5655d772adda93d77c99183b3344353d1d4c2bb07d1f45d7c888425",
+      "scikit_learn_version": "1.8.0",
+      "reproduction": "membership computed from the admitted training keys of fold_assignments (window counts per subject balance the folds); to be saved with the analysis base residuals"
+    },
+    "all_residuals": "every training window with a compliant OOF rule gets its OOF residual; validation and test rows use the base fitted on the full training split; scalers, imputers, standardizers and any other fitted preprocessing are fitted inside each fold's training part only",
+    "openfe_init_scores": {
+      "option": "separate_openfe_init_scores",
+      "protocol_A": {
+        "internal_split": "per subject the first 75% of the training period is internal-train (whole support before the 75% cut) and the rest internal-validation (whole support after the cut); windows crossing the cut are dropped from both (REC 4.1 internal validation = last 25%)",
+        "internal_train_init_scores": "OOF inside the internal-train period: 5 equal-duration blocks of that period, non-forward, crossing windows dropped",
+        "internal_validation_init_scores": "base fitted on all internal-train windows only"
+      },
+      "protocol_B": {
+        "internal_split": "18 internal-train / 9 internal-validation subjects among the 27 training subjects (REC 3.6 example); membership: internal_membership",
+        "internal_train_init_scores": "GroupKFold(5) OOF inside the 18 subjects, deterministic",
+        "internal_validation_init_scores": "base fitted on the 18 internal-train subjects only",
+        "internal_membership": {
+          "rule": "the 27 Protocol-B training subject ids are sorted; permutation = numpy.random.default_rng(42).permutation(sorted ids); the first 18 are internal-train, the last 9 internal-validation; Protocol-B validation and test subjects are never used",
+          "generator": "numpy.random.default_rng (PCG64)",
+          "seed": 42,
+          "numpy_version": "2.4.2",
+          "sorted_training_subjects": [
+            4,
+            5,
+            6,
+            8,
+            10,
+            11,
+            17,
+            19,
+            21,
+            22,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            34,
+            35,
+            38,
+            39,
+            42,
+            43,
+            44,
+            45,
+            47,
+            49
+          ],
+          "permutation": [
+            19,
+            38,
+            43,
+            42,
+            34,
+            11,
+            31,
+            49,
+            35,
+            26,
+            22,
+            17,
+            32,
+            8,
+            4,
+            44,
+            39,
+            28,
+            27,
+            30,
+            47,
+            6,
+            10,
+            45,
+            5,
+            29,
+            21
+          ],
+          "internal_train_subjects": [
+            19,
+            38,
+            43,
+            42,
+            34,
+            11,
+            31,
+            49,
+            35,
+            26,
+            22,
+            17,
+            32,
+            8,
+            4,
+            44,
+            39,
+            28
+          ],
+          "internal_validation_subjects": [
+            27,
+            30,
+            47,
+            6,
+            10,
+            45,
+            5,
+            29,
+            21
+          ]
+        }
+      },
+      "rule": "no internal-validation label, lag, residual or fold fit reaches the internal-train data through the base, the residual target, the init_scores, the preprocessing parameters or the folds; the final O_k factor block is trained on the main OOF residuals",
+      "consequence": "A: 5,157 of the 58,895 internal-train windows (8.8%) have no init_score because of the block edges, in addition to 1,290 windows crossing the 75% cut"
+    }
+  },
+  "primary_endpoint": "Paired subject-equal RMSE change relative to fixed GlucoBench predictions",
+  "evidence_source": "history/test_execution.zip"
+}

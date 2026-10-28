@@ -1,0 +1,556 @@
+{
+  "spec_id": "baseline_reproduction_spec_v2",
+  "selection_status": "formal baselines selected",
+  "provenance_vocabulary": [
+    "paper-reported",
+    "public-code-verified",
+    "not reported",
+    "project adaptation",
+    "project-specified decision"
+  ],
+  "fixed_task": {
+    "protocol_id": "primary_libre_120m_to_30m_stride5",
+    "task_id": "primary_libre_30min",
+    "target_device": "Libre",
+    "target_field": "libre_gl",
+    "target_unit": "mg/dL",
+    "prediction_type": "single_future_point_glucose_forecasting",
+    "history_interval": "[t - 120 minutes, t]",
+    "history_minutes": 120,
+    "expected_history_points": 121,
+    "forecast_horizon_minutes": 30,
+    "origin_stride_minutes": 5,
+    "grid_resolution_minutes": 1,
+    "base_grid_artifact": "results/aligned_data/dynamic_aligned_1min.parquet",
+    "input_cutoff_rule": "An input may be used only if both its event time and its availability time are at or before origin time t.",
+    "window_rule_version": "strict_published_history_v1",
+    "window_key": [
+      "subject",
+      "origin_time",
+      "task_id"
+    ],
+    "fold_key": [
+      "evaluation_protocol",
+      "subject",
+      "origin_time",
+      "task_id"
+    ],
+    "split_rule_version": "primary_scope_v1",
+    "evaluation_protocols": [
+      "Within-subject Future Prediction",
+      "Unseen-subject Generalization"
+    ],
+    "temporal_partitions": {
+      "train": "[start_time, protocol_a_train_end_time]",
+      "validation": "(protocol_a_train_end_time, protocol_a_val_end_time]",
+      "test": "(protocol_a_val_end_time, end_time]"
+    },
+    "subject_rule": "Use protocol_b_group from primary split_scope_v1; normalize val to validation only.",
+    "support_rule": "The entire closed [history_start_time, target_time] must be in one temporal partition. Origins alone never determine admission.",
+    "preprocessing_policy": "Fit learned preprocessing separately on the appropriate training split of each protocol. Validation is for tuning and test is for frozen evaluation only.",
+    "unseen_history_policy": "An unseen subject may supply causally available pre-origin history at prediction time. Only training subjects fit models, preprocessing, dimensionality reduction, and feature selection. Validation may guide model selection; test-subject windows, statistics, and history cannot guide fitting or tuning.",
+    "cross_protocol_policy": "Do not transfer learned statistics or choices from Protocol A data into Protocol B when those subjects are held out in Protocol B; shared exploration remains restricted to the common training range.",
+    "eligible_windows": 134539,
+    "registered_glucose_features": [
+      "glucose_lag_0min",
+      "glucose_lag_30min",
+      "glucose_lag_60min",
+      "glucose_lag_120min",
+      "glucose_mean_30min",
+      "glucose_std_30min",
+      "glucose_slope_30min",
+      "glucose_mean_120min",
+      "glucose_std_120min",
+      "glucose_slope_120min"
+    ]
+  },
+  "upstream_artifacts": {
+    "task_protocol": "results/forecast_windows/task_protocol.json",
+    "window_construction_rules": "results/forecast_windows/window_construction_rules.json",
+    "split_rules": "results/forecast_windows/split_rules.json",
+    "feature_registry": "results/forecast_windows/feature_registry.csv",
+    "sample_flow": "results/forecast_windows/sample_flow.csv",
+    "window_manifest": "results/forecast_windows/window_manifest.parquet",
+    "fold_assignments": "results/forecast_windows/fold_assignments.parquet",
+    "glucose_history_samples": "results/forecast_windows/glucose_history_samples.parquet"
+  },
+  "split_sizes": [
+    {
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "split": "test",
+      "windows": 28322,
+      "subjects": 9
+    },
+    {
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "split": "train",
+      "windows": 81958,
+      "subjects": 27
+    },
+    {
+      "evaluation_protocol": "Unseen-subject Generalization",
+      "split": "validation",
+      "windows": 24259,
+      "subjects": 9
+    },
+    {
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "split": "test",
+      "windows": 26269,
+      "subjects": 45
+    },
+    {
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "split": "train",
+      "windows": 79300,
+      "subjects": 45
+    },
+    {
+      "evaluation_protocol": "Within-subject Future Prediction",
+      "split": "validation",
+      "windows": 26330,
+      "subjects": 45
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "glucobench_paper",
+      "evidence_role": "primary",
+      "citation": "Sergazinov R, Chun E, Rogovchenko V, Fernandes N, Kasman N, Gaynanova I. GlucoBench: Curated List of Continuous Glucose Monitoring Datasets with Prediction Benchmarks. ICLR 2024.",
+      "identifier": "arXiv:2410.05780v1",
+      "version": "v1",
+      "access": "full text",
+      "access_date": "2026-09-27"
+    },
+    {
+      "source_id": "glucobench_code",
+      "evidence_role": "primary",
+      "citation": "IrinaStatsLab/GlucoBench official repository (https://github.com/IrinaStatsLab/GlucoBench)",
+      "identifier": "commit 661d840a98b316df51faa13a7100430afcbbb5b7",
+      "version": "lib/linreg.py; utils/darts_processing.py; data_formatter/base.py; config/*.yaml; requirements.txt",
+      "access": "source files read",
+      "access_date": "2026-09-27"
+    },
+    {
+      "source_id": "darts_docs",
+      "evidence_role": "primary",
+      "citation": "Darts documentation, darts.models.forecasting.linear_regression_model.LinearRegressionModel",
+      "identifier": "unit8co.github.io/darts",
+      "version": "online documentation (repository pin darts==0.29.0)",
+      "access": "documentation read",
+      "access_date": "2026-09-27"
+    },
+    {
+      "source_id": "sparacino2007",
+      "evidence_role": "primary",
+      "citation": "Sparacino G, Zanderigo F, Corazza S, Maran A, Facchinetti A, Cobelli C. Glucose concentration can be predicted ahead in time from continuous glucose monitoring sensor time-series. IEEE Trans Biomed Eng. 2007;54(5):931-937.",
+      "identifier": "doi:10.1109/TBME.2006.889774",
+      "version": "published article",
+      "access": "full text",
+      "access_date": "2026-09-28"
+    },
+    {
+      "source_id": "zanderigo2007",
+      "evidence_role": "secondary",
+      "citation": "Zanderigo F, Sparacino G, Kovatchev B, Cobelli C. Glucose prediction algorithms from continuous monitoring data. J Diabetes Sci Technol. 2007;1(5):645-651.",
+      "identifier": "PMC2734107",
+      "version": "published article",
+      "access": "full text",
+      "access_date": "2026-09-27"
+    },
+    {
+      "source_id": "cobelli2009",
+      "evidence_role": "secondary",
+      "citation": "Cobelli C, Dalla Man C, Sparacino G, Magni L, De Nicolao G, Kovatchev BP. Diabetes: models, signals, and control. IEEE Rev Biomed Eng. 2009;2:54-96.",
+      "identifier": "PMC2951686",
+      "version": "published article",
+      "access": "full text",
+      "access_date": "2026-09-27"
+    }
+  ],
+  "baselines": {
+    "glucobench_linear_regression": {
+      "role": "primary",
+      "reproduction_status": "public implementation verified / adapted method reproduction",
+      "fields": [
+        {
+          "field": "model_name",
+          "value": "GlucoBench Linear Regression (global linear autoregressive model on target lags)",
+          "provenance": "paper-reported",
+          "source_ids": "glucobench_paper"
+        },
+        {
+          "field": "source_paper",
+          "value": "GlucoBench, ICLR 2024 (arXiv:2410.05780v1), Section 4.2",
+          "provenance": "paper-reported",
+          "source_ids": "glucobench_paper"
+        },
+        {
+          "field": "implementation_source",
+          "value": "lib/linreg.py @ 661d840a98b316df51faa13a7100430afcbbb5b7: darts.models.LinearRegressionModel(lags=in_len, lags_past_covariates=None, lags_future_covariates=None, output_chunk_length=out_len)",
+          "provenance": "public-code-verified",
+          "source_ids": "glucobench_code"
+        },
+        {
+          "field": "original_task",
+          "value": "1-hour-ahead CGM forecasting, T = 12 steps at 5-min frequency",
+          "provenance": "paper-reported",
+          "source_ids": "glucobench_paper"
+        },
+        {
+          "field": "original_input_geometry",
+          "value": "Past target values only; lags = in_len points; in_len searched by Optuna in [12, max_length_input] with step 12 (saved configs: iglu 192, hall 84)",
+          "provenance": "public-code-verified",
+          "source_ids": "glucobench_code"
+        },
+        {
+          "field": "original_input_geometry",
+          "value": "load_data(..., use_static_covs=True) attaches static covariates (including the subject id) to target series",
+          "provenance": "public-code-verified",
+          "source_ids": "glucobench_code"
+        },
+        {
+          "field": "original_fitting",
+          "value": "Separate linear model for each forecast step",
+          "provenance": "paper-reported",
+          "source_ids": "glucobench_paper"
+        },
+        {
+          "field": "original_fitting",
+          "value": "Default estimator sklearn.linear_model.LinearRegression (ordinary least squares); multi_models=True trains one model per step; fitted once on all training series",
+          "provenance": "public-code-verified",
+          "source_ids": "darts_docs;glucobench_code"
+        },
+        {
+          "field": "original_fitting",
+          "value": "Min-max scaling fitted on the training target across all series (ScalerCustom); short gaps linearly interpolated",
+          "provenance": "public-code-verified",
+          "source_ids": "glucobench_code;glucobench_paper"
+        },
+        {
+          "field": "original_horizon",
+          "value": "12 steps x 5 min = 60 min trajectory",
+          "provenance": "paper-reported",
+          "source_ids": "glucobench_paper"
+        },
+        {
+          "field": "current_role",
+          "value": "primary formal time-series baseline",
+          "provenance": "project-specified decision",
+          "source_ids": ""
+        },
+        {
+          "field": "project_adaptation",
+          "value": "Single direct prediction of libre_gl at t+30 min, i.e. only the 30-min step of the per-step strategy",
+          "provenance": "project adaptation",
+          "source_ids": ""
+        },
+        {
+          "field": "project_adaptation",
+          "value": "History fixed to the frozen 120-min window; no input-length search",
+          "provenance": "project adaptation",
+          "source_ids": ""
+        },
+        {
+          "field": "project_adaptation",
+          "value": "Training rows are the frozen the corresponding analysis training windows; one pooled model per evaluation protocol",
+          "provenance": "project adaptation",
+          "source_ids": ""
+        },
+        {
+          "field": "project_adaptation",
+          "value": "No static covariates and no subject identifier as regressors (subject identity is a grouping key only)",
+          "provenance": "project adaptation",
+          "source_ids": ""
+        },
+        {
+          "field": "project_adaptation",
+          "value": "Any scaling is fitted on the training split of the same protocol only; no gap interpolation (strict published windows)",
+          "provenance": "project adaptation",
+          "source_ids": ""
+        },
+        {
+          "field": "unresolved_detail",
+          "value": "Estimator keyword arguments (e.g. fit_intercept) are not set in the reference code; the value must be set explicitly",
+          "provenance": "not reported",
+          "source_ids": "glucobench_code"
+        },
+        {
+          "field": "unresolved_detail",
+          "value": "Whether darts 0.29.0 uses the attached static covariates as regressors was not verified",
+          "provenance": "not reported",
+          "source_ids": "glucobench_code"
+        },
+        {
+          "field": "implementation_status",
+          "value": "Reference implementation read at the pinned commit; implemented and fitted in the training section below",
+          "provenance": "public-code-verified",
+          "source_ids": "glucobench_code"
+        }
+      ]
+    },
+    "sparacino2007_ar1_wls": {
+      "role": "secondary",
+      "reproduction_status": "published-equation method reproduction / reference implementation unavailable",
+      "geometry": {
+        "input_window": "[t - 120 minutes, t]",
+        "step_minutes": 3,
+        "observation_offsets_minutes": [
+          -120,
+          -117,
+          -114,
+          -111,
+          -108,
+          -105,
+          -102,
+          -99,
+          -96,
+          -93,
+          -90,
+          -87,
+          -84,
+          -81,
+          -78,
+          -75,
+          -72,
+          -69,
+          -66,
+          -63,
+          -60,
+          -57,
+          -54,
+          -51,
+          -48,
+          -45,
+          -42,
+          -39,
+          -36,
+          -33,
+          -30,
+          -27,
+          -24,
+          -21,
+          -18,
+          -15,
+          -12,
+          -9,
+          -6,
+          -3,
+          0
+        ],
+        "observations": 41,
+        "regression_pairs": 40,
+        "forecast_steps_T": 10,
+        "output": "single libre_gl prediction at t+30 min"
+      },
+      "decisions": [
+        {
+          "decision_id": "R1",
+          "topic": "filtering",
+          "provenance": "project-specified decision",
+          "rule": "Main analysis uses no low-pass filter. The published first-order Butterworth filter may only be applied causally in an optional sensitivity analysis; zero-phase filtering is not permitted.",
+          "classification": "project adaptation"
+        },
+        {
+          "decision_id": "R2",
+          "topic": "forgetting factor",
+          "provenance": "project-specified decision",
+          "rule": "Candidate set mu in {0.2, 0.5, 0.8}. The formal mu is selected on validation data only, separately within each evaluation protocol, and locked before test evaluation. Test data never inform mu. Results for all three values may be reported as pre-registered sensitivity.",
+          "classification": "project adaptation"
+        },
+        {
+          "decision_id": "R3",
+          "topic": "estimator",
+          "provenance": "project-specified decision",
+          "rule": "Closed-form implementation of the published exponentially weighted AR(1) estimator: a = sum_k mu^k u(n-k) u(n-k-1) / sum_k mu^k u(n-k-1)^2 over the window pairs; forecast a^T * u(n). No claim of numerical identity with the original Matlab RLS.",
+          "classification": "project adaptation"
+        }
+      ],
+      "fields": [
+        {
+          "field": "model_name",
+          "value": "Sparacino et al. (2007) first-order autoregressive model with time-varying parameters (AR(1)-WLS)",
+          "provenance": "paper-reported",
+          "source_ids": "sparacino2007"
+        },
+        {
+          "field": "source_paper",
+          "value": "IEEE Trans Biomed Eng 2007;54(5):931-937, full text",
+          "provenance": "paper-reported",
+          "source_ids": "sparacino2007"
+        },
+        {
+          "field": "implementation_source",
+          "value": "No author, same-group or third-party reference implementation available",
+          "provenance": "not reported",
+          "source_ids": "sparacino2007"
+        },
+        {
+          "field": "original_task",
+          "value": "Ahead-of-time CGM glucose prediction with PH = 30 and 45 min",
+          "provenance": "paper-reported",
+          "source_ids": "sparacino2007"
+        },
+        {
+          "field": "original_input_geometry",
+          "value": "All past samples of the same subject, 3-min GlucoDay series; sample k instants before t_n weighted by mu^k, mu in (0, 1)",
+          "provenance": "paper-reported",
+          "source_ids": "sparacino2007"
+        },
+        {
+          "field": "original_model",
+          "value": "u_i = a * u_(i-1) + w_i; theta = (a, sigma^2); no intercept",
+          "provenance": "paper-reported",
+          "source_ids": "sparacino2007"
+        },
+        {
+          "field": "original_fitting",
+          "value": "theta re-estimated at every sampling time by weighted least squares; AR model solved with the recursive least squares algorithm of the Matlab System Identification Toolbox",
+          "provenance": "paper-reported",
+          "source_ids": "sparacino2007"
+        },
+        {
+          "field": "original_prediction",
+          "value": "Equation iterated for i = n+1 ... n+T with w_i = 0; T = 10 or 15 at 3 min gives PH 30 or 45 min",
+          "provenance": "paper-reported",
+          "source_ids": "sparacino2007"
+        },
+        {
+          "field": "original_hyperparameters",
+          "value": "mu = 0.2, 0.5, 0.8 compared; no single value selected; mu = 1 rejected",
+          "provenance": "paper-reported",
+          "source_ids": "sparacino2007"
+        },
+        {
+          "field": "original_preprocessing",
+          "value": "First-order Butterworth low-pass filter, cutoff normalized to half the sampling rate = 0.05",
+          "provenance": "paper-reported",
+          "source_ids": "sparacino2007"
+        },
+        {
+          "field": "original_data",
+          "value": "28 type 1 diabetic patients, GlucoDay microdialysis CGM, 24-48 h home monitoring",
+          "provenance": "paper-reported",
+          "source_ids": "sparacino2007"
+        },
+        {
+          "field": "original_evaluation",
+          "value": "MSPE and ESOD; delay of threshold crossings; each subject processed on its own series",
+          "provenance": "paper-reported",
+          "source_ids": "sparacino2007"
+        },
+        {
+          "field": "secondary_consistency",
+          "value": "Same equation and exponential weighting described by the same group",
+          "provenance": "paper-reported",
+          "source_ids": "zanderigo2007;cobelli2009"
+        },
+        {
+          "field": "current_role",
+          "value": "secondary formal time-series baseline",
+          "provenance": "project-specified decision",
+          "source_ids": ""
+        },
+        {
+          "field": "reproduction_wording",
+          "value": "method reproduction based on published equations; no reference implementation available",
+          "provenance": "project-specified decision",
+          "source_ids": ""
+        },
+        {
+          "field": "project_adaptation",
+          "value": "Input restricted to the frozen window [t - 120 minutes, t] on the released 1-min Libre grid",
+          "provenance": "project adaptation",
+          "source_ids": ""
+        },
+        {
+          "field": "project_adaptation",
+          "value": "Observations every 3 min at offsets -120 ... 0 min: 41 observations, 40 regression pairs",
+          "provenance": "project adaptation",
+          "source_ids": ""
+        },
+        {
+          "field": "project_adaptation",
+          "value": "Iterative forecast with innovation set to zero for T = 10 steps; output is the single t+30 min value",
+          "provenance": "project adaptation",
+          "source_ids": ""
+        },
+        {
+          "field": "project_adaptation",
+          "value": "Coefficient a estimated independently in every window; no state carried across windows",
+          "provenance": "project adaptation",
+          "source_ids": ""
+        },
+        {
+          "field": "unresolved_detail",
+          "value": "RLS toolbox function and initialization, filter causality, start-up length and missing-data handling are not reported; resolved for this project by decisions R1 and R3 and by complete frozen windows",
+          "provenance": "not reported",
+          "source_ids": "sparacino2007"
+        },
+        {
+          "field": "implementation_status",
+          "value": "published-equation method reproduction; reference implementation unavailable; implemented and fitted in the training section below",
+          "provenance": "project-specified decision",
+          "source_ids": ""
+        }
+      ]
+    }
+  },
+  "protocol_rules": {
+    "Within-subject Future Prediction": {
+      "rule": "Models and any learned preprocessing are fitted on each subject's training partition only; validation guides model and hyperparameter selection; test is used only for frozen evaluation.",
+      "provenance": "the corresponding analysis split_rules"
+    },
+    "Unseen-subject Generalization": {
+      "rule": "Test subjects may not contribute to population-level fitting, reusable subject-specific fitting, preprocessing fitting, or hyperparameter tuning. Deterministic calculations based solely on the current causally available input window are permitted at prediction time.",
+      "prohibited": [
+        "population-level model fitting on test subjects",
+        "reusable subject-specific fitting on test subjects",
+        "preprocessing fitted on test-subject statistics",
+        "hyperparameter tuning on test subjects",
+        "information after the prediction origin",
+        "test labels"
+      ],
+      "permitted": [
+        "deterministic calculation on the current window [t-120, t] only",
+        "local feature calculation",
+        "local closed-form coefficient estimation, including the Sparacino coefficient a"
+      ],
+      "conditions": [
+        "belongs to the current window only",
+        "not stored across windows",
+        "not reused for future windows",
+        "no future information",
+        "no test labels",
+        "hyperparameters fixed on permitted data"
+      ],
+      "provenance": "project-specified decision"
+    }
+  },
+  "baseline_protocol_use": [
+    {
+      "model_id": "glucobench_linear_regression",
+      "protocol": "Within-subject Future Prediction",
+      "fitting": "pooled model fitted on the training partitions",
+      "prediction_time": "frozen window lags"
+    },
+    {
+      "model_id": "glucobench_linear_regression",
+      "protocol": "Unseen-subject Generalization",
+      "fitting": "pooled model fitted on training subjects only",
+      "prediction_time": "frozen window lags"
+    },
+    {
+      "model_id": "sparacino2007_ar1_wls",
+      "protocol": "Within-subject Future Prediction",
+      "fitting": "none; mu selected on this protocol's validation split",
+      "prediction_time": "local a estimated from the current window only"
+    },
+    {
+      "model_id": "sparacino2007_ar1_wls",
+      "protocol": "Unseen-subject Generalization",
+      "fitting": "none; mu selected on this protocol's validation split",
+      "prediction_time": "local a estimated from the current window only (permitted deterministic calculation)"
+    }
+  ]
+}
