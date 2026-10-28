@@ -2,6 +2,8 @@
 
 Availability-constrained factor discovery for **30-minute-ahead glucose forecasting** on CGMacros. The primary task uses a closed 120-minute Libre glucose history, with prediction origins every five minutes. **Protocol A** predicts future periods within participants; **Protocol B** evaluates unseen participants. The primary metric is participant-equal RMSE.
 
+See the [research report](report/report.pdf) for methods, results, interpretation, and limitations.
+
 ## Notebook guide
 
 Read the notebooks in numbered order. Their saved outputs are included unchanged.
